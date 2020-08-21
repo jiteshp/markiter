@@ -1,0 +1,398 @@
+@import 'settings';
+@import 'mixins';
+
+//
+// Override settings
+// -----------------------------------------------------------------------------
+$font-sizes: (
+	small: 0.8 * $base-font-size-md,
+	normal: 1 * $base-font-size-md,
+	medium: 1.25 * $base-font-size-md,
+	large: 1.6 * $base-font-size-md,
+	extra-large: 2.05 * $base-font-size-md,
+);
+
+$white-space: $base-font-size-md * $base-line-height;
+
+$content-wrap-max-width: ( 720 / 20 ) * $base-font-size-md;
+$content-wide-wrap-max-width: ( 960 / 20 ) * $base-font-size-md;
+
+/**
+ * Editor styles wrapper
+ * -----------------------------------------------------------------------------
+ */
+.editor-styles-wrapper > * {
+	background-color: get-color( bg );
+	color: get-color( text );
+	font-family: $text-font;
+	font-size: get-font-size( normal );
+	line-height: $base-line-height;
+}
+
+.editor-styles-wrapper .wp-block {
+	@include make-block( $white-space );
+	max-width: $content-wrap-max-width;
+}
+
+.editor-styles-wrapper .wp-block[data-align="wide"] {
+	max-width: $content-wide-wrap-max-width;
+}
+
+.editor-styles-wrapper .wp-block[data-align="full"] {
+	max-width: none;
+}
+
+.editor-styles-wrapper .alignleft {
+	margin-right: $white-space;
+}
+
+.editor-styles-wrapper .alignright {
+	margin-left: $white-space;
+}
+
+/**
+ * Typography styles
+ * -----------------------------------------------------------------------------
+ */
+.editor-styles-wrapper {
+	address,
+	blockquote,
+	pre {
+		background-color: get-color( alt-bg );
+		padding: $white-space;
+	}
+
+	figcaption {
+		font-size: get-font-size( small );
+		margin: 0;
+		padding: ( $white-space / 4 ) 0;
+	}
+
+	.editor-post-title__input,
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $text-font;
+		font-weight: bold;
+	}
+
+	.editor-post-title__input,
+	h1, h2, h3 {
+		line-height: $heading-line-height;
+	}
+
+	.editor-post-title__input,
+	h1 {
+		font-size: get-font-size( extra-large );
+	}
+
+	h2 {
+		font-size: get-font-size( large );
+	}
+
+	h3 {
+		font-size: get-font-size( medium );
+	}
+
+	h4 {
+		font-size: get-font-size( normal );
+	}
+
+	h5, h6 {
+		font-size: get-font-size( small );
+	}
+}
+
+/**
+ * Block styles
+ * -----------------------------------------------------------------------------
+ */
+.editor-styles-wrapper {
+	/**
+	 * Caption styles
+	 * -----------------------------------------------------------------------------
+	 */
+	.blocks-gallery-caption,
+	.wp-block-embed figcaption,
+	.wp-block-image figcaption,
+	.wp-block-video figcaption {
+		@extend figcaption;
+		margin: 0;
+		width: 100%;
+	}
+
+	/**
+	 * Button block styles
+	 * -----------------------------------------------------------------------------
+	 */
+	.wp-block-button {
+		.wp-block-button__link {
+			@include make-button( get-color( accent ), get-color( accent ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
+			font-size: get-font-size( normal );
+			line-height: $base-line-height;
+
+			&:hover {
+				@include set-button-color( get-color( text ), get-color( text ), get-color( bg ) );
+			}
+		}
+
+		&.is-style-outline {
+			.wp-block-button__link {
+				@include make-button( transparent, get-color( accent ), $button-border-width, $button-border-radius, get-color( accent ), $button-padding-x, $button-padding-y );
+				font-size: get-font-size( normal );
+				line-height: $base-line-height;
+
+				&:hover {
+					@include set-button-color( get-color( accent ), get-color( accent ), get-color( bg ) );
+				}
+			}
+		}
+	}
+
+	/**
+	 * Cover block styles
+	 * -----------------------------------------------------------------------------
+	 */
+	.wp-block-cover {
+		.wp-block-cover__inner-container {
+			color: get-color( bg );
+			padding-bottom: $white-space * 2;
+			padding-top: $white-space * 2;
+			width: calc( 100% - 3.5rem );
+		}
+
+		&.alignfull {
+			.wp-block-cover__inner-container {
+				padding-left: $gutter-width / 2;
+				padding-right: $gutter-width / 2;
+				width: $header-wrap-max-width;
+			}
+		}
+	}
+
+	/**
+	 * Columns block styles
+	 * -----------------------------------------------------------------------------
+	 */
+	.wp-block-column {
+		&:nth-last-of-type(-n+2) {
+			margin-bottom: 0;
+		}
+	}
+
+	/**
+	 * Quote block styles
+	 * -----------------------------------------------------------------------------
+	 */
+	.wp-block-quote {
+		&,
+		&.is-style-large,
+		&.has-text-align-right {
+			border: none;
+			padding: $white-space;
+
+			p {
+				font-style: normal;
+				margin-bottom: $white-space / 2;
+			}
+
+			.wp-block-quote__citation,
+			cite {
+				color: get-color( text );
+				display: block;
+				font-size: get-font-size( small );
+				margin-top: 0;
+			}
+		}
+
+		&.is-style-large {
+			p {
+				font-size: get-font-size( medium );
+			}
+		}
+	}
+
+	/**
+	 * Pull quote styles
+	 * -----------------------------------------------------------------------------
+	 */
+	.wp-block-pullquote {
+		padding: 0;
+		text-align: left;
+
+		blockquote {
+			background-color: transparent;
+
+			p {
+				font-size: get-font-size( normal );
+				line-height: $base-line-height;
+				margin-bottom: $white-space / 2;
+			}
+
+			.wp-block-quote__citation,
+			cite {
+				color: get-color( text );
+				display: block;
+				font-size: get-font-size( small );
+				letter-spacing: 0;
+				margin-top: 0;
+				text-transform: none;
+			}
+		}
+
+		&.is-style-solid-color {
+			blockquote {
+				max-width: none;
+
+				p {
+					font-size: get-font-size( normal );
+					line-height: $base-line-height;
+					margin-bottom: $white-space / 2;
+				}
+			}
+		}
+	}
+
+	/**
+	 * Embed styles
+	 * -----------------------------------------------------------------------------
+	 */
+	.wp-block-embed__wrapper {
+		margin-bottom: 0;
+	}
+
+	/**
+	 * Search block styles
+	 * -----------------------------------------------------------------------------
+	 */
+	.wp-block-search {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+
+		.wp-block-search__input {
+			margin-bottom: 0;
+		}
+
+		label {
+			display: none;
+		}
+	}
+
+	/**
+	 * Group block styles
+	 * -----------------------------------------------------------------------------
+	 */
+	.wp-block-group {
+		&,
+		&.has-background {
+			@include make-block( $white-space );
+			padding: 0 0;
+
+			.alignwide {
+				margin-left: 0;
+				margin-right: 0;
+				max-width: none;
+				width: 100%;
+			}
+
+			.wp-block-group__inner-container {
+				padding: $white-space;
+			}
+		}
+
+		&.alignfull {
+			.wp-block-group__inner-container {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: $header-wrap-max-width;
+				padding-left: $gutter-width / 2;
+				padding-right: $gutter-width / 2;
+			}
+		}
+
+		.wp-block-cover & {
+			.wp-block-group__inner-container {
+				padding: 0;
+			}
+		}
+	}
+
+	/**
+	 * Separator block styles
+	 * -----------------------------------------------------------------------------
+	 */
+	.wp-block-separator {
+		&,
+		&.is-style-wide {
+			border: 0;
+			border-bottom: $hr-border-width solid get-color( text );
+		}
+
+		&.is-style-dots {
+			&:before {
+				content: '\2022\2022\2022';
+			}
+		}
+	}
+
+	/**
+	 * Code block styles
+	 * -----------------------------------------------------------------------------
+	 */
+	.wp-block-code {
+		background-color: get-color( alt-bg );
+		border: none;
+		border-radius: 0;
+		overflow: auto;
+		padding: $white-space;
+	}
+
+	/**
+	 * Table block styles
+	 * -----------------------------------------------------------------------------
+	 */
+	.wp-block-table {
+		&,
+		&.is-style-stripes {
+			td, th {
+				border-color: rgba( 0, 0, 0, 0.1 );
+				padding: $white-space / 2;
+			}
+		}
+
+		&.is-style-stripes {
+			tr:nth-child(even) {
+				background-color: get-color( bg );
+			}
+		}
+	}
+
+	/**
+	 * Color styles
+	 * -----------------------------------------------------------------------------
+	 */
+	@each $name, $color in $colors {
+		.has-#{$name}-color {
+			color: $color;
+		}
+
+		.has-#{$name}-background-color {
+			background-color: $color;
+		}
+	}
+
+	/**
+	 * Font size styles
+	 * -----------------------------------------------------------------------------
+	 */
+	@each $name, $size in $font-sizes {
+		.has-#{$name}-font-size {
+			font-size: $size;
+		}
+	}
+
+	.has-medium-font-size,
+	.has-large-font-size,
+	.has-extra-large-font-size {
+		line-height: $heading-line-height;
+	}
+}

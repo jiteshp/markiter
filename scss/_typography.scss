@@ -1,0 +1,216 @@
+/**
+ * Body typography styles
+ * -----------------------------------------------------------------------------
+ */
+body {
+	background-color: get-color( bg );
+	color: get-color( text );
+	font-family: $text-font;
+	font-size: get-font-size( normal );
+	line-height: $base-line-height;
+}
+
+/**
+ * Block elements typography styles
+ * -----------------------------------------------------------------------------
+ */
+address,
+blockquote,
+dl, ol, ul,
+figure,
+h1, h2, h3, h4, h5, h6,
+hr,
+p,
+pre,
+table {
+	@include make-block( $white-space );
+}
+
+address,
+blockquote,
+pre {
+	background-color: get-color( alt-bg );
+	padding: $white-space;
+}
+
+pre {
+	font-family: $code-font;
+	font-size: $base-font-size;
+	overflow: auto;
+}
+
+dl {
+	dt {
+		font-weight: bold;
+	}
+	dd {
+		margin-left: $white-space;
+	}
+}
+
+ol, ul {
+	list-style: decimal;
+	margin-left: $white-space;
+
+	ol, ul {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+
+	li {
+		margin-bottom: $white-space / 2;
+		margin-top: $white-space / 2;
+	}
+}
+
+ul {
+	list-style: disc;
+}
+
+figure {
+	height: auto;
+	max-width: 100%;
+
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+h1, h2, h3 {
+	line-height: $heading-line-height;
+}
+
+h1 {
+	font-size: get-font-size( extra-large );
+}
+
+h2 {
+	font-size: get-font-size( large );
+}
+
+h3 {
+	font-size: get-font-size( medium );
+}
+
+h4 {
+	font-size: get-font-size( normal );
+}
+
+h5, h6 {
+	font-size: get-font-size( small );
+}
+
+hr {
+	border: 0;
+	border-bottom: $hr-border-width solid get-color( text );
+}
+
+table {
+	background-color: get-color( alt-bg );
+	border: $table-border-width solid rgba( 0, 0, 0, 0.1 );
+	border-collapse: collapse;
+	width: 100%;
+
+	td, th {
+		border: $table-border-width solid rgba( 0, 0, 0, 0.1 );
+		padding: $white-space / 4;
+	}
+}
+
+/**
+ * Inline elements typography styles
+ * -----------------------------------------------------------------------------
+ */
+a {
+	color: get-color( accent );
+	text-decoration: underline;
+
+	&:active,
+	&:hover {
+		color: get-color( text );
+	}
+}
+
+abbr[title], acronym[title] {
+	cursor: help;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+}
+
+big {
+	font-size: get-font-size( medium );
+}
+
+cite {
+	font-weight: bold;
+}
+
+code, kbd, tt, var {
+	background-color: get-color( alt-bg );
+	display: inline-block;
+	font-family: $code-font;
+	font-size: $base-font-size;
+	padding: 3px 6px;
+}
+
+del, s, strike {
+	text-decoration: line-through;
+}
+
+em {
+	font-style: italic;
+}
+
+figcaption {
+	color: get-color( text );
+	display: block;
+	font-size: get-font-size( small );
+	padding: $white-space / 4;
+	text-align: center;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+ins, u {
+	text-decoration: underline;
+}
+
+q {
+	&:before {
+		content: '\201c';
+	}
+
+	&:after {
+		content: '\201d';
+	}
+}
+
+small {
+	font-size: get-font-size( small );
+}
+
+strong {
+	font-weight: bold;
+}
+
+sub, sup {
+	font-size: get-font-size( small );
+	position: relative;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}

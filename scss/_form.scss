@@ -1,0 +1,74 @@
+/**
+ * Button styles
+ * -----------------------------------------------------------------------------
+ */
+.btn {
+	@include make-button( get-color( accent ), get-color( accent ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
+	font-size: get-font-size( normal );
+	line-height: $base-line-height;
+
+	&:hover {
+		@include set-button-color( get-color( text ), get-color( text ), get-color( bg ) );
+	}
+}
+
+.btn-outline {
+	@include make-button( transparent, get-color( accent ), $button-border-width, $button-border-radius, get-color( accent ), $button-padding-x, $button-padding-y );
+	font-size: get-font-size( normal );
+	line-height: $base-line-height;
+
+	&:hover {
+		@include set-button-color( get-color( accent ), get-color( accent ), get-color( bg ) );
+	}
+}
+
+/**
+ * Default form elements styles
+ * -----------------------------------------------------------------------------
+ */
+form p {
+	@include make-block( $white-space / 2 );
+}
+
+button, input, select, textarea {
+	background-color: get-color( bg );
+	border: none;
+	border-radius: $input-border-radius;
+	color: get-color( text );
+	display: inline-block;
+	font-family: $text-font;
+	font-size: get-font-size( normal );
+	line-height: $base-line-height;
+	padding: $input-padding-y $input-padding-x;
+	width: 100%;
+}
+
+input, select, textarea {
+	box-shadow: inset 0 0 3px rgba( 0, 0, 0, 0.4 );
+}
+
+input[type=checkbox], input[type=submit], input[type=radio], input[type=reset] {
+	box-shadow: none;
+	width: auto;
+}
+
+label {
+	color: get-color( text );
+	font-size: get-font-size( small );
+}
+
+select {
+	-webkit-appearance: initial;
+}
+
+textarea {
+	height: $input-height * 2.5;
+}
+
+button[type=submit], input[type=submit] {
+	@extend .btn;
+}
+
+input[type=reset] {
+	@extend .btn-outline;
+}

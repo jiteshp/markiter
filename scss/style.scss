@@ -1,0 +1,606 @@
+/**
+ * Theme name: 		Markiter
+ * Version:			1.5
+ * Description:		Minimal theme for marketers & bloggers.
+ * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, threaded-comments, block-styles, wide-blocks
+ * Text domain: 	markiter
+ * Author: 			Jitesh Patil
+ * Author URI: 		https://www.jiteshpatil.com/
+ * License: 		GNU General Public License v2 or later
+ * License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+ * Tested up to: 	5.5
+ * Requires PHP: 	7.1
+ *
+ * All files, unless otherwise stated, are released under the
+ * GNU General Public License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+ *
+ * This theme, like WordPress, is licensed under the GPL.
+ * Use it to make something cool, have fun, and share what you've learned with others.
+ */
+
+@import 'reset';
+@import 'settings';
+@import 'mixins';
+@import 'form';
+@import 'typography';
+@import 'a11y';
+@import 'wordpress';
+
+/**
+ * Base typography styles
+ * -----------------------------------------------------------------------------
+ */
+html {
+	font-size: $base-font-size;
+
+	@include when-screen( md ) {
+		font-size: $base-font-size-md;
+	}
+}
+
+/**
+ * Site header styles
+ * -----------------------------------------------------------------------------
+ */
+.site-header {
+	padding-bottom: $white-space / 2;
+	padding-top: $white-space / 2;
+}
+
+.site-header-wrap {
+	@include make-container( $header-wrap-max-width, $gutter-width / 2 );
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/**
+ * Site content styles
+ * -----------------------------------------------------------------------------
+ */
+.site-content {
+	padding-bottom: $white-space;
+	padding-top: $white-space;
+
+	@include when-screen( lg ) {
+		padding-bottom: $white-space * 2;
+		padding-top: $white-space * 2;
+	}
+}
+
+.site-content-wrap {
+	@include make-container( $content-wrap-max-width, $gutter-width / 2 );
+}
+
+/**
+ * Site footer styles
+ * -----------------------------------------------------------------------------
+ */
+.site-footer {
+	background-color: get-color( alt-bg );
+	font-size: get-font-size( small );
+	margin-top: $white-space / 2;
+	padding-bottom: $white-space;
+	padding-top: $white-space;
+	text-align: center;
+
+	@include when-screen( lg ) {
+		padding-bottom: $white-space * 2;
+		padding-top: $white-space * 2;
+	}
+}
+
+.site-footer-wrap {
+	@include make-container( $footer-wrap-max-width, $gutter-width / 2 );
+}
+
+/**
+ * Brand styles
+ * -----------------------------------------------------------------------------
+ */
+.brand {
+	a {
+		text-decoration: none;
+	}
+}
+
+.site-title,
+.site-description {
+	margin-bottom: 0;
+}
+
+.site-title {
+	font-size: get-font-size( large );
+	font-weight: bold;
+	line-height: $heading-line-height;
+}
+
+.site-description {
+	color: get-color( text );
+	font-size: get-font-size( small );
+}
+
+.custom-logo {
+	display: block;
+}
+
+/**
+ * Menu toggle styles
+ * -----------------------------------------------------------------------------
+ */
+.menu-toggle {
+	background-color: transparent;
+	color: get-color( text );
+	font-size: get-font-size( large );
+	height: $input-height;
+	line-height: $input-height;
+	padding: 0;
+	text-align: center;
+	width: $input-height;
+
+	@include when-screen( lg ) {
+		display: none;
+	}
+}
+
+/**
+ * Main navigation styles
+ * -----------------------------------------------------------------------------
+ */
+.main-navigation {
+	display: none;
+	font-size: $base-font-size;
+	margin-top: $white-space / 2;
+	width: 100%;
+
+	&.toggled {
+		display: block;
+	}
+
+	ul {
+		list-style: none;
+		margin-bottom: 0;
+		margin-top: 0;
+		width: 100%;
+	}
+
+	li {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+
+	a {
+		color: get-color( text );
+		display: block;
+		padding: ( $input-padding-y * 1.5 ) 0;
+		text-decoration: none;
+
+		&:hover {
+			color: get-color( accent );
+		}
+	}
+
+	@include when-screen( lg ) {
+		display: block;
+		margin-top: 0;
+		width: auto;
+
+		li {
+			position: relative;
+
+			&.menu-item-has-children {
+				& > a {
+					position: relative;
+
+					&:after {
+						border: solid get-color( text );
+						border-width: 0 2px 2px 0;
+						content: '';
+						display: inline-block;
+						padding: 2px;
+						position: absolute;
+						right: $input-padding-x / 3;
+						top: 45%;
+					}
+				}
+			}
+		}
+
+		a {
+			padding-left: $input-padding-x;
+			padding-right: $input-padding-x;
+		}
+	}
+}
+
+.main-navigation .menu {
+	margin-left: 0;
+
+	& > li {
+		border-bottom: 1px dotted rgba( 0, 0, 0, 0.1 );
+
+		&.focus,
+		&:hover {
+			& > .sub-menu {
+				left: 0;
+			}
+		}
+	}
+
+	@include when-screen( lg ) {
+		& > li {
+			border-bottom: none;
+			float: left;
+
+			&.menu-item-has-children {
+				& > a {
+					&:after {
+						right: $input-padding-x / 3;
+						transform: rotate( 45deg );
+					}
+				}
+			}
+		}
+	}
+}
+
+.main-navigation .sub-menu {
+	& > li {
+		border-top: 1px dotted rgba( 0, 0, 0, 0.1 );
+	}
+
+	@include when-screen( lg ) {
+		background-color: get-color( alt-bg );
+		box-shadow: 0 3px 3px rgba( 0, 0, 0, 0.1 );
+		left: -999em;
+		margin-left: 0;
+		position: absolute;
+		top: 100%;
+		width: 240px;
+		z-index: 1000;
+
+		li {
+			&.menu-item-has-children {
+				& > a {
+					&:after {
+						right: $input-padding-x / 2;
+						transform: rotate( -45deg );
+					}
+				}
+			}
+
+			&:first-child {
+				border-top: none;
+				position: relative;
+
+				&:before {
+					border-left: 10px solid transparent;
+					border-right: 10px solid transparent;
+					border-bottom: 10px solid get-color( alt-bg );
+					content: '';
+					display: block;
+					height: 0;
+					left: $input-padding-x;
+					position: absolute;
+					top: -9px;
+					width: 0;
+				}
+			}
+
+			&.focus,
+			&:hover {
+				& > .sub-menu {
+					left: 100.5%;
+					top: 0;
+				}
+			}
+		}
+	}
+}
+
+.main-navigation .sub-menu .sub-menu {
+	@include when-screen( lg ) {
+		& > li {
+			&:first-child {
+				&:before {
+					content: none;
+				}
+			}
+		}
+	}
+}
+
+/**
+ * Entry styles
+ * -----------------------------------------------------------------------------
+ */
+.hentry {
+	@include make-block( $white-space * 2 );
+}
+
+.entry-header,
+.entry-content,
+.entry-footer {
+	@include make-block( $white-space );
+}
+
+.entry-title {
+	font-size: get-font-size( extra-large );
+	margin-bottom: $white-space / 4;
+
+	a {
+		color: get-color( text );
+		text-decoration: none;
+
+		&:active,
+		&:hover {
+			color: get-color( accent );
+		}
+	}
+}
+
+.entry-meta {
+	color: get-color( text );
+	font-size: get-font-size( small );
+
+	a {
+		text-decoration: none;
+	}
+
+	.entry-date,
+	.entry-tags {
+		&:before {
+			content: '\2014';
+			margin: 0 5px;
+		}
+	}
+
+	.published:not(.updated) {
+		display: none;
+	}
+
+	.sticky .entry-header & {
+		&:before {
+			color: get-color( accent );
+			content: '\2605';
+			margin-right: 5px;
+		}
+	}
+}
+
+.entry-content {
+	@include clear-floats();
+}
+
+.more-link {
+	@extend .btn-outline;
+}
+
+.post-nav-links {
+	clear: both;
+}
+
+/**
+ * Page header styles
+ * -----------------------------------------------------------------------------
+ */
+.page-header {
+	@include make-block( $white-space * 2 );
+	text-align: center;
+
+	.page-title {
+		font-size: get-font-size( medium );
+	}
+}
+
+/**
+ * Pagination styles
+ * -----------------------------------------------------------------------------
+ */
+.pagination {
+	.page-numbers {
+		background-color: get-color( alt-bg );
+		border-radius: $button-border-radius;
+		display: inline-block;
+		height: $input-height;
+		line-height: $input-height;
+		text-align: center;
+		text-decoration: none;
+		width: $input-height;
+	}
+}
+
+/**
+ * Pagination styles
+ * -----------------------------------------------------------------------------
+ */
+.post-navigation {
+	@extend .alignwide;
+	@include make-block( $white-space * 2 );
+	border-bottom: 1px solid rgba( 0, 0, 0, 0.1 );
+	border-top: 1px solid rgba( 0, 0, 0, 0.1 );
+	padding: $white-space;
+
+	.nav-links {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	.nav-previous,
+	.nav-next {
+		text-align: center;
+
+		a {
+			text-decoration: none;
+		}
+
+		span {
+			color: get-color( text );
+			display: block;
+			font-size: get-font-size( small );
+			text-transform: uppercase;
+		}
+	}
+
+	.nav-previous span {
+		&:before {
+			content: '\2190';
+			margin-right: 5px;
+		}
+	}
+
+	.nav-next span {
+		&:after {
+			content: '\2192';
+			margin-left: 5px;
+		}
+	}
+
+	@include when-screen( sm ) {
+		.nav-links {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.nav-previous,
+		.nav-next {
+			width: 50%;
+		}
+
+		.nav-previous {
+			border-right: 1px solid rgba( 0, 0, 0, 0.1 );
+			padding-right: $white-space;
+			text-align: left;
+		}
+
+		.nav-next {
+			padding-left: $white-space;
+			text-align: right;
+		}
+	}
+}
+
+/**
+ * Comments area styles
+ * -----------------------------------------------------------------------------
+ */
+.comment-list {
+	margin-left: 0;
+
+	&, .children {
+		list-style: none;
+	}
+}
+
+.comment-body {
+	background-color: get-color( alt-bg );
+	padding: $white-space;
+}
+
+.comment-meta,
+.comment-content,
+.reply {
+	@include make-block( $white-space );
+}
+
+.comment-meta {
+	a {
+		text-decoration: none;
+	}
+
+	.avatar {
+		float: left;
+		margin-right: 10px;
+	}
+
+	.fn {
+		font-weight: bold;
+	}
+}
+
+.comment-metadata {
+	font-size: get-font-size( small );
+
+	a {
+		color: get-color( text );
+	}
+}
+
+.comment-respond {
+	border: 1px solid rgba( 0, 0, 0, 0.1 );
+	padding: $white-space;
+
+	.comment & {
+		margin-top: $white-space;
+	}
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/**
+ * Page not found styles
+ * -----------------------------------------------------------------------------
+ */
+.page-not-found {
+	padding: $white-space;
+
+	.search-form {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+
+		input[type=submit] {
+			margin-left: 10px;
+		}
+	}
+}
+
+/**
+ * Footer navigation styles
+ * -----------------------------------------------------------------------------
+ */
+.footer-navigation {
+	margin-bottom: $white-space / 2;
+
+	ul {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		list-style: none;
+		margin: 0;
+	}
+
+	li {
+		margin: 0;
+
+		&:before {
+			content: '\2014';
+			margin: 0 10px;
+		}
+
+		&:first-child:before {
+			content: none;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
+/**
+ * No header page template styles
+ * -----------------------------------------------------------------------------
+ */
+.page-template-no-header-page {
+	.site-header {
+		display: none;
+	}
+}

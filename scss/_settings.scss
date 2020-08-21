@@ -1,0 +1,68 @@
+//
+// Color settings
+// -----------------------------------------------------------------------------
+$colors: (
+	bg: #FFFFFF,
+	alt-bg: #E6E6EF,
+	text: #33334F,
+	accent: #884FFA,
+);
+
+//
+// Typography settings
+// -----------------------------------------------------------------------------
+$code-font: 'Courier New', 'Courier', monospace;
+$text-font: 'Quattrocento Sans', serif;
+
+$base-font-size: 16px;
+$base-font-size-md: 20px;
+
+$base-line-height: 1.75;
+$heading-line-height: 1.25;
+
+$white-space: $base-line-height * 1rem;
+
+$font-sizes: (
+	small: 0.8rem,
+	normal: 1rem,
+	medium: 1.25rem,
+	large: 1.6rem,
+	extra-large: 2.05rem,
+);
+
+//
+// Layout settings
+// -----------------------------------------------------------------------------
+$screens: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+);
+
+$header-wrap-max-width: ( 1200 / 20 ) * 1rem;
+$footer-wrap-max-width: $header-wrap-max-width;
+$content-wrap-max-width: ( 750 / 20 ) * 1rem;
+$content-wide-wrap-max-width: ( 960 / 20 ) * 1rem;
+$gutter-width: ( 30 / 20 ) * 1rem;
+
+//
+// Form elements settings
+// -----------------------------------------------------------------------------
+$input-border-radius: 0.2rem;
+$input-height: $base-line-height * 1.5rem;
+$input-padding-y: ( $input-height / 2 ) - ( $base-line-height * 0.5rem );
+$input-padding-x: 1rem;
+
+$button-border-radius: $input-border-radius;
+$button-height: $input-height;
+$button-border-width: 0.1rem;
+$button-padding-y: $input-padding-y - $button-border-width;
+$button-padding-x: $input-padding-x;
+
+//
+// Misc settings
+// -----------------------------------------------------------------------------
+$hr-border-width: 0.2rem;
+$table-border-width: 0.05rem;

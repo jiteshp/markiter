@@ -17,7 +17,7 @@ if ( is_archive() ) {
 if ( $markiter_page_title ) :
 	?>
 	<header class="page-header">
-		<h1 class="page-title"><?php echo esc_html( $markiter_page_title ); ?></h1>
+		<h1 class="page-title"><?php echo wp_kses_post( $markiter_page_title ); ?></h1>
 	</header>
 	<?php
 endif;

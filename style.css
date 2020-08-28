@@ -99,9 +99,9 @@ html {
  * -----------------------------------------------------------------------------
  */
 .btn, button[type=submit], input[type=submit] {
-  background-color: #884FFA;
-  border-color: #884FFA;
-  color: #FFFFFF;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-color);
   border-width: 0.1rem;
   border-style: solid;
   border-radius: 0.2rem;
@@ -114,15 +114,15 @@ html {
   line-height: 1.75;
 }
 .btn:hover, button[type=submit]:hover, input[type=submit]:hover {
-  background-color: #33334F;
-  border-color: #33334F;
-  color: #FFFFFF;
+  background-color: var(--text-color);
+  border-color: var(--text-color);
+  color: var(--bg-color);
 }
 
 .btn-outline, .more-link, input[type=reset] {
   background-color: transparent;
-  border-color: #884FFA;
-  color: #884FFA;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
   border-width: 0.1rem;
   border-style: solid;
   border-radius: 0.2rem;
@@ -135,9 +135,9 @@ html {
   line-height: 1.75;
 }
 .btn-outline:hover, .more-link:hover, input[type=reset]:hover {
-  background-color: #884FFA;
-  border-color: #884FFA;
-  color: #FFFFFF;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-color);
 }
 
 /**
@@ -152,10 +152,10 @@ form p:last-child {
 }
 
 button, input, select, textarea {
-  background-color: #FFFFFF;
+  background-color: var(--bg-color);
   border: none;
   border-radius: 0.2rem;
-  color: #33334F;
+  color: var(--text-color);
   display: inline-block;
   font-family: "Quattrocento Sans", serif;
   font-size: 1rem;
@@ -174,7 +174,7 @@ input[type=checkbox], input[type=submit], input[type=radio], input[type=reset] {
 }
 
 label {
-  color: #33334F;
+  color: var(--text-color);
   font-size: 0.8rem;
 }
 
@@ -191,8 +191,8 @@ textarea {
  * -----------------------------------------------------------------------------
  */
 body {
-  background-color: #FFFFFF;
-  color: #33334F;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: "Quattrocento Sans", serif;
   font-size: 1rem;
   line-height: 1.75;
@@ -230,7 +230,7 @@ table:last-child {
 address,
 blockquote,
 pre {
-  background-color: #E6E6EF;
+  background-color: var(--alt-bg-color);
   padding: 1.75rem;
 }
 
@@ -304,11 +304,11 @@ h5, h6 {
 
 hr {
   border: 0;
-  border-bottom: 0.2rem solid #33334F;
+  border-bottom: 0.2rem solid var(--text-color);
 }
 
 table {
-  background-color: #E6E6EF;
+  background-color: var(--alt-bg-color);
   border: 0.05rem solid rgba(0, 0, 0, 0.1);
   border-collapse: collapse;
   width: 100%;
@@ -323,11 +323,11 @@ table td, table th {
  * -----------------------------------------------------------------------------
  */
 a {
-  color: #884FFA;
+  color: var(--accent-color);
   text-decoration: underline;
 }
 a:active, a:hover {
-  color: #33334F;
+  color: var(--text-color);
 }
 
 abbr[title], acronym[title] {
@@ -345,7 +345,7 @@ cite {
 }
 
 code, kbd, tt, var {
-  background-color: #E6E6EF;
+  background-color: var(--alt-bg-color);
   display: inline-block;
   font-family: "Courier New", "Courier", monospace;
   font-size: 16px;
@@ -366,7 +366,7 @@ figcaption, .wp-caption-text,
 .wp-block-embed figcaption,
 .wp-block-image figcaption,
 .wp-block-video figcaption {
-  color: #33334F;
+  color: var(--text-color);
   display: block;
   font-size: 0.8rem;
   padding: 0.4375rem;
@@ -535,9 +535,9 @@ sup {
   text-align: center;
 }
 .wp-block-button .wp-block-button__link {
-  background-color: #884FFA;
-  border-color: #884FFA;
-  color: #FFFFFF;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-color);
   border-width: 0.1rem;
   border-style: solid;
   border-radius: 0.2rem;
@@ -550,14 +550,14 @@ sup {
   line-height: 1.75;
 }
 .wp-block-button .wp-block-button__link:hover {
-  background-color: #33334F;
-  border-color: #33334F;
-  color: #FFFFFF;
+  background-color: var(--text-color);
+  border-color: var(--text-color);
+  color: var(--bg-color);
 }
 .wp-block-button.is-style-outline .wp-block-button__link {
   background-color: transparent;
-  border-color: #884FFA;
-  color: #884FFA;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
   border-width: 0.1rem;
   border-style: solid;
   border-radius: 0.2rem;
@@ -570,9 +570,9 @@ sup {
   line-height: 1.75;
 }
 .wp-block-button.is-style-outline .wp-block-button__link:hover {
-  background-color: #884FFA;
-  border-color: #884FFA;
-  color: #FFFFFF;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-color);
 }
 .wp-block-button.alignleft, .wp-block-button.alignright {
   float: none;
@@ -594,7 +594,7 @@ sup {
  * -----------------------------------------------------------------------------
  */
 .wp-block-cover .wp-block-cover__inner-container {
-  color: #FFFFFF;
+  color: var(--bg-color);
   padding-bottom: 3.5rem;
   padding-top: 3.5rem;
   width: calc( 100% - 3.5rem );
@@ -626,7 +626,7 @@ sup {
   margin-bottom: 0.875rem;
 }
 .wp-block-quote cite, .wp-block-quote.is-style-large cite, .wp-block-quote.has-text-align-right cite {
-  color: #33334F;
+  color: var(--text-color);
   display: block;
   font-size: 0.8rem;
   margin-top: 0;
@@ -652,7 +652,7 @@ sup {
   margin-bottom: 0.875rem;
 }
 .wp-block-pullquote blockquote cite {
-  color: #33334F;
+  color: var(--text-color);
   display: block;
   font-size: 0.8rem;
   letter-spacing: 0;
@@ -729,7 +729,7 @@ sup {
  */
 .wp-block-separator, .wp-block-separator.is-style-wide {
   border: 0;
-  border-bottom: 0.2rem solid #33334F;
+  border-bottom: 0.2rem solid var(--text-color);
 }
 .wp-block-separator.is-style-dots:before {
   content: "•••";
@@ -740,7 +740,7 @@ sup {
  * -----------------------------------------------------------------------------
  */
 .wp-block-code {
-  background-color: #E6E6EF;
+  background-color: var(--alt-bg-color);
   border: none;
   border-radius: 0;
   overflow: auto;
@@ -756,7 +756,7 @@ sup {
   padding: 0.875rem;
 }
 .wp-block-table.is-style-stripes tr:nth-child(even) {
-  background-color: #FFFFFF;
+  background-color: var(--bg-color);
 }
 
 /**
@@ -826,9 +826,16 @@ sup {
 }
 
 /**
- * Base typography styles
+ * Base styles
  * -----------------------------------------------------------------------------
  */
+:root {
+  --bg-color: #FFFFFF;
+  --alt-bg-color: #E6E6EF;
+  --text-color: #33334F;
+  --accent-color: #884FFA;
+}
+
 html {
   font-size: 16px;
 }
@@ -888,8 +895,8 @@ html {
  * -----------------------------------------------------------------------------
  */
 .site-footer {
-  background-color: #33334F;
-  color: #FFFFFF;
+  background-color: var(--text-color);
+  color: var(--bg-color);
   font-size: 0.8rem;
   margin-top: 0.875rem;
   padding-bottom: 1.75rem;
@@ -897,7 +904,7 @@ html {
   text-align: center;
 }
 .site-footer a {
-  color: #FFFFFF;
+  color: var(--bg-color);
   text-decoration: none;
 }
 .site-footer a:hover {
@@ -938,7 +945,7 @@ html {
 }
 
 .site-description {
-  color: #33334F;
+  color: var(--text-color);
   font-size: 0.8rem;
 }
 
@@ -952,7 +959,7 @@ html {
  */
 .menu-toggle {
   background-color: transparent;
-  color: #33334F;
+  color: var(--text-color);
   font-size: 1.6rem;
   height: 2.625rem;
   line-height: 2.625rem;
@@ -990,13 +997,13 @@ html {
   margin-top: 0;
 }
 .main-navigation a {
-  color: #33334F;
+  color: var(--text-color);
   display: block;
   padding: 0.65625rem 0;
   text-decoration: none;
 }
 .main-navigation a:hover {
-  color: #884FFA;
+  color: var(--accent-color);
 }
 @media (min-width: 992px) {
   .main-navigation {
@@ -1011,7 +1018,7 @@ html {
     position: relative;
   }
   .main-navigation li.menu-item-has-children > a:after {
-    border: solid #33334F;
+    border: solid var(--text-color);
     border-width: 0 2px 2px 0;
     content: "";
     display: inline-block;
@@ -1051,7 +1058,7 @@ html {
 }
 @media (min-width: 992px) {
   .main-navigation .sub-menu {
-    background-color: #E6E6EF;
+    background-color: var(--alt-bg-color);
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
     left: -999em;
     margin-left: 0;
@@ -1071,7 +1078,7 @@ html {
   .main-navigation .sub-menu li:first-child:before {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid #E6E6EF;
+    border-bottom: 10px solid var(--alt-bg-color);
     content: "";
     display: block;
     height: 0;
@@ -1119,15 +1126,15 @@ html {
   margin-bottom: 0.4375rem;
 }
 .entry-title a {
-  color: #33334F;
+  color: var(--text-color);
   text-decoration: none;
 }
 .entry-title a:active, .entry-title a:hover {
-  color: #884FFA;
+  color: var(--accent-color);
 }
 
 .entry-meta {
-  color: #33334F;
+  color: var(--text-color);
   font-size: 0.8rem;
 }
 .entry-meta a {
@@ -1142,7 +1149,7 @@ html {
   display: none;
 }
 .sticky .entry-header .entry-meta:before {
-  color: #884FFA;
+  color: var(--accent-color);
   content: "★";
   margin-right: 5px;
 }
@@ -1179,7 +1186,7 @@ html {
  * -----------------------------------------------------------------------------
  */
 .pagination .page-numbers {
-  background-color: #E6E6EF;
+  background-color: var(--alt-bg-color);
   border-radius: 0.2rem;
   display: inline-block;
   height: 2.625rem;
@@ -1217,7 +1224,7 @@ html {
 }
 .post-navigation .nav-previous span,
 .post-navigation .nav-next span {
-  color: #33334F;
+  color: var(--text-color);
   display: block;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -1262,7 +1269,7 @@ html {
 }
 
 .comment-body {
-  background-color: #E6E6EF;
+  background-color: var(--alt-bg-color);
   padding: 1.75rem;
 }
 
@@ -1292,7 +1299,7 @@ html {
   font-size: 0.8rem;
 }
 .comment-metadata a {
-  color: #33334F;
+  color: var(--text-color);
 }
 
 .comment-respond {

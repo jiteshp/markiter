@@ -27,9 +27,15 @@
 @import 'wordpress';
 
 /**
- * Base typography styles
+ * Base styles
  * -----------------------------------------------------------------------------
  */
+:root {
+	@each $name, $value in $colors {
+		--#{$name}-color: #{$value};
+	}
+}
+
 html {
 	font-size: $base-font-size;
 

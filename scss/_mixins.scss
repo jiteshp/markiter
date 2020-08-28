@@ -60,7 +60,7 @@
 // Color mixins
 // -----------------------------------------------------------------------------
 @function get-color( $c ) {
-	@return map-get( $colors, $c );
+	@return var(--#{$c}-color);
 }
 
 //

@@ -22,7 +22,7 @@ function markiter_setup() {
 
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'responsive-embeds' );
-	add_theme_support( 'editor-color-palette', markiter_get_editor_color_palette() );
+	add_theme_support( 'editor-color-palette', markiter_get_color_palette() );
 	add_theme_support( 'editor-font-sizes', markiter_get_editor_font_sizes() );
 	add_theme_support( 'wp-block-styles' );
 
@@ -96,6 +96,66 @@ function markiter_block_editor_styles() {
 }
 
 add_action( 'enqueue_block_editor_assets', 'markiter_block_editor_styles' );
+
+/**
+ * Adds options to customize theme colors.
+ *
+ * @param  WP_Customize_Manager $wp_customize The customizer manager object.
+ * @return void
+ */
+function markiter_custom_colors( $wp_customize ) {
+	$colors = markiter_get_color_palette();
+
+	foreach ( $colors as $color ) {
+		$wp_customize->add_setting(
+			$color['slug'] . '-color',
+			array(
+				'default'           => $color['color'],
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				$color['slug'] . '-color',
+				array(
+					'label'   => $color[ 'name' ] . esc_html__( ' Color', 'markiter' ),
+					'section' => 'colors',
+				)
+			)
+		);
+	}
+}
+add_action( 'customize_register', 'markiter_custom_colors' );
+
+/**
+ * Adds the custom styles for the theme.
+ *
+ * @return void
+ */
+function markiter_custom_styles() {
+	$custom_style = '';
+	$colors = markiter_get_color_palette();
+
+	foreach ( $colors as $color ) {
+		$slug  = $color['slug'];
+		$value = get_theme_mod( $slug . '-color', $color['color'] );
+
+		$custom_style .= "
+			--$slug-color: $value;";
+	}
+
+	if ( ! empty( $custom_style ) ) {
+		$custom_style = "
+			:root {
+				$custom_style
+			}
+		";
+	}
+
+	wp_add_inline_style( 'markiter-style', $custom_style );
+}
+add_action( 'wp_enqueue_scripts', 'markiter_custom_styles' );
 
 /**
  * Adds preconnect for Google Fonts.
@@ -215,7 +275,7 @@ function markiter_get_fonts_uri() {
  *
  * @return array
  */
-function markiter_get_editor_color_palette() {
+function markiter_get_color_palette() {
 	return apply_filters(
 		'markiter_editor_color_palette',
 		array(

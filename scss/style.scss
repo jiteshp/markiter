@@ -79,12 +79,22 @@ html {
  * -----------------------------------------------------------------------------
  */
 .site-footer {
-	background-color: get-color( alt-bg );
+	background-color: get-color( text );
+	color: get-color( bg );
 	font-size: get-font-size( small );
 	margin-top: $white-space / 2;
 	padding-bottom: $white-space;
 	padding-top: $white-space;
 	text-align: center;
+
+	a {
+		color: get-color( bg );
+		text-decoration: none;
+
+		&:hover {
+			opacity: 0.667;
+		}
+	}
 
 	@include when-screen( lg ) {
 		padding-bottom: $white-space * 2;
@@ -588,10 +598,6 @@ html {
 		&:first-child:before {
 			content: none;
 		}
-	}
-
-	a {
-		text-decoration: none;
 	}
 }
 

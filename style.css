@@ -888,12 +888,20 @@ html {
  * -----------------------------------------------------------------------------
  */
 .site-footer {
-  background-color: #E6E6EF;
+  background-color: #33334F;
+  color: #FFFFFF;
   font-size: 0.8rem;
   margin-top: 0.875rem;
   padding-bottom: 1.75rem;
   padding-top: 1.75rem;
   text-align: center;
+}
+.site-footer a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  opacity: 0.667;
 }
 @media (min-width: 992px) {
   .site-footer {
@@ -1340,9 +1348,6 @@ html {
 }
 .footer-navigation li:first-child:before {
   content: none;
-}
-.footer-navigation a {
-  text-decoration: none;
 }
 
 /**

@@ -8,6 +8,7 @@ body {
 	font-family: $text-font;
 	font-size: get-font-size( normal );
 	line-height: $base-line-height;
+	overflow-x: hidden;
 }
 
 /**

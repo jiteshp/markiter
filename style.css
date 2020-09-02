@@ -196,6 +196,7 @@ body {
   font-family: "Quattrocento Sans", serif;
   font-size: 1rem;
   line-height: 1.75;
+  overflow-x: hidden;
 }
 
 /**
@@ -1140,7 +1141,7 @@ html {
 .entry-meta a {
   text-decoration: none;
 }
-.entry-meta .entry-date:before,
+.entry-meta .entry-author:before,
 .entry-meta .entry-tags:before {
   content: "—";
   margin: 0 5px;

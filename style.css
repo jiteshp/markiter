@@ -324,8 +324,9 @@ table td, table th {
  * -----------------------------------------------------------------------------
  */
 a {
+  border-bottom: 1px solid var(--accent-color);
   color: var(--accent-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:active, a:hover {
   color: var(--text-color);
@@ -905,11 +906,11 @@ html {
   text-align: center;
 }
 .site-footer a {
+  border-bottom: 1px solid transparent;
   color: var(--bg-color);
-  text-decoration: none;
 }
 .site-footer a:hover {
-  opacity: 0.667;
+  border-bottom: 1px solid var(--bg-color);
 }
 @media (min-width: 992px) {
   .site-footer {
@@ -931,7 +932,7 @@ html {
  * -----------------------------------------------------------------------------
  */
 .brand a {
-  text-decoration: none;
+  border-bottom: none;
 }
 
 .site-title,
@@ -998,10 +999,10 @@ html {
   margin-top: 0;
 }
 .main-navigation a {
+  border-bottom: none;
   color: var(--text-color);
   display: block;
   padding: 0.65625rem 0;
-  text-decoration: none;
 }
 .main-navigation a:hover {
   color: var(--accent-color);
@@ -1127,8 +1128,8 @@ html {
   margin-bottom: 0.4375rem;
 }
 .entry-title a {
+  border-bottom: none;
   color: var(--text-color);
-  text-decoration: none;
 }
 .entry-title a:active, .entry-title a:hover {
   color: var(--accent-color);
@@ -1139,7 +1140,11 @@ html {
   font-size: 0.8rem;
 }
 .entry-meta a {
-  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.entry-meta a:hover {
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
 }
 .entry-meta .entry-author:before,
 .entry-meta .entry-tags:before {
@@ -1188,12 +1193,12 @@ html {
  */
 .pagination .page-numbers {
   background-color: var(--alt-bg-color);
+  border-bottom: none;
   border-radius: 0.2rem;
   display: inline-block;
   height: 2.625rem;
   line-height: 2.625rem;
   text-align: center;
-  text-decoration: none;
   width: 2.625rem;
 }
 
@@ -1221,7 +1226,16 @@ html {
 }
 .post-navigation .nav-previous a,
 .post-navigation .nav-next a {
-  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.post-navigation .nav-previous a:hover,
+.post-navigation .nav-next a:hover {
+  border-bottom: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+.post-navigation .nav-previous a:hover span,
+.post-navigation .nav-next a:hover span {
+  color: var(--accent-color);
 }
 .post-navigation .nav-previous span,
 .post-navigation .nav-next span {
@@ -1286,7 +1300,11 @@ html {
 }
 
 .comment-meta a {
-  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.comment-meta a:hover {
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
 }
 .comment-meta .avatar {
   float: left;
@@ -1300,7 +1318,7 @@ html {
   font-size: 0.8rem;
 }
 .comment-metadata a {
-  color: var(--text-color);
+  color: var(--accent-color);
 }
 
 .comment-respond {

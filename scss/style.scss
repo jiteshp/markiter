@@ -94,11 +94,11 @@ html {
 	text-align: center;
 
 	a {
+		border-bottom: 1px solid transparent;
 		color: get-color( bg );
-		text-decoration: none;
 
 		&:hover {
-			opacity: 0.667;
+			border-bottom: 1px solid get-color( bg );
 		}
 	}
 
@@ -118,7 +118,7 @@ html {
  */
 .brand {
 	a {
-		text-decoration: none;
+		border-bottom: none;
 	}
 }
 
@@ -188,10 +188,10 @@ html {
 	}
 
 	a {
+		border-bottom: none;
 		color: get-color( text );
 		display: block;
 		padding: ( $input-padding-y * 1.5 ) 0;
-		text-decoration: none;
 
 		&:hover {
 			color: get-color( accent );
@@ -347,8 +347,8 @@ html {
 	margin-bottom: $white-space / 4;
 
 	a {
+		border-bottom: none;
 		color: get-color( text );
-		text-decoration: none;
 
 		&:active,
 		&:hover {
@@ -362,7 +362,12 @@ html {
 	font-size: get-font-size( small );
 
 	a {
-		text-decoration: none;
+		border-bottom: 1px solid transparent;
+
+		&:hover {
+			color: get-color( accent );
+			border-bottom: 1px solid get-color( accent );
+		}
 	}
 
 	.entry-author,
@@ -418,12 +423,12 @@ html {
 .pagination {
 	.page-numbers {
 		background-color: get-color( alt-bg );
+		border-bottom: none;
 		border-radius: $button-border-radius;
 		display: inline-block;
 		height: $input-height;
 		line-height: $input-height;
 		text-align: center;
-		text-decoration: none;
 		width: $input-height;
 	}
 }
@@ -450,7 +455,16 @@ html {
 		text-align: center;
 
 		a {
-			text-decoration: none;
+			border-bottom: 1px solid transparent;
+
+			&:hover {
+				border-bottom: 1px solid get-color( accent );
+				color: get-color( accent );
+
+				span {
+					color: get-color( accent );
+				}
+			}
 		}
 
 		span {
@@ -524,7 +538,12 @@ html {
 
 .comment-meta {
 	a {
-		text-decoration: none;
+		border-bottom: 1px solid transparent;
+
+		&:hover {
+			color: get-color( accent );
+			border-bottom: 1px solid get-color( accent );
+		}
 	}
 
 	.avatar {
@@ -541,7 +560,7 @@ html {
 	font-size: get-font-size( small );
 
 	a {
-		color: get-color( text );
+		color: get-color( accent );
 	}
 }
 

@@ -129,8 +129,9 @@ table {
  * -----------------------------------------------------------------------------
  */
 a {
+	border-bottom: 1px solid get-color( accent );
 	color: get-color( accent );
-	text-decoration: underline;
+	text-decoration: none;
 
 	&:active,
 	&:hover {

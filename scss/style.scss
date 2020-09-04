@@ -1,14 +1,14 @@
 /**
  * Theme name: 		Markiter
- * Version:			1.5
+ * Version:			1.6
  * Description:		Minimal theme for marketers & bloggers.
- * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, threaded-comments, block-styles, wide-blocks
+ * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, threaded-comments, block-styles, wide-blocks
  * Text domain: 	markiter
  * Author: 			Jitesh Patil
  * Author URI: 		https://www.jiteshpatil.com/
  * License: 		GNU General Public License v2 or later
  * License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
- * Tested up to: 	5.5
+ * Tested up to: 	5.5.1
  * Requires PHP: 	7.1
  *
  * All files, unless otherwise stated, are released under the
@@ -218,7 +218,7 @@ html {
 						padding: 2px;
 						position: absolute;
 						right: $input-padding-x / 3;
-						top: 45%;
+						top: 40%;
 					}
 				}
 			}
@@ -277,6 +277,13 @@ html {
 		width: 240px;
 		z-index: 1000;
 
+		a {
+			&:hover {
+				background-color: get-color( accent );
+				color: get-color( bg );
+			}
+		}
+
 		li {
 			&.menu-item-has-children {
 				& > a {
@@ -300,7 +307,7 @@ html {
 					height: 0;
 					left: $input-padding-x;
 					position: absolute;
-					top: -9px;
+					top: -10px;
 					width: 0;
 				}
 			}

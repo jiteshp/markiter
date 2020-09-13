@@ -13,6 +13,10 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 == Changelog ==
 
 = 1.8 =
+* Updates screenshot.
+* Tested up to 5.5.1
+
+= 1.7 =
 * Improves nav submenu hover and pagination style for accessibility.
 * Tested up to 5.5.1
 

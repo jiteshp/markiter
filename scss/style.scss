@@ -1,8 +1,8 @@
 /**
  * Theme name: 		Markiter
- * Version:			1.6
+ * Version:			1.7
  * Description:		Minimal theme for marketers & bloggers.
- * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, threaded-comments, block-styles, wide-blocks
+ * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks
  * Text domain: 	markiter
  * Author: 			Jitesh Patil
  * Author URI: 		https://www.jiteshpatil.com/
@@ -279,8 +279,7 @@ html {
 
 		a {
 			&:hover {
-				background-color: get-color( accent );
-				color: get-color( bg );
+				color: get-color( accent );
 			}
 		}
 

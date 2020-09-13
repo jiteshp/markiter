@@ -12,6 +12,10 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 1.7 =
+* Improves nav submenu hover and pagination style for accessibility.
+* Tested up to 5.5.1
+
 = 1.6 =
 * Improves link default, hover, and active states for accessibility.
 * Improves nav submenu hover style for accessibility.

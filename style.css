@@ -1,9 +1,9 @@
 @charset "UTF-8";
 /**
  * Theme name: 		Markiter
- * Version:			1.6
+ * Version:			1.7
  * Description:		Minimal theme for marketers & bloggers.
- * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, threaded-comments, block-styles, wide-blocks
+ * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks
  * Text domain: 	markiter
  * Author: 			Jitesh Patil
  * Author URI: 		https://www.jiteshpatil.com/
@@ -774,27 +774,27 @@ sup {
 }
 
 .has-alt-bg-color {
-  color: #E6E6EF;
+  color: #ECE4FE;
 }
 
 .has-alt-bg-background-color {
-  background-color: #E6E6EF;
+  background-color: #ECE4FE;
 }
 
 .has-text-color {
-  color: #33334F;
+  color: #190248;
 }
 
 .has-text-background-color {
-  background-color: #33334F;
+  background-color: #190248;
 }
 
 .has-accent-color {
-  color: #884FFA;
+  color: #722EF9;
 }
 
 .has-accent-background-color {
-  background-color: #884FFA;
+  background-color: #722EF9;
 }
 
 /**
@@ -833,9 +833,9 @@ sup {
  */
 :root {
   --bg-color: #FFFFFF;
-  --alt-bg-color: #E6E6EF;
-  --text-color: #33334F;
-  --accent-color: #884FFA;
+  --alt-bg-color: #ECE4FE;
+  --text-color: #190248;
+  --accent-color: #722EF9;
 }
 
 html {
@@ -1070,8 +1070,7 @@ html {
     z-index: 1000;
   }
   .main-navigation .sub-menu a:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
+    color: var(--accent-color);
   }
   .main-navigation .sub-menu li.menu-item-has-children > a:after {
     right: 0.5rem;

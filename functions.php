@@ -287,17 +287,17 @@ function markiter_get_color_palette() {
 			array(
 				'name'  => esc_html__( 'Alternate Background', 'markiter' ),
 				'slug'  => 'alt-bg',
-				'color' => '#E6E6EF',
+				'color' => '#ECE4FE',
 			),
 			array(
 				'name'  => esc_html__( 'Text', 'markiter' ),
 				'slug'  => 'text',
-				'color' => '#33334F',
+				'color' => '#190248',
 			),
 			array(
 				'name'  => esc_html__( 'Accent', 'markiter' ),
 				'slug'  => 'accent',
-				'color' => '#884FFA',
+				'color' => '#722EF9',
 			),
 		)
 	);

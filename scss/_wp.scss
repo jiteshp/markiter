@@ -40,11 +40,11 @@
  */
 @each $name, $color in $colors {
 	.has-#{$name}-color {
-		color: $color;
+		color: get-color( $name );
 	}
 
 	.has-#{$name}-background-color {
-		background-color: $color;
+		background-color: get-color( $name );
 	}
 }
 
@@ -91,5 +91,27 @@ h5,
 h6 {
 	&.has-background {
 		padding: $white-space;
+	}
+}
+
+/**
+ * Quote block styles
+ * -----------------------------------------------------------------------------
+ */
+.wp-block-quote {
+	cite {
+		font-size: get-font-size( small );
+	}
+
+	&.is-style-large {
+		padding: $white-space;
+
+		p {
+			font-style: normal;
+		}
+
+		cite {
+			font-size: get-font-size( small );
+		}
 	}
 }

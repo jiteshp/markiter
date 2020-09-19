@@ -18,6 +18,15 @@ $content-wrap-max-width: ( 720 / 20 ) * $base-font-size-md;
 $content-wide-wrap-max-width: ( 960 / 20 ) * $base-font-size-md;
 
 //
+// Root settings
+// -----------------------------------------------------------------------------
+:root {
+	@each $name, $value in $colors {
+		--#{$name}-color: #{$value};
+	}
+}
+
+//
 // Editor styles
 // -----------------------------------------------------------------------------
 .editor-styles-wrapper > * {
@@ -148,5 +157,34 @@ $content-wide-wrap-max-width: ( 960 / 20 ) * $base-font-size-md;
 
 	ul {
 		list-style: disc;
+	}
+}
+
+/**
+ * Quote block styles
+ * -----------------------------------------------------------------------------
+ */
+.editor-styles-wrapper {
+	blockquote {
+		&,
+		&.has-text-align-center,
+		&.has-text-align-right,
+		&.is-style-large {
+			background-color: get-color( alt-bg );
+			border: none;
+			padding: $white-space;
+		}
+
+		&.is-style-large {
+			p {
+				font-style: normal;
+			}
+		}
+
+		.wp-block-quote__citation {
+			color: get-color( text );
+			font-size: get-font-size( small );
+			font-weight: bold;
+		}
 	}
 }

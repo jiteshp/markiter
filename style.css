@@ -468,35 +468,35 @@ sup {
  * -----------------------------------------------------------------------------
  */
 .has-bg-color {
-  color: #FFFFFF;
+  color: var(--bg-color);
 }
 
 .has-bg-background-color {
-  background-color: #FFFFFF;
+  background-color: var(--bg-color);
 }
 
 .has-alt-bg-color {
-  color: #ECE4FE;
+  color: var(--alt-bg-color);
 }
 
 .has-alt-bg-background-color {
-  background-color: #ECE4FE;
+  background-color: var(--alt-bg-color);
 }
 
 .has-text-color {
-  color: #190248;
+  color: var(--text-color);
 }
 
 .has-text-background-color {
-  background-color: #190248;
+  background-color: var(--text-color);
 }
 
 .has-accent-color {
-  color: #722EF9;
+  color: var(--accent-color);
 }
 
 .has-accent-background-color {
-  background-color: #722EF9;
+  background-color: var(--accent-color);
 }
 
 /**
@@ -552,6 +552,23 @@ h4.has-background,
 h5.has-background,
 h6.has-background {
   padding: 1.75rem;
+}
+
+/**
+ * Quote block styles
+ * -----------------------------------------------------------------------------
+ */
+.wp-block-quote cite {
+  font-size: 0.8rem;
+}
+.wp-block-quote.is-style-large {
+  padding: 1.75rem;
+}
+.wp-block-quote.is-style-large p {
+  font-style: normal;
+}
+.wp-block-quote.is-style-large cite {
+  font-size: 0.8rem;
 }
 
 /**

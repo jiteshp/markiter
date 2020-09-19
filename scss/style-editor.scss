@@ -124,3 +124,29 @@ $content-wide-wrap-max-width: ( 960 / 20 ) * $base-font-size-md;
 		font-size: get-font-size( small ) !important;
 	}
 }
+
+/**
+ * List block styles
+ * -----------------------------------------------------------------------------
+ */
+.editor-styles-wrapper {
+	ol,
+	ul {
+		list-style: decimal;
+		margin-left: $white-space;
+
+		ol, ul {
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+
+		li {
+			margin-bottom: $white-space / 2;
+			margin-top: $white-space / 2;
+		}
+	}
+
+	ul {
+		list-style: disc;
+	}
+}

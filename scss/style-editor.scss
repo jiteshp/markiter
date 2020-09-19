@@ -188,3 +188,23 @@ $content-wide-wrap-max-width: ( 960 / 20 ) * $base-font-size-md;
 		}
 	}
 }
+
+/**
+ * Code block styles
+ * -----------------------------------------------------------------------------
+ */
+.editor-styles-wrapper {
+	pre {
+		background-color: get-color( alt-bg );
+		border: none;
+		border-radius: 0;
+		overflow: auto;
+		padding: $white-space;
+
+		&,
+		code {
+			font-family: $code-font;
+			font-size: get-font-size( small );
+		}
+	}
+}

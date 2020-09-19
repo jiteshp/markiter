@@ -161,4 +161,21 @@
   font-weight: bold;
 }
 
+/**
+ * Code block styles
+ * -----------------------------------------------------------------------------
+ */
+.editor-styles-wrapper pre {
+  background-color: var(--alt-bg-color);
+  border: none;
+  border-radius: 0;
+  overflow: auto;
+  padding: 35px;
+}
+.editor-styles-wrapper pre,
+.editor-styles-wrapper pre code {
+  font-family: "Courier New", "Courier", monospace;
+  font-size: 16px;
+}
+
 /*# sourceMappingURL=style-editor.css.map */

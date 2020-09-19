@@ -66,14 +66,60 @@ $content-wide-wrap-max-width: ( 960 / 20 ) * $base-font-size-md;
  * Paragraph block styles
  * -----------------------------------------------------------------------------
  */
-.editor-styles-wrapper p {
-	&.has-background {
-		padding: $white-space;
+.editor-styles-wrapper {
+	p {
+		&.has-background {
+			padding: $white-space;
+		}
+
+		&.has-drop-cap:not(:focus):first-letter {
+			font-size: 3.5em;
+			font-weight: bold;
+			margin: 0.2em 0.1em 0 0;
+		}
+	}
+}
+
+/**
+ * Headings block styles
+ * -----------------------------------------------------------------------------
+ */
+.editor-styles-wrapper {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		&.has-background {
+			padding: $white-space;
+		}
 	}
 
-	&.has-drop-cap:not(:focus):first-letter {
-		font-size: 3.5em;
-		font-weight: bold;
-		margin: 0.2em 0.1em 0 0;
+	h1,
+	h2,
+	h3 {
+		line-height: $heading-line-height;
+	}
+
+	h1 {
+		font-size: get-font-size( extra-large ) !important;
+	}
+
+	h2 {
+		font-size: get-font-size( large ) !important;
+	}
+
+	h3 {
+		font-size: get-font-size( medium ) !important;
+	}
+
+	h4 {
+		font-size: get-font-size( normal ) !important;
+	}
+
+	h5,
+	h6 {
+		font-size: get-font-size( small ) !important;
 	}
 }

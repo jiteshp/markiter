@@ -542,6 +542,19 @@ p.has-drop-cap:not(:focus):first-letter {
 }
 
 /**
+ * Headings block styles
+ * -----------------------------------------------------------------------------
+ */
+h1.has-background,
+h2.has-background,
+h3.has-background,
+h4.has-background,
+h5.has-background,
+h6.has-background {
+  padding: 1.75rem;
+}
+
+/**
  * Base styles
  * -----------------------------------------------------------------------------
  */

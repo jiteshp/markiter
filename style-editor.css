@@ -77,4 +77,38 @@
   margin: 0.2em 0.1em 0 0;
 }
 
+/**
+ * Headings block styles
+ * -----------------------------------------------------------------------------
+ */
+.editor-styles-wrapper h1.has-background,
+.editor-styles-wrapper h2.has-background,
+.editor-styles-wrapper h3.has-background,
+.editor-styles-wrapper h4.has-background,
+.editor-styles-wrapper h5.has-background,
+.editor-styles-wrapper h6.has-background {
+  padding: 35px;
+}
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3 {
+  line-height: 1.25;
+}
+.editor-styles-wrapper h1 {
+  font-size: 41px !important;
+}
+.editor-styles-wrapper h2 {
+  font-size: 32px !important;
+}
+.editor-styles-wrapper h3 {
+  font-size: 25px !important;
+}
+.editor-styles-wrapper h4 {
+  font-size: 20px !important;
+}
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+  font-size: 16px !important;
+}
+
 /*# sourceMappingURL=style-editor.css.map */

@@ -1,0 +1,80 @@
+/**
+ * Default alignment styles
+ * -----------------------------------------------------------------------------
+ */
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+	margin-right: $white-space;
+}
+
+.alignright {
+	float: right;
+	margin-left: $white-space;
+}
+
+.alignfull {
+	margin-left: calc( -100vw / 2 + 100% / 2 );
+    margin-right: calc( -100vw / 2 + 100% / 2 );
+    max-width: 100vw;
+    width: 100vw;
+}
+
+.alignwide {
+	@include when-screen( lg ) {
+		margin-left: ( $content-wide-wrap-max-width / 2 - $content-wrap-max-width / 2 + $gutter-width / 2 ) * -1;
+		margin-right: ( $content-wide-wrap-max-width / 2 - $content-wrap-max-width / 2 + $gutter-width / 2 ) * -1;
+		max-width: $content-wide-wrap-max-width;
+		width: $content-wide-wrap-max-width;
+	}
+}
+
+/**
+ * Default color styles
+ * -----------------------------------------------------------------------------
+ */
+@each $name, $color in $colors {
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}
+
+/**
+ * Font size styles
+ * -----------------------------------------------------------------------------
+ */
+@each $name, $size in $font-sizes {
+	.has-#{$name}-font-size {
+		font-size: $size;
+	}
+}
+
+.has-large-font-size,
+.has-extra-large-font-size {
+	line-height: $heading-line-height;
+}
+
+/**
+ * Paragraph block styles
+ * -----------------------------------------------------------------------------
+ */
+p {
+	&.has-background {
+		padding: $white-space;
+	}
+
+	&.has-drop-cap:not(:focus):first-letter {
+		font-size: 3.5em;
+		font-weight: bold;
+		margin: 0.2em 0.1em 0 0;
+	}
+}

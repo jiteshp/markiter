@@ -8,6 +8,7 @@
 
 .editor-styles-wrapper .wp-block {
   margin-bottom: 35px;
+  margin-top: 0;
   max-width: 720px;
   /**
    * Default color styles

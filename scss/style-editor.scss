@@ -30,6 +30,7 @@ $content-wide-wrap-max-width: ( 960 / 20 ) * $base-font-size-md;
 
 .editor-styles-wrapper .wp-block {
 	@include make-block( $white-space );
+	margin-top: 0;
 	max-width: $content-wrap-max-width;
 
 	/**

@@ -631,9 +631,17 @@
 }
 
 /**
- * No header page template styles
+ * Page template styles
  * -----------------------------------------------------------------------------
  */
+.page-template-no-header-page,
+.page-template-no-title-page {
+	.site-content {
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+}
+
 .page-template-no-header-page {
 	.site-header {
 		display: none;

@@ -13,6 +13,10 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 == Changelog ==
 
 = 2.0 =
+* Fixes full aligned group styles
+* Fixes padding on no-title and no-header page templates
+
+= 1.9 =
 * Updates the block styles for WP 5.5.1.
 
 = 1.8 =

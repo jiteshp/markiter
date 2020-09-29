@@ -61,6 +61,8 @@ $white-space: $base-font-size * $base-line-height;
 		// Left aligned block
 		// ---------------------------------------------------------------------
 		&[data-align="left"] {
+			height: auto;
+
 			& > * {
 				float: left;
 				margin: ( $white-space / 4 ) $white-space ( $white-space / 4 ) 0;
@@ -72,6 +74,8 @@ $white-space: $base-font-size * $base-line-height;
 		// Right aligned block
 		// ---------------------------------------------------------------------
 		&[data-align="right"] {
+			height: auto;
+
 			& > * {
 				float: right;
 				margin: ( $white-space / 4 ) 0 ( $white-space / 4 ) $white-space;
@@ -293,34 +297,89 @@ $white-space: $base-font-size * $base-line-height;
 //
 // Button block styles
 // -----------------------------------------------------------------------------
-.editor-styles-wrapper {
-	.wp-block-buttons {
-		@include make-block( $white-space );
-		margin-top: 0;
+.wp-block-buttons {
+	@include make-block( $white-space );
+	margin-top: 0;
+
+	.wp-block[data-align="left"] > &,
+	.wp-block[data-align="right"] > & {
+		float: none;
+		margin-bottom: $white-space !important;
+		max-width: none;
 	}
 
-	.wp-block-button {
-		margin-bottom: 8px;
+	.wp-block[data-align="left"] > & {
+		margin-right: 0;
+		text-align: left;
+	}
 
+	.wp-block[data-align="right"] > & {
+		margin-left: 0;
+		text-align: right;
+	}
+}
+
+.wp-block-button {
+	margin-bottom: 8px !important;
+
+	.wp-block-button__link {
+		@include make-button( get-color( accent ), get-color( accent ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
+
+		&:active,
+		&:focus,
+		&:hover {
+			@include make-button( get-color( txt ), get-color( txt ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
+		}
+	}
+
+	&.is-style-outline {
 		.wp-block-button__link {
-			@include make-button( get-color( accent ), get-color( accent ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
+			@include make-button( transparent, get-color( accent ), $button-border-width, $button-border-radius, get-color( accent ), $button-padding-x, $button-padding-y );
 
 			&:active,
 			&:focus,
 			&:hover {
-				@include make-button( get-color( txt ), get-color( txt ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
+				@include make-button( get-color( accent ), get-color( accent ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
 			}
 		}
+	}
+}
 
-		&.is-style-outline {
-			.wp-block-button__link {
-				@include make-button( transparent, get-color( accent ), $button-border-width, $button-border-radius, get-color( accent ), $button-padding-x, $button-padding-y );
+//
+// Column block styles
+// -----------------------------------------------------------------------------
+.wp-block-columns {
+	margin-bottom: 0 !important;
+}
 
-				&:active,
-				&:focus,
-				&:hover {
-					@include make-button( get-color( accent ), get-color( accent ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
-				}
+.wp-block-column {
+	margin-bottom: $white-space;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@media ( min-width: 782px ) {
+		margin-bottom: 0;
+		margin-right: $white-space;
+	}
+}
+
+//
+// Group block styles
+// -----------------------------------------------------------------------------
+.wp-block-group {
+	.wp-block[data-align="full"] > &,
+	.wp-block[data-align="full"] > &.has-background {
+		margin-bottom: 0;
+		margin-top: 0;
+		padding: 0 !important;
+
+		.wp-block-group__inner-container {
+			@include make-container( $content-full-wrap-max-width, $gutter-width / 2 );
+
+			.wp-block {
+				max-width: none;
 			}
 		}
 	}

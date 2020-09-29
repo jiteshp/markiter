@@ -32,7 +32,9 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+figure,
+.wp-caption, figcaption, .gallery-caption,
+.wp-caption-text, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -43,7 +45,8 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure,
+article, aside, details, figcaption, .gallery-caption,
+.wp-caption-text, figure, .wp-caption,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -196,6 +199,7 @@ address,
 blockquote,
 dl, ol, ul,
 figure,
+.wp-caption,
 h1, h2, h3, h4, h5, h6,
 hr,
 p,
@@ -207,6 +211,7 @@ address:last-child,
 blockquote:last-child,
 dl:last-child, ol:last-child, ul:last-child,
 figure:last-child,
+.wp-caption:last-child,
 h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child,
 hr:last-child,
 p:last-child,
@@ -252,11 +257,11 @@ ul {
   list-style: disc;
 }
 
-figure {
+figure, .wp-caption {
   height: auto;
   max-width: 100%;
 }
-figure img {
+figure img, .wp-caption img {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -349,7 +354,8 @@ em {
   font-style: italic;
 }
 
-figcaption {
+figcaption, .gallery-caption,
+.wp-caption-text {
   color: var(--txt-color);
   display: block;
   font-size: var(--small-font-size);
@@ -466,6 +472,10 @@ sup {
 }
 
 /**
+ * Caption styles
+ * -----------------------------------------------------------------------------
+ */
+/**
  * Color styles
  * -----------------------------------------------------------------------------
  */
@@ -580,13 +590,13 @@ pre.wp-block-preformatted {
  * Image block styles
  * -----------------------------------------------------------------------------
  */
-figure.wp-block-image {
+figure.wp-block-image, .wp-block-image.wp-caption {
   margin-bottom: 1.75rem;
 }
-figure.wp-block-image:last-child {
+figure.wp-block-image:last-child, .wp-block-image.wp-caption:last-child {
   margin-bottom: 0;
 }
-figure.wp-block-image img {
+figure.wp-block-image img, .wp-block-image.wp-caption img {
   display: block;
   margin: 0 auto;
 }

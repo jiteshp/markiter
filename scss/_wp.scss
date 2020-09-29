@@ -10,35 +10,39 @@
 
 .alignleft {
 	float: left;
-	margin-right: $white-space;
+	margin: ( $white-space / 4 ) $white-space ( $white-space / 4 ) 0;
+	max-width: 40%;
 }
 
 .alignright {
 	float: right;
-	margin-left: $white-space;
+	margin: ( $white-space / 4 ) 0 ( $white-space / 4 ) $white-space;
+	max-width: 40%;
 }
 
 .alignfull {
-	margin-left: calc( -100vw / 2 + 100% / 2 );
-    margin-right: calc( -100vw / 2 + 100% / 2 );
-    max-width: 100vw;
-    width: 100vw;
+	margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 }
 
 .alignwide {
 	@include when-screen( lg ) {
-		margin-left: ( $content-wide-wrap-max-width / 2 - $content-wrap-max-width / 2 + $gutter-width / 2 ) * -1;
-		margin-right: ( $content-wide-wrap-max-width / 2 - $content-wrap-max-width / 2 + $gutter-width / 2 ) * -1;
-		max-width: $content-wide-wrap-max-width;
-		width: $content-wide-wrap-max-width;
+		margin-left: $white-space * -1;
+		margin-right: $white-space * -1;
+		max-width: $content-wrap-max-width + ( $white-space * 2 );
+		width: $content-wrap-max-width + ( $white-space * 2 );
 	}
 }
 
 /**
- * Default color styles
+ * Color styles
  * -----------------------------------------------------------------------------
  */
-@each $name, $color in $colors {
+.has-background {
+	padding: $white-space !important;
+}
+
+@each $name, $value in $colors {
 	.has-#{$name}-color {
 		color: get-color( $name );
 	}
@@ -52,15 +56,10 @@
  * Font size styles
  * -----------------------------------------------------------------------------
  */
-@each $name, $size in $font-sizes {
+@each $name, $value in $font-sizes {
 	.has-#{$name}-font-size {
-		font-size: $size;
+		font-size: get-font-size( $name );
 	}
-}
-
-.has-large-font-size,
-.has-extra-large-font-size {
-	line-height: $heading-line-height;
 }
 
 /**
@@ -68,29 +67,12 @@
  * -----------------------------------------------------------------------------
  */
 p {
-	&.has-background {
-		padding: $white-space;
-	}
-
-	&.has-drop-cap:not(:focus):first-letter {
-		font-size: 3.5em;
-		font-weight: bold;
-		margin: 0.2em 0.1em 0 0;
-	}
-}
-
-/**
- * Headings block styles
- * -----------------------------------------------------------------------------
- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	&.has-background {
-		padding: $white-space;
+	&.has-drop-cap {
+		&:not(:focus):first-letter {
+			font-size: 3.5em;
+			font-weight: bold;
+			margin: 0.2em 0.1em 0 0;
+		}
 	}
 }
 
@@ -98,20 +80,158 @@ h6 {
  * Quote block styles
  * -----------------------------------------------------------------------------
  */
-.wp-block-quote {
-	cite {
-		font-size: get-font-size( small );
-	}
-
+blockquote.wp-block-quote {
+	&,
 	&.is-style-large {
+		@extend .alignwide;
+		@include make-block( $white-space );
 		padding: $white-space;
 
 		p {
+			@include make-block( $white-space / 2 );
+			font-size: get-font-size( normal );
 			font-style: normal;
 		}
 
 		cite {
 			font-size: get-font-size( small );
+			font-weight: bold;
+		}
+	}
+
+	&.is-style-large {
+		p {
+			font-size: get-font-size( medium );
+		}
+	}
+}
+
+/**
+ * Code block styles
+ * -----------------------------------------------------------------------------
+ */
+pre.wp-block-code code,
+pre.wp-block-preformatted {
+	color: get-color( text );
+	font-size: get-font-size( small );
+}
+
+/**
+ * Image block styles
+ * -----------------------------------------------------------------------------
+ */
+figure.wp-block-image {
+	@include make-block( $white-space );
+
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+/**
+ * Media text block styles
+ * -----------------------------------------------------------------------------
+ */
+.wp-block-media-text {
+	@include make-block( $white-space );
+
+	.wp-block-media-text__content {
+		padding: $white-space;
+	}
+
+	&.has-background {
+		padding: 0 !important;
+	}
+}
+
+/**
+ * Cover block styles
+ * -----------------------------------------------------------------------------
+ */
+.wp-block-cover {
+	@include make-block( $white-space );
+	padding: $white-space;
+
+	&.has-background-dim {
+		background-color: get-color( txt );
+
+		@each $name, $value in $colors {
+			&.has-#{$name}-background-color {
+				background-color: get-color( $name );
+			}
+		}
+	}
+
+	.wp-block-cover__inner-container {
+		margin: 0 auto;
+		max-width: $content-wrap-max-width;
+	}
+}
+
+//
+// Button block styles
+// -----------------------------------------------------------------------------
+.wp-block-buttons {
+	@include make-block( $white-space );
+}
+
+.wp-block-button {
+	.wp-block-button__link {
+		@include make-button( get-color( accent ), get-color( accent ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
+
+		&:active,
+		&:focus,
+		&:hover {
+			@include make-button( get-color( txt ), get-color( txt ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
+		}
+	}
+
+	&.is-style-outline {
+		.wp-block-button__link {
+			@include make-button( transparent, get-color( accent ), $button-border-width, $button-border-radius, get-color( accent ), $button-padding-x, $button-padding-y );
+
+			&:active,
+			&:focus,
+			&:hover {
+				@include make-button( get-color( accent ), get-color( accent ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
+			}
+		}
+	}
+}
+
+//
+// Column block styles
+// -----------------------------------------------------------------------------
+.wp-block-columns {
+	@include make-block( $white-space );
+
+	.wp-block-column {
+		margin-bottom: $white-space;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@media ( min-width: 782px ) {
+			margin-bottom: 0;
+			margin-right: $white-space;
+		}
+	}
+}
+
+//
+// Group block styles
+// -----------------------------------------------------------------------------
+.wp-block-group {
+	@include make-block( $white-space );
+
+	&.alignfull {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+
+		.wp-block-group__inner-container {
+			@include make-container( $content-full-wrap-max-width, $gutter-width / 2 );
 		}
 	}
 }

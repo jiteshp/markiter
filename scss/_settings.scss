@@ -4,7 +4,7 @@
 $colors: (
 	bg: #FFFFFF,
 	alt-bg: #ECE4FE,
-	text: #190248,
+	txt: #190248,
 	accent: #722EF9,
 );
 
@@ -14,20 +14,18 @@ $colors: (
 $code-font: 'Courier New', 'Courier', monospace;
 $text-font: 'Quattrocento Sans', serif;
 
-$base-font-size: 16px;
-$base-font-size-md: 20px;
-
+$base-font-size: 20px;
 $base-line-height: 1.75;
 $heading-line-height: 1.25;
 
 $white-space: $base-line-height * 1rem;
 
 $font-sizes: (
-	small: 0.8rem,
-	normal: 1rem,
-	medium: 1.25rem,
-	large: 1.6rem,
-	extra-large: 2.05rem,
+	small: 0.8 * $base-font-size,
+	normal: 1 * $base-font-size,
+	medium: 1.25 * $base-font-size,
+	large: 1.6 * $base-font-size,
+	extra-large: 2.05 * $base-font-size,
 );
 
 //
@@ -41,11 +39,11 @@ $screens: (
 	xl: 1200px,
 );
 
-$header-wrap-max-width: ( 1200 / 20 ) * 1rem;
+$header-wrap-max-width: 1200px;
 $footer-wrap-max-width: $header-wrap-max-width;
 $content-wrap-max-width: ( 750 / 20 ) * 1rem;
-$content-wide-wrap-max-width: ( 960 / 20 ) * 1rem;
-$gutter-width: ( 30 / 20 ) * 1rem;
+$content-full-wrap-max-width: 1200px;
+$gutter-width: 30px;
 
 //
 // Form elements settings

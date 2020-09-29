@@ -67,5 +67,5 @@
 // Typography mixins
 // -----------------------------------------------------------------------------
 @function get-font-size( $fs ) {
-	@return map-get( $font-sizes, $fs );
+	@return var( --#{$fs}-font-size );
 }

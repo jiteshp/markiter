@@ -8,7 +8,7 @@
 	line-height: $base-line-height;
 
 	&:hover {
-		@include set-button-color( get-color( text ), get-color( text ), get-color( bg ) );
+		@include set-button-color( get-color( txt ), get-color( txt ), get-color( bg ) );
 	}
 }
 
@@ -34,7 +34,7 @@ button, input, select, textarea {
 	background-color: get-color( bg );
 	border: none;
 	border-radius: $input-border-radius;
-	color: get-color( text );
+	color: get-color( txt );
 	display: inline-block;
 	font-family: $text-font;
 	font-size: get-font-size( normal );
@@ -53,7 +53,7 @@ input[type=checkbox], input[type=submit], input[type=radio], input[type=reset] {
 }
 
 label {
-	color: get-color( text );
+	color: get-color( txt );
 	font-size: get-font-size( small );
 }
 

@@ -23,6 +23,7 @@ function markiter_setup() {
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'editor-color-palette', markiter_get_color_palette() );
+	add_theme_support( 'disable-custom-colors' );
 	add_theme_support( 'editor-font-sizes', markiter_get_editor_font_sizes() );
 
 	add_theme_support(

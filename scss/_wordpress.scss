@@ -92,7 +92,7 @@
 		line-height: $base-line-height;
 
 		&:hover {
-			@include set-button-color( get-color( text ), get-color( text ), get-color( bg ) );
+			@include set-button-color( get-color( txt ), get-color( txt ), get-color( bg ) );
 		}
 	}
 
@@ -166,7 +166,7 @@
 		}
 
 		cite {
-			color: get-color( text );
+			color: get-color( txt );
 			display: block;
 			font-size: get-font-size( small );
 			margin-top: 0;
@@ -198,7 +198,7 @@
 		}
 
 		cite {
-			color: get-color( text );
+			color: get-color( txt );
 			display: block;
 			font-size: get-font-size( small );
 			letter-spacing: 0;
@@ -293,7 +293,7 @@
 	&,
 	&.is-style-wide {
 		border: 0;
-		border-bottom: $hr-border-width solid get-color( text );
+		border-bottom: $hr-border-width solid get-color( txt );
 	}
 
 	&.is-style-dots {

@@ -4,7 +4,7 @@
  */
 body {
 	background-color: get-color( bg );
-	color: get-color( text );
+	color: get-color( txt );
 	font-family: $text-font;
 	font-size: get-font-size( normal );
 	line-height: $base-line-height;
@@ -59,8 +59,8 @@ ol, ul {
 	}
 
 	li {
-		margin-bottom: $white-space / 2;
-		margin-top: $white-space / 2;
+		margin-bottom: $white-space / 4;
+		margin-top: $white-space / 4;
 	}
 }
 
@@ -109,7 +109,7 @@ h5, h6 {
 
 hr {
 	border: 0;
-	border-bottom: $hr-border-width solid get-color( text );
+	border-bottom: $hr-border-width solid get-color( txt );
 }
 
 table {
@@ -135,7 +135,7 @@ a {
 
 	&:active,
 	&:hover {
-		color: get-color( text );
+		color: get-color( txt );
 	}
 }
 
@@ -170,7 +170,7 @@ em {
 }
 
 figcaption {
-	color: get-color( text );
+	color: get-color( txt );
 	display: block;
 	font-size: get-font-size( small );
 	padding: $white-space / 4;

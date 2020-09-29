@@ -1,6 +1,6 @@
 /**
  * Theme name: 		Markiter
- * Version:			1.8
+ * Version:			2.0
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks
  * Text domain: 	markiter
@@ -31,16 +31,14 @@
  * -----------------------------------------------------------------------------
  */
 :root {
+	font-size: $base-font-size;
+
 	@each $name, $value in $colors {
 		--#{$name}-color: #{$value};
 	}
-}
 
-html {
-	font-size: $base-font-size;
-
-	@include when-screen( md ) {
-		font-size: $base-font-size-md;
+	@each $name, $value in $font-sizes {
+		--#{$name}-font-size: #{$value};
 	}
 }
 
@@ -85,7 +83,7 @@ html {
  * -----------------------------------------------------------------------------
  */
 .site-footer {
-	background-color: get-color( text );
+	background-color: get-color( txt );
 	color: get-color( bg );
 	font-size: get-font-size( small );
 	margin-top: $white-space / 2;
@@ -134,7 +132,7 @@ html {
 }
 
 .site-description {
-	color: get-color( text );
+	color: get-color( txt );
 	font-size: get-font-size( small );
 }
 
@@ -148,7 +146,7 @@ html {
  */
 .menu-toggle {
 	background-color: transparent;
-	color: get-color( text );
+	color: get-color( txt );
 	font-size: get-font-size( large );
 	height: $input-height;
 	line-height: $input-height;
@@ -189,7 +187,7 @@ html {
 
 	a {
 		border-bottom: none;
-		color: get-color( text );
+		color: get-color( txt );
 		display: block;
 		padding: ( $input-padding-y * 1.5 ) 0;
 
@@ -211,7 +209,7 @@ html {
 					position: relative;
 
 					&:after {
-						border: solid get-color( text );
+						border: solid get-color( txt );
 						border-width: 0 2px 2px 0;
 						content: '';
 						display: inline-block;
@@ -354,7 +352,7 @@ html {
 
 	a {
 		border-bottom: none;
-		color: get-color( text );
+		color: get-color( txt );
 
 		&:active,
 		&:hover {
@@ -364,7 +362,7 @@ html {
 }
 
 .entry-meta {
-	color: get-color( text );
+	color: get-color( txt );
 	font-size: get-font-size( small );
 
 	a {
@@ -474,7 +472,7 @@ html {
 		}
 
 		span {
-			color: get-color( text );
+			color: get-color( txt );
 			display: block;
 			font-size: get-font-size( small );
 			text-transform: uppercase;

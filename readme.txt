@@ -12,6 +12,9 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.0 =
+* Updates the block styles for WP 5.5.1.
+
 = 1.8 =
 * Updates screenshot.
 * Tested up to 5.5.1

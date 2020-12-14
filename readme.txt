@@ -1,6 +1,6 @@
 === Markiter ===
 Contributors: jiteshpatil
-Tested up to: 5.5.1
+Tested up to: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,6 +11,9 @@ Minimal theme for marketers & bloggers.
 Minimal theme for marketers & bloggers that's designed to be compatible with the WordPress block editor.
 
 == Changelog ==
+
+= 2.0.1 =
+* Fixes blockquote styles
 
 = 2.0 =
 * Fixes full aligned group styles

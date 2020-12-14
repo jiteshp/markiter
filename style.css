@@ -463,7 +463,7 @@ sup {
 }
 
 @media (min-width: 992px) {
-  .alignwide, .post-navigation, blockquote.wp-block-quote, blockquote.wp-block-quote.is-style-large {
+  .alignwide, .post-navigation {
     margin-left: -1.75rem;
     margin-right: -1.75rem;
     max-width: 41rem;

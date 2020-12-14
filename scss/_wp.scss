@@ -98,7 +98,6 @@ p {
 blockquote.wp-block-quote {
 	&,
 	&.is-style-large {
-		@extend .alignwide;
 		@include make-block( $white-space );
 		padding: $white-space;
 

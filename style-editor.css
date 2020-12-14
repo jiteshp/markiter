@@ -160,8 +160,6 @@
 }
 
 .editor-styles-wrapper blockquote.wp-block-quote, .editor-styles-wrapper blockquote.wp-block-quote.is-style-large {
-  margin-left: -35px;
-  margin-right: -35px;
   background-color: var(--alt-bg-color);
   border-left: none;
   border-right: none;

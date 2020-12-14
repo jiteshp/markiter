@@ -210,8 +210,6 @@ $white-space: $base-font-size * $base-line-height;
 	blockquote.wp-block-quote {
 		&,
 		&.is-style-large {
-			margin-left: $white-space * -1;
-			margin-right: $white-space * -1;
 			background-color: get-color( alt-bg );
 			border-left: none;
 			border-right: none;

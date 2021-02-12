@@ -8,8 +8,17 @@
  */
 
 ?>
-
 <footer id="footer" class="site-footer" role="contentinfo">
+	<?php
+	if ( ! is_page_template( 'no-header-page.php' ) && is_active_sidebar( 'footer' ) ) :
+	 	?>
+	 	<aside class="footer-widgets" role="complementary">
+	 		<?php dynamic_sidebar( 'footer' )?>
+	 	</aside>
+	 	<?php
+	 endif;
+	?>
+
 	<div class="site-footer-wrap">
 		<?php if ( has_nav_menu( 'secondary' ) ) : ?>
 			<nav id="footer-navigation" class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Secondary menu', 'markiter' ); ?>">

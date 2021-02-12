@@ -61,6 +61,41 @@ function markiter_content_width() {
 add_action( 'template_redirect', 'markiter_content_width' );
 
 /**
+ * Registers the sidebars used in the theme.
+ *
+ * @return void
+ */
+function markiter_sidebars() {
+	// Footer widgets
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer', 'markiter' ),
+			'id'            => 'footer',
+			'description'   => esc_html__( 'Displayed everywhere other than squeeze pages.', 'markiter' ),
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+			'before_widget' => '<div class="widget %2$s" id="%1$s">',
+			'after_widget'  => '</div>',
+		)
+	);
+
+	// Home widgets
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Home', 'markiter' ),
+			'id'            => 'home',
+			'description'   => esc_html__( 'Displayed on the blog page.', 'markiter' ),
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+			'before_widget' => '<div class="widget %2$s" id="%1$s">',
+			'after_widget'  => '</div>',
+		)
+	);
+}
+
+add_action( 'widgets_init', 'markiter_sidebars' );
+
+/**
  * Enqueues the theme styles & scripts.
  *
  * @return void
@@ -287,17 +322,27 @@ function markiter_get_color_palette() {
 			array(
 				'name'  => esc_html__( 'Alternate Background', 'markiter' ),
 				'slug'  => 'alt-bg',
-				'color' => '#ECE4FE',
+				'color' => '#E4E1FF',
 			),
 			array(
 				'name'  => esc_html__( 'Text', 'markiter' ),
-				'slug'  => 'text',
+				'slug'  => 'fg',
 				'color' => '#190248',
 			),
 			array(
 				'name'  => esc_html__( 'Accent', 'markiter' ),
 				'slug'  => 'accent',
 				'color' => '#722EF9',
+			),
+			array(
+				'name'  => esc_html__( 'Border', 'markiter' ),
+				'slug'  => 'border',
+				'color' => '#DDDDDD',
+			),
+			array(
+				'name'  => esc_html__( 'Input', 'markiter' ),
+				'slug'  => 'input',
+				'color' => '#999999',
 			),
 		)
 	);

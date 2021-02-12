@@ -1,8 +1,8 @@
 /**
  * Theme name: 		Markiter
- * Version:			2.0.1
+ * Version:			2.1.0
  * Description:		Minimal theme for marketers & bloggers.
- * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks
+ * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, one-column
  * Text domain: 	markiter
  * Author: 			Jitesh Patil
  * Author URI: 		https://www.jiteshpatil.com/
@@ -31,8 +31,6 @@
  * -----------------------------------------------------------------------------
  */
 :root {
-	font-size: $base-font-size;
-
 	@each $name, $value in $colors {
 		--#{$name}-color: #{$value};
 	}
@@ -52,7 +50,7 @@
 }
 
 .site-header-wrap {
-	@include make-container( $header-wrap-max-width, $gutter-width / 2 );
+	@include make-container( $container-wide-max-width, $gutter-width / 2 );
 	align-items: center;
 	display: flex;
 	flex-direction: row;
@@ -65,17 +63,13 @@
  * -----------------------------------------------------------------------------
  */
 .site-content {
-	padding-bottom: $white-space;
-	padding-top: $white-space;
+	margin-bottom: $white-space;
+	margin-top: $white-space;
 
 	@include when-screen( lg ) {
-		padding-bottom: $white-space * 2;
-		padding-top: $white-space * 2;
+		margin-bottom: $white-space * 2;
+		margin-top: $white-space * 2;
 	}
-}
-
-.site-content-wrap {
-	@include make-container( $content-wrap-max-width, $gutter-width / 2 );
 }
 
 /**
@@ -83,10 +77,13 @@
  * -----------------------------------------------------------------------------
  */
 .site-footer {
-	background-color: get-color( txt );
+	background-color: get-color( fg );
+}
+
+.site-footer-wrap {
+	@include make-container( $container-wide-max-width, $gutter-width / 2 );
 	color: get-color( bg );
 	font-size: get-font-size( small );
-	margin-top: $white-space / 2;
 	padding-bottom: $white-space;
 	padding-top: $white-space;
 	text-align: center;
@@ -99,15 +96,6 @@
 			border-bottom: 1px solid get-color( bg );
 		}
 	}
-
-	@include when-screen( lg ) {
-		padding-bottom: $white-space * 2;
-		padding-top: $white-space * 2;
-	}
-}
-
-.site-footer-wrap {
-	@include make-container( $footer-wrap-max-width, $gutter-width / 2 );
 }
 
 /**
@@ -132,7 +120,7 @@
 }
 
 .site-description {
-	color: get-color( txt );
+	color: get-color( fg );
 	font-size: get-font-size( small );
 }
 
@@ -146,7 +134,7 @@
  */
 .menu-toggle {
 	background-color: transparent;
-	color: get-color( txt );
+	color: get-color( fg );
 	font-size: get-font-size( large );
 	height: $input-height;
 	line-height: $input-height;
@@ -187,7 +175,7 @@
 
 	a {
 		border-bottom: none;
-		color: get-color( txt );
+		color: get-color( fg );
 		display: block;
 		padding: ( $input-padding-y * 1.5 ) 0;
 
@@ -209,7 +197,7 @@
 					position: relative;
 
 					&:after {
-						border: solid get-color( txt );
+						border: solid get-color( fg );
 						border-width: 0 2px 2px 0;
 						content: '';
 						display: inline-block;
@@ -233,7 +221,7 @@
 	margin-left: 0;
 
 	& > li {
-		border-bottom: 1px dotted rgba( 0, 0, 0, 0.1 );
+		border-bottom: 1px dotted get-color( border );
 
 		&.focus,
 		&:hover {
@@ -262,12 +250,12 @@
 
 .main-navigation .sub-menu {
 	& > li {
-		border-top: 1px dotted rgba( 0, 0, 0, 0.1 );
+		border-top: 1px dotted get-color( border );
 	}
 
 	@include when-screen( lg ) {
 		background-color: get-color( alt-bg );
-		box-shadow: 0 3px 3px rgba( 0, 0, 0, 0.1 );
+		box-shadow: 0 3px 3px get-color( border );
 		left: -999em;
 		margin-left: 0;
 		position: absolute;
@@ -346,13 +334,22 @@
 	@include make-block( $white-space );
 }
 
+.entry-header,
+.entry-footer {
+	@include make-container( $container-max-width - $gutter-width, $gutter-width / 2 );
+
+	@include when-screen( md ) {
+		@include make-container( $container-max-width - $gutter-width, 0 );
+	}
+}
+
 .entry-title {
 	font-size: get-font-size( extra-large );
 	margin-bottom: $white-space / 4;
 
 	a {
 		border-bottom: none;
-		color: get-color( txt );
+		color: get-color( fg );
 
 		&:active,
 		&:hover {
@@ -362,7 +359,7 @@
 }
 
 .entry-meta {
-	color: get-color( txt );
+	color: get-color( fg );
 	font-size: get-font-size( small );
 
 	a {
@@ -397,6 +394,14 @@
 
 .entry-content {
 	@include clear-floats();
+
+	& > * {
+		@include make-container( $container-max-width - $gutter-width, $gutter-width / 2 );
+
+		@include when-screen( md ) {
+			@include make-container( $container-max-width - $gutter-width, 0 );
+		}
+	}
 }
 
 .more-link {
@@ -421,10 +426,23 @@
 }
 
 /**
+ * Widget area styles
+ * -----------------------------------------------------------------------------
+ */
+.home-widgets {
+}
+
+.footer-widgets {
+	border-bottom: 1px solid rgba( 255, 255, 255, 0.1 );
+}
+
+/**
  * Pagination styles
  * -----------------------------------------------------------------------------
  */
 .pagination {
+	@include make-container( $container-max-width - $gutter-width, 0 );
+
 	.page-numbers {
 		background-color: get-color( alt-bg );
 		border-bottom: none;
@@ -444,8 +462,9 @@
 .post-navigation {
 	@extend .alignwide;
 	@include make-block( $white-space * 2 );
-	border-bottom: 1px solid rgba( 0, 0, 0, 0.1 );
-	border-top: 1px solid rgba( 0, 0, 0, 0.1 );
+	@include make-container( $container-wide-max-width - $gutter-width, 0 );
+	border-bottom: 1px solid get-color( border );
+	border-top: 1px solid get-color( border );
 	padding: $white-space;
 
 	.nav-links {
@@ -472,7 +491,7 @@
 		}
 
 		span {
-			color: get-color( txt );
+			color: get-color( fg );
 			display: block;
 			font-size: get-font-size( small );
 			text-transform: uppercase;
@@ -505,7 +524,7 @@
 		}
 
 		.nav-previous {
-			border-right: 1px solid rgba( 0, 0, 0, 0.1 );
+			border-right: 1px solid get-color( border );
 			padding-right: $white-space;
 			text-align: left;
 		}
@@ -513,6 +532,10 @@
 		.nav-next {
 			padding-left: $white-space;
 			text-align: right;
+
+			&:first-child {
+				align-self: flex-end;
+			}
 		}
 	}
 }
@@ -521,6 +544,10 @@
  * Comments area styles
  * -----------------------------------------------------------------------------
  */
+.comments-area {
+	@include make-container( $container-max-width, $gutter-width / 2 );
+}
+
 .comment-list {
 	margin-left: 0;
 
@@ -530,7 +557,7 @@
 }
 
 .comment-body {
-	background-color: get-color( alt-bg );
+	border: 1px solid get-color( border );
 	padding: $white-space;
 }
 
@@ -569,7 +596,7 @@
 }
 
 .comment-respond {
-	border: 1px solid rgba( 0, 0, 0, 0.1 );
+	border: 1px solid get-color( border );
 	padding: $white-space;
 
 	.comment & {
@@ -637,8 +664,8 @@
 .page-template-no-header-page,
 .page-template-no-title-page {
 	.site-content {
-		padding-bottom: 0;
-		padding-top: 0;
+		margin-bottom: 0;
+		margin-top: 0;
 	}
 }
 

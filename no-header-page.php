@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: No Header Template
+ * Template name: Squeeze Page
  *
  * Default no header page template. Does not show page title & site header.
  *

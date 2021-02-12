@@ -65,3 +65,12 @@
 		<?php endif; ?>
 	</div>
 </header>
+
+<?php
+if ( is_home() && is_active_sidebar( 'home' ) ) :
+	?>
+	<section class="home-widgets">
+		<?php dynamic_sidebar( 'home' )?>
+	</section>
+	<?php
+endif;

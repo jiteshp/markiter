@@ -12,6 +12,12 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.1.0 =
+* Adds blog page and footer widget areas.
+* Improves wide and full alignment styling.
+* Makes typography responsive.
+* Adds custom border and input color options.
+
 = 2.0.1 =
 * Fixes blockquote styles
 

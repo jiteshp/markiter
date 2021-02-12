@@ -2,13 +2,20 @@
  * Body typography styles
  * -----------------------------------------------------------------------------
  */
+:root {
+	font-size: $base-font-size;
+
+	@include when-screen( md ) {
+		font-size: $base-font-size-md;
+	}
+}
+
 body {
 	background-color: get-color( bg );
-	color: get-color( txt );
+	color: get-color( fg );
 	font-family: $text-font;
 	font-size: get-font-size( normal );
 	line-height: $base-line-height;
-	overflow-x: hidden;
 }
 
 /**
@@ -109,17 +116,17 @@ h5, h6 {
 
 hr {
 	border: 0;
-	border-bottom: $hr-border-width solid get-color( txt );
+	border-bottom: $hr-border-width solid get-color( fg );
 }
 
 table {
 	background-color: get-color( alt-bg );
-	border: $table-border-width solid rgba( 0, 0, 0, 0.1 );
+	border: $table-border-width solid get-color( border );
 	border-collapse: collapse;
 	width: 100%;
 
 	td, th {
-		border: $table-border-width solid rgba( 0, 0, 0, 0.1 );
+		border: $table-border-width solid get-color( border );
 		padding: $white-space / 4;
 	}
 }
@@ -135,7 +142,7 @@ a {
 
 	&:active,
 	&:hover {
-		color: get-color( txt );
+		color: get-color( fg );
 	}
 }
 
@@ -170,7 +177,7 @@ em {
 }
 
 figcaption {
-	color: get-color( txt );
+	color: get-color( fg );
 	display: block;
 	font-size: get-font-size( small );
 	padding: $white-space / 4;

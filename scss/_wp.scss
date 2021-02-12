@@ -2,37 +2,46 @@
  * Default alignment styles
  * -----------------------------------------------------------------------------
  */
-.aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.alignleft {
-	float: left;
-	margin: ( $white-space / 4 ) $white-space ( $white-space / 4 ) 0;
-	max-width: 40%;
-}
-
-.alignright {
-	float: right;
-	margin: ( $white-space / 4 ) 0 ( $white-space / 4 ) $white-space;
-	max-width: 40%;
-}
-
 .alignfull {
-	margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-	max-width: 100vw;
-	width: 100vw;
+	&,
+	.entry-content & {
+		@include make-container( $container-full-max-width, 0 );
+	}
 }
 
 .alignwide {
-	@include when-screen( lg ) {
-		margin-left: $white-space * -1;
-		margin-right: $white-space * -1;
-		max-width: $content-wrap-max-width + ( $white-space * 2 );
-		width: $content-wrap-max-width + ( $white-space * 2 );
+	&,
+	.entry-content & {
+		@media ( min-width: $container-wide-max-width ) {
+			@include make-container( $container-wide-max-width - $gutter-width, 0 );
+		}
+	}
+}
+
+.aligncenter {
+	&,
+	.entry-content & {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.alignleft {
+	&,
+	.entry-content & {
+		float: left;
+		margin: ( $white-space / 4 ) $white-space ( $white-space / 4 ) 0;
+		max-width: 40%;
+	}
+}
+
+.alignright {
+	&,
+	.entry-content & {
+		float: right;
+		margin: ( $white-space / 4 ) 0 ( $white-space / 4 ) $white-space;
+		max-width: 40%;
 	}
 }
 
@@ -60,6 +69,11 @@
 @each $name, $value in $colors {
 	.has-#{$name}-color {
 		color: get-color( $name );
+
+		a {
+			border-bottom-color: get-color( $name );
+			color: get-color( $name );
+		}
 	}
 
 	.has-#{$name}-background-color {
@@ -126,7 +140,7 @@ blockquote.wp-block-quote {
  */
 pre.wp-block-code code,
 pre.wp-block-preformatted {
-	color: get-color( text );
+	color: get-color( fg );
 	font-size: get-font-size( small );
 }
 
@@ -168,7 +182,7 @@ figure.wp-block-image {
 	padding: $white-space;
 
 	&.has-background-dim {
-		background-color: get-color( txt );
+		background-color: get-color( fg );
 
 		@each $name, $value in $colors {
 			&.has-#{$name}-background-color {
@@ -178,8 +192,13 @@ figure.wp-block-image {
 	}
 
 	.wp-block-cover__inner-container {
-		margin: 0 auto;
-		max-width: $content-wrap-max-width;
+		@include make-container( $container-wide-max-width - $gutter-width, 0 );
+	}
+
+	&.inner-container-sm {
+		.wp-block-cover__inner-container {
+			@include make-container( $container-max-width - $gutter-width, 0 );
+		}
 	}
 }
 
@@ -197,7 +216,7 @@ figure.wp-block-image {
 		&:active,
 		&:focus,
 		&:hover {
-			@include make-button( get-color( txt ), get-color( txt ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
+			@include make-button( get-color( fg ), get-color( fg ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
 		}
 	}
 
@@ -239,14 +258,15 @@ figure.wp-block-image {
 // -----------------------------------------------------------------------------
 .wp-block-group {
 	@include make-block( $white-space );
+	padding: $white-space;
 
-	&.alignfull {
-		margin-bottom: 0;
-		margin-top: 0;
-		padding: 0 !important;
+	.wp-block-group__inner-container {
+		@include make-container( $container-wide-max-width - $gutter-width, 0 );
+	}
 
+	&.inner-container-sm {
 		.wp-block-group__inner-container {
-			@include make-container( $content-full-wrap-max-width, $gutter-width / 2 );
+			@include make-container( $container-max-width - $gutter-width, 0 );
 		}
 	}
 }

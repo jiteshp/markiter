@@ -4,17 +4,17 @@
  */
 .btn {
 	@include make-button( get-color( accent ), get-color( accent ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
-	font-size: get-font-size( normal );
+	font-size: get-font-size( small );
 	line-height: $base-line-height;
 
 	&:hover {
-		@include set-button-color( get-color( txt ), get-color( txt ), get-color( bg ) );
+		@include set-button-color( get-color( fg ), get-color( fg ), get-color( bg ) );
 	}
 }
 
 .btn-outline {
 	@include make-button( transparent, get-color( accent ), $button-border-width, $button-border-radius, get-color( accent ), $button-padding-x, $button-padding-y );
-	font-size: get-font-size( normal );
+	font-size: get-font-size( small );
 	line-height: $base-line-height;
 
 	&:hover {
@@ -33,18 +33,18 @@ form p {
 button, input, select, textarea {
 	background-color: get-color( bg );
 	border: none;
-	border-radius: $input-border-radius;
-	color: get-color( txt );
+	border-radius: $input-radius;
+	color: get-color( fg );
 	display: inline-block;
 	font-family: $text-font;
-	font-size: get-font-size( normal );
+	font-size: get-font-size( small );
 	line-height: $base-line-height;
 	padding: $input-padding-y $input-padding-x;
 	width: 100%;
 }
 
 input, select, textarea {
-	box-shadow: inset 0 0 3px rgba( 0, 0, 0, 0.4 );
+	box-shadow: inset 0 0 3px get-color( input );
 }
 
 input[type=checkbox], input[type=submit], input[type=radio], input[type=reset] {
@@ -53,7 +53,7 @@ input[type=checkbox], input[type=submit], input[type=radio], input[type=reset] {
 }
 
 label {
-	color: get-color( txt );
+	color: get-color( fg );
 	font-size: get-font-size( small );
 }
 
@@ -62,7 +62,7 @@ select {
 }
 
 textarea {
-	height: $input-height * 2.5;
+	height: $input-height * 2;
 }
 
 button[type=submit], input[type=submit] {

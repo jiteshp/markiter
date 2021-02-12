@@ -4,8 +4,10 @@
 $colors: (
 	bg: #FFFFFF,
 	alt-bg: #ECE4FE,
-	txt: #190248,
+	fg: #190248,
 	accent: #722EF9,
+	border: #DDDDDD,
+	input: #999999,
 );
 
 //
@@ -14,18 +16,19 @@ $colors: (
 $code-font: 'Courier New', 'Courier', monospace;
 $text-font: 'Quattrocento Sans', serif;
 
-$base-font-size: 20px;
+$base-font-size: 100%;
+$base-font-size-md: 125%;
 $base-line-height: 1.75;
 $heading-line-height: 1.25;
 
 $white-space: $base-line-height * 1rem;
 
 $font-sizes: (
-	small: 0.8 * $base-font-size,
-	normal: 1 * $base-font-size,
-	medium: 1.25 * $base-font-size,
-	large: 1.6 * $base-font-size,
-	extra-large: 2.05 * $base-font-size,
+	small: 0.8rem,
+	normal: 1rem,
+	medium: 1.25rem,
+	large: 1.6rem,
+	extra-large: 2.05rem,
 );
 
 //
@@ -39,25 +42,24 @@ $screens: (
 	xl: 1200px,
 );
 
-$header-wrap-max-width: 1200px;
-$footer-wrap-max-width: $header-wrap-max-width;
-$content-wrap-max-width: ( 750 / 20 ) * 1rem;
-$content-full-wrap-max-width: 1200px;
-$gutter-width: 30px;
+$gutter-width: $white-space * 2;
+$container-max-width: 39.5rem;
+$container-wide-max-width: 63.5rem;
+$container-full-max-width: none;
 
 //
 // Form elements settings
 // -----------------------------------------------------------------------------
-$input-border-radius: 0.2rem;
+$input-radius: 0.2rem;
 $input-height: $base-line-height * 1.5rem;
 $input-padding-y: ( $input-height / 2 ) - ( $base-line-height * 0.5rem );
-$input-padding-x: 1rem;
+$input-padding-x: 0.75rem;
 
-$button-border-radius: $input-border-radius;
+$button-border-radius: $input-radius;
 $button-height: $input-height;
 $button-border-width: 0.1rem;
 $button-padding-y: $input-padding-y - $button-border-width;
-$button-padding-x: $input-padding-x;
+$button-padding-x: $input-padding-x * 1.25;
 
 //
 // Misc settings

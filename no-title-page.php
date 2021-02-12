@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: No Title Template
+ * Template name: Landing Page
  *
  * Default no title page template. Does not show page title.
  *

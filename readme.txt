@@ -12,6 +12,9 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.1.1 =
+* Fixes WP.org required notices.
+
 = 2.1.0 =
 * Adds blog page and footer widget areas.
 * Improves wide and full alignment styling.

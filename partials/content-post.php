@@ -31,3 +31,11 @@
 
 	<?php get_template_part( 'partials/meta', 'footer' ); ?>
 </article>
+
+<?php
+the_post_navigation(
+	array(
+		'prev_text' => '<span class="rel">' . esc_html__( 'Previous post', 'markiter' ) . '</span> %title',
+		'next_text' => '<span class="rel">' . esc_html__( 'Next post', 'markiter' ) . '</span> %title',
+	)
+);

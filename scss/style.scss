@@ -1,6 +1,6 @@
 /**
  * Theme name: 		Markiter
- * Version:			2.1.1
+ * Version:			2.1.2
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets
  * Text domain: 	markiter
@@ -371,7 +371,7 @@
 		}
 	}
 
-	.entry-author,
+	.entry-date,
 	.entry-tags {
 		&:before {
 			content: '\2014';

@@ -113,7 +113,7 @@ blockquote.wp-block-quote {
 	&,
 	&.is-style-large {
 		@include make-block( $white-space );
-		padding: $white-space;
+		padding: $white-space 0 $white-space $white-space;
 
 		p {
 			@include make-block( $white-space / 2 );

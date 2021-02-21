@@ -12,6 +12,11 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.1.2 =
+* Improves blockquote styles.
+* Improves post meta.
+* Moves post navigation to the template part.
+
 = 2.1.1 =
 * Fixes WP.org required notices.
 

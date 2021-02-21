@@ -35,10 +35,14 @@ table {
 }
 
 address,
-blockquote,
 pre {
 	background-color: get-color( alt-bg );
 	padding: $white-space;
+}
+
+blockquote {
+	border-left: solid 0.25rem get-color( alt-bg );
+	padding: $white-space 0 $white-space $white-space;
 }
 
 pre {

@@ -9,23 +9,13 @@ $markiter_tags = get_the_tag_list( '', ', ', '' );
 ?>
 <footer class="entry-footer entry-meta">
 	<div class="entry-footer-wrap">
-		<span class="entry-date">
+		<span class="entry-categories">
 			<?php
-			echo wp_kses(
+			echo wp_kses_post(
 				sprintf(
-					// translators: %s is for the author link.
-					__( 'Updated on %s', 'markiter' ),
-					markiter_get_the_date()
-				),
-				array(
-					'a' => array(
-						'href' => array(),
-						'rel'  => array(),
-					),
-					'time' => array(
-						'datetime' => array(),
-						'class'    => array(),
-					),
+					// translators: %s is for the category list.
+					__( 'Posted in %s', 'markiter' ),
+					get_the_category_list( ', ' )
 				)
 			);
 			?>

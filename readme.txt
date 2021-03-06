@@ -12,6 +12,9 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.2 =
+* Enable custom colors in block editor.
+
 = 2.1.2 =
 * Improves blockquote styles.
 * Improves post meta.

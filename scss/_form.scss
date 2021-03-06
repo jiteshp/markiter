@@ -91,3 +91,13 @@ input[type=reset] {
 		}
 	}
 }
+
+.happyforms-part--width-auto + .happyforms-part--submit,
+.happyforms-part--width-auto + .happyforms-part--recaptcha + .happyforms-part--submit {
+	align-self: flex-start !important;
+
+	input[type=submit] {
+		border-width: 0 !important;
+		padding: $input-padding-y $input-padding-x !important;
+	}
+}

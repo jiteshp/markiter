@@ -187,6 +187,16 @@ textarea {
   margin-right: 0 !important;
 }
 
+.happyforms-part--width-auto + .happyforms-part--submit,
+.happyforms-part--width-auto + .happyforms-part--recaptcha + .happyforms-part--submit {
+  align-self: flex-start !important;
+}
+.happyforms-part--width-auto + .happyforms-part--submit input[type=submit],
+.happyforms-part--width-auto + .happyforms-part--recaptcha + .happyforms-part--submit input[type=submit] {
+  border-width: 0 !important;
+  padding: 0.4375rem 0.75rem !important;
+}
+
 /**
  * Body typography styles
  * -----------------------------------------------------------------------------
@@ -1189,6 +1199,9 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
     padding-left: 0;
     padding-right: 0;
   }
+}
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+  margin-bottom: 0.875rem;
 }
 
 .post-nav-links {

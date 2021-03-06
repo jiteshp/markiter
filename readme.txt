@@ -15,6 +15,7 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 = 2.2 =
 * Enable custom colors in block editor.
 * Happy Forms plugin support.
+* Entry content bottom margins.
 
 = 2.1.2 =
 * Improves blockquote styles.

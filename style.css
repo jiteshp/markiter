@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
  * Theme name: 		Markiter
- * Version:			2.1.2
+ * Version:			2.2
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets
  * Text domain: 	markiter
@@ -1111,17 +1111,20 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 }
 
 .entry-header,
+.entry-thumbnail,
 .entry-content,
 .entry-footer {
   margin-bottom: 1.75rem;
 }
 .entry-header:last-child,
+.entry-thumbnail:last-child,
 .entry-content:last-child,
 .entry-footer:last-child {
   margin-bottom: 0;
 }
 
 .entry-header,
+.entry-thumbnail,
 .entry-footer {
   margin-left: auto;
   margin-right: auto;
@@ -1131,6 +1134,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 }
 @media (min-width: 768px) {
   .entry-header,
+.entry-thumbnail,
 .entry-footer {
     margin-left: auto;
     margin-right: auto;
@@ -1175,6 +1179,11 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   color: var(--accent-color);
   content: "★";
   margin-right: 5px;
+}
+
+.entry-thumbnail img {
+  display: block;
+  margin: 0 auto;
 }
 
 .entry-content:after, .entry-content:before {

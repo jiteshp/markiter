@@ -14,6 +14,19 @@
 		?>
 	</header>
 
+	<?php if ( has_post_thumbnail() ) : ?>
+		<div class="entry-thumbnail">
+			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php
+				the_post_thumbnail(
+					'post-thumbnail',
+					array(
+						'alt' => esc_attr( get_the_title() ),
+					)
+				);
+			?></a>
+		</div>
+	<?php endif; ?>
+
 	<div class="entry-content">
 		<?php the_excerpt(); ?>
 	</div>

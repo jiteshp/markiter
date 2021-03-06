@@ -14,6 +14,19 @@
 		?>
 	</header>
 
+	<?php if ( has_post_thumbnail() ) : ?>
+		<div class="entry-thumbnail">
+			<?php
+			the_post_thumbnail(
+				'post-thumbnail',
+				array(
+					'alt' => esc_attr( get_the_title() ),
+				)
+			);
+			?>
+		</div>
+	<?php endif; ?>
+
 	<div class="entry-content">
 		<?php
 		the_content();

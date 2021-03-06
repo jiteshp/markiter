@@ -106,9 +106,7 @@ html {
   line-height: 1.75;
 }
 .btn:hover, button[type=submit]:hover, input[type=submit]:hover {
-  background-color: var(--fg-color);
-  border-color: var(--fg-color);
-  color: var(--bg-color);
+  opacity: 0.75;
 }
 
 .btn-outline, .more-link, input[type=reset] {
@@ -166,7 +164,6 @@ input[type=checkbox], input[type=submit], input[type=radio], input[type=reset] {
 }
 
 label {
-  color: var(--fg-color);
   font-size: var(--small-font-size);
 }
 
@@ -176,6 +173,18 @@ select {
 
 textarea {
   height: 5.25rem;
+}
+
+/**
+ * Happy forms styles
+ * -----------------------------------------------------------------------------
+ */
+.happyforms-part__label {
+  margin-bottom: 0 !important;
+}
+
+.happyforms-part--submit * {
+  margin-right: 0 !important;
 }
 
 /**
@@ -416,7 +425,7 @@ sup {
  * Screen reader text
  * -----------------------------------------------------------------------------
  */
-.screen-reader-text {
+.screen-reader-text, .happyforms-form .hide-label .happyforms-part__label-container {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -428,7 +437,7 @@ sup {
   width: 1px;
   word-wrap: normal !important;
 }
-.screen-reader-text:focus {
+.screen-reader-text:focus, .happyforms-form .hide-label .happyforms-part__label-container:focus {
   background-color: #eee;
   clip: auto !important;
   clip-path: none;

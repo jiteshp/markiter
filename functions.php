@@ -163,6 +163,7 @@ function markiter_custom_colors( $wp_customize ) {
 		);
 	}
 }
+
 add_action( 'customize_register', 'markiter_custom_colors' );
 
 /**
@@ -191,8 +192,11 @@ function markiter_custom_styles() {
 	}
 
 	wp_add_inline_style( 'markiter-style', $custom_style );
+	wp_add_inline_style( 'markiter-block-editor-style', $custom_style );
 }
+
 add_action( 'wp_enqueue_scripts', 'markiter_custom_styles' );
+add_action( 'admin_enqueue_scripts', 'markiter_custom_styles' );
 
 /**
  * Adds preconnect for Google Fonts.
@@ -250,6 +254,22 @@ function markiter_excerpt_more( $more ) {
 }
 
 add_filter( 'excerpt_more', 'markiter_excerpt_more' );
+
+/**
+ * Returns the customized color palette.
+ *
+ * @param  array $colors The default editor color palette
+ * @return array
+ */
+function markiter_customize_color_palette( $colors ) {
+	for ( $i = 0; $i < count( $colors ); $i++ ) {
+		$colors[ $i ]['color'] = get_theme_mod( $colors[ $i ]['slug'] . '-color', $colors[ $i ]['color'] );
+	}
+
+	return $colors;
+}
+
+add_filter( 'markiter_color_palette', 'markiter_customize_color_palette' );
 
 /**
  * Outputs the entry published and/or modified date.
@@ -314,7 +334,7 @@ function markiter_get_fonts_uri() {
  */
 function markiter_get_color_palette() {
 	return apply_filters(
-		'markiter_editor_color_palette',
+		'markiter_color_palette',
 		array(
 			array(
 				'name'  => esc_html__( 'Background', 'markiter' ),

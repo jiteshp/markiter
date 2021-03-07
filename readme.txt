@@ -16,7 +16,8 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 * Enable post thumbnails.
 * Enable custom colors in block editor.
 * Happy Forms plugin support.
-* Entry content bottom margins.
+* Fixes entry content > headings bottom margins.
+* Fixes editor color styles to include custom colors.
 
 = 2.1.2 =
 * Improves blockquote styles.

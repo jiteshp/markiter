@@ -1,15 +1,15 @@
 :root {
-  --bg-color: #FFFFFF;
-  --alt-bg-color: #ECE4FE;
-  --fg-color: #190248;
-  --accent-color: #722EF9;
-  --border-color: #DDDDDD;
-  --input-color: #999999;
-  --small-font-size: 16px;
-  --normal-font-size: 20px;
-  --medium-font-size: 25px;
-  --large-font-size: 32px;
-  --extra-large-font-size: 41px;
+  --markiter-bg-color: #FFFFFF;
+  --markiter-alt-bg-color: #ECE4FE;
+  --markiter-fg-color: #190248;
+  --markiter-accent-color: #722EF9;
+  --markiter-border-color: #DDDDDD;
+  --markiter-input-color: #999999;
+  --markiter-small-font-size: 16px;
+  --markiter-normal-font-size: 20px;
+  --markiter-medium-font-size: 25px;
+  --markiter-large-font-size: 32px;
+  --markiter-extra-large-font-size: 41px;
 }
 
 .alignfull {
@@ -31,17 +31,17 @@
 }
 
 .editor-styles-wrapper {
-  color: var(--fg-color);
-  background-color: var(--bg-color);
+  color: var(--markiter-fg-color);
+  background-color: var(--markiter-bg-color);
 }
 .editor-styles-wrapper > * {
-  color: var(--fg-color);
+  color: var(--markiter-fg-color);
   font-family: "Quattrocento Sans", serif;
-  font-size: var(--normal-font-size);
+  font-size: var(--markiter-normal-font-size);
   line-height: 1.75;
 }
 .editor-styles-wrapper .editor-post-title__input {
-  font-size: var(--extra-large-font-size);
+  font-size: var(--markiter-extra-large-font-size);
 }
 .editor-styles-wrapper .wp-block {
   margin-bottom: 35px;
@@ -77,55 +77,55 @@
   padding: 35px !important;
 }
 .editor-styles-wrapper .has-bg-color {
-  color: var(--bg-color);
+  color: var(--markiter-bg-color);
 }
 .editor-styles-wrapper .has-bg-background-color {
-  background-color: var(--bg-color);
+  background-color: var(--markiter-bg-color);
 }
 .editor-styles-wrapper .has-alt-bg-color {
-  color: var(--alt-bg-color);
+  color: var(--markiter-alt-bg-color);
 }
 .editor-styles-wrapper .has-alt-bg-background-color {
-  background-color: var(--alt-bg-color);
+  background-color: var(--markiter-alt-bg-color);
 }
 .editor-styles-wrapper .has-fg-color {
-  color: var(--fg-color);
+  color: var(--markiter-fg-color);
 }
 .editor-styles-wrapper .has-fg-background-color {
-  background-color: var(--fg-color);
+  background-color: var(--markiter-fg-color);
 }
 .editor-styles-wrapper .has-accent-color {
-  color: var(--accent-color);
+  color: var(--markiter-accent-color);
 }
 .editor-styles-wrapper .has-accent-background-color {
-  background-color: var(--accent-color);
+  background-color: var(--markiter-accent-color);
 }
 .editor-styles-wrapper .has-border-color {
-  color: var(--border-color);
+  color: var(--markiter-border-color);
 }
 .editor-styles-wrapper .has-border-background-color {
-  background-color: var(--border-color);
+  background-color: var(--markiter-border-color);
 }
 .editor-styles-wrapper .has-input-color {
-  color: var(--input-color);
+  color: var(--markiter-input-color);
 }
 .editor-styles-wrapper .has-input-background-color {
-  background-color: var(--input-color);
+  background-color: var(--markiter-input-color);
 }
 .editor-styles-wrapper .has-small-font-size {
-  font-size: var(--small-font-size);
+  font-size: var(--markiter-small-font-size);
 }
 .editor-styles-wrapper .has-normal-font-size {
-  font-size: var(--normal-font-size);
+  font-size: var(--markiter-normal-font-size);
 }
 .editor-styles-wrapper .has-medium-font-size {
-  font-size: var(--medium-font-size);
+  font-size: var(--markiter-medium-font-size);
 }
 .editor-styles-wrapper .has-large-font-size {
-  font-size: var(--large-font-size);
+  font-size: var(--markiter-large-font-size);
 }
 .editor-styles-wrapper .has-extra-large-font-size {
-  font-size: var(--extra-large-font-size);
+  font-size: var(--markiter-extra-large-font-size);
 }
 
 .editor-styles-wrapper p.wp-block.has-drop-cap:not(:focus):first-letter {
@@ -149,20 +149,20 @@
   line-height: 1.25;
 }
 .editor-styles-wrapper h1.wp-block {
-  font-size: var(--extra-large-font-size) !important;
+  font-size: var(--markiter-extra-large-font-size) !important;
 }
 .editor-styles-wrapper h2.wp-block {
-  font-size: var(--large-font-size) !important;
+  font-size: var(--markiter-large-font-size) !important;
 }
 .editor-styles-wrapper h3.wp-block {
-  font-size: var(--medium-font-size) !important;
+  font-size: var(--markiter-medium-font-size) !important;
 }
 .editor-styles-wrapper h4.wp-block {
-  font-size: var(--normal-font-size) !important;
+  font-size: var(--markiter-normal-font-size) !important;
 }
 .editor-styles-wrapper h5.wp-block,
 .editor-styles-wrapper h6.wp-block {
-  font-size: var(--small-font-size) !important;
+  font-size: var(--markiter-small-font-size) !important;
 }
 
 .editor-styles-wrapper ol, .editor-styles-wrapper ul {
@@ -182,34 +182,33 @@
 }
 
 .editor-styles-wrapper blockquote.wp-block-quote, .editor-styles-wrapper blockquote.wp-block-quote.is-style-large {
-  background-color: var(--alt-bg-color);
-  border-left: none;
+  border-left: solid 0.25rem var(--markiter-alt-bg-color);
   border-right: none;
-  padding: 35px;
+  padding: 35px 0 35px 35px;
 }
 .editor-styles-wrapper blockquote.wp-block-quote p, .editor-styles-wrapper blockquote.wp-block-quote.is-style-large p {
   margin-bottom: 17.5px;
-  font-size: var(--normal-font-size);
+  font-size: var(--markiter-normal-font-size);
   font-style: normal;
 }
 .editor-styles-wrapper blockquote.wp-block-quote p:last-child, .editor-styles-wrapper blockquote.wp-block-quote.is-style-large p:last-child {
   margin-bottom: 0;
 }
 .editor-styles-wrapper blockquote.wp-block-quote .wp-block-quote__citation, .editor-styles-wrapper blockquote.wp-block-quote.is-style-large .wp-block-quote__citation {
-  color: var(--fg-color);
-  font-size: var(--small-font-size);
+  color: var(--markiter-fg-color);
+  font-size: var(--markiter-small-font-size);
   font-weight: bold;
 }
 .editor-styles-wrapper blockquote.wp-block-quote.is-style-large p {
-  font-size: var(--medium-font-size);
+  font-size: var(--markiter-medium-font-size);
 }
 
 .editor-styles-wrapper pre.wp-block-code code,
 .editor-styles-wrapper pre.wp-block-preformatted {
-  background-color: var(--alt-bg-color);
-  color: var(--fg-color);
+  background-color: var(--markiter-alt-bg-color);
+  color: var(--markiter-fg-color);
   font-family: "Courier New", "Courier", monospace;
-  font-size: var(--small-font-size);
+  font-size: var(--markiter-small-font-size);
   overflow-x: auto;
   padding: 35px;
 }
@@ -221,8 +220,8 @@
 .editor-styles-wrapper .wp-block-image figcaption,
 .editor-styles-wrapper .wp-block-video figcaption,
 .editor-styles-wrapper .wp-block-embed.is-type-video figcaption {
-  color: var(--fg-color);
-  font-size: var(--small-font-size);
+  color: var(--markiter-fg-color);
+  font-size: var(--markiter-small-font-size);
 }
 
 .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__content {
@@ -230,7 +229,7 @@
 }
 
 .editor-styles-wrapper .wp-block-cover.has-background-dim {
-  background-color: var(--fg-color);
+  background-color: var(--markiter-fg-color);
 }
 .editor-styles-wrapper .wp-block-cover .wp-block-group__inner-container {
   margin-left: auto;
@@ -274,9 +273,9 @@
   margin-bottom: 8px !important;
 }
 .editor-styles-wrapper .wp-block-button .wp-block-button__link {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  color: var(--bg-color);
+  background-color: var(--markiter-accent-color);
+  border-color: var(--markiter-accent-color);
+  color: var(--markiter-bg-color);
   border-width: 0.1rem;
   border-style: solid;
   border-radius: 0.2rem;
@@ -287,9 +286,9 @@
   width: auto;
 }
 .editor-styles-wrapper .wp-block-button .wp-block-button__link:active, .editor-styles-wrapper .wp-block-button .wp-block-button__link:focus, .editor-styles-wrapper .wp-block-button .wp-block-button__link:hover {
-  background-color: var(--fg-color);
-  border-color: var(--fg-color);
-  color: var(--bg-color);
+  background-color: var(--markiter-fg-color);
+  border-color: var(--markiter-fg-color);
+  color: var(--markiter-bg-color);
   border-width: 0.1rem;
   border-style: solid;
   border-radius: 0.2rem;
@@ -301,8 +300,8 @@
 }
 .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link {
   background-color: transparent;
-  border-color: var(--accent-color);
-  color: var(--accent-color);
+  border-color: var(--markiter-accent-color);
+  color: var(--markiter-accent-color);
   border-width: 0.1rem;
   border-style: solid;
   border-radius: 0.2rem;
@@ -313,9 +312,9 @@
   width: auto;
 }
 .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:active, .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:focus, .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:hover {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  color: var(--bg-color);
+  background-color: var(--markiter-accent-color);
+  border-color: var(--markiter-accent-color);
+  color: var(--markiter-bg-color);
   border-width: 0.1rem;
   border-style: solid;
   border-radius: 0.2rem;

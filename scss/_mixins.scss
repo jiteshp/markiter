@@ -60,12 +60,12 @@
 // Color mixins
 // -----------------------------------------------------------------------------
 @function get-color( $c ) {
-	@return var(--#{$c}-color);
+	@return var(--markiter-#{$c}-color);
 }
 
 //
 // Typography mixins
 // -----------------------------------------------------------------------------
 @function get-font-size( $fs ) {
-	@return var( --#{$fs}-font-size );
+	@return var( --markiter-#{$fs}-font-size );
 }

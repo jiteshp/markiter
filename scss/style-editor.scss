@@ -23,11 +23,11 @@ $font-sizes: (
 // -----------------------------------------------------------------------------
 :root {
 	@each $name, $value in $colors {
-		--#{$name}-color: #{$value};
+		--markiter-#{$name}-color: #{$value};
 	}
 
 	@each $name, $value in $font-sizes {
-		--#{$name}-font-size: #{$value};
+		--markiter-#{$name}-font-size: #{$value};
 	}
 }
 
@@ -221,10 +221,9 @@ $font-sizes: (
 	blockquote.wp-block-quote {
 		&,
 		&.is-style-large {
-			background-color: get-color( alt-bg );
-			border-left: none;
+			border-left: solid 0.25rem get-color( alt-bg );
 			border-right: none;
-			padding: $white-space;
+			padding: $white-space 0 $white-space $white-space;
 
 			p {
 				@include make-block( $white-space / 2 );

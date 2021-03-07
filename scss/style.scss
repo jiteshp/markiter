@@ -32,11 +32,11 @@
  */
 :root {
 	@each $name, $value in $colors {
-		--#{$name}-color: #{$value};
+		--markiter-#{$name}-color: #{$value};
 	}
 
 	@each $name, $value in $font-sizes {
-		--#{$name}-font-size: #{$value};
+		--markiter-#{$name}-font-size: #{$value};
 	}
 }
 
@@ -336,12 +336,19 @@
 }
 
 .entry-header,
-.entry-thumbnail,
 .entry-footer {
 	@include make-container( $container-max-width - $gutter-width, $gutter-width / 2 );
 
 	@include when-screen( md ) {
 		@include make-container( $container-max-width - $gutter-width, 0 );
+	}
+}
+
+.entry-thumbnail {
+	@include make-container( $container-wide-max-width - $gutter-width, $gutter-width / 2 );
+
+	@include when-screen( md ) {
+		@include make-container( $container-wide-max-width - $gutter-width, 0 );
 	}
 }
 

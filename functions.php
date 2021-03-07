@@ -22,7 +22,7 @@ function markiter_setup() {
 
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'responsive-embeds' );
-	add_theme_support( 'editor-color-palette', markiter_get_color_palette() );
+	add_theme_support( 'editor-color-palette', markiter_get_editor_color_palette() );
 	add_theme_support( 'editor-font-sizes', markiter_get_editor_font_sizes() );
 
 	add_theme_support(
@@ -141,7 +141,7 @@ add_action( 'enqueue_block_editor_assets', 'markiter_block_editor_styles' );
  * @return void
  */
 function markiter_custom_colors( $wp_customize ) {
-	$colors = markiter_get_color_palette();
+	$colors = markiter_get_default_color_palette();
 
 	foreach ( $colors as $color ) {
 		$wp_customize->add_setting(
@@ -173,14 +173,14 @@ add_action( 'customize_register', 'markiter_custom_colors' );
  */
 function markiter_custom_styles() {
 	$custom_style = '';
-	$colors = markiter_get_color_palette();
+	$colors = markiter_get_default_color_palette();
 
 	foreach ( $colors as $color ) {
 		$slug  = $color['slug'];
 		$value = get_theme_mod( $slug . '-color', $color['color'] );
 
 		$custom_style .= "
-			--$slug-color: $value;";
+			--markiter-$slug-color: $value;";
 	}
 
 	if ( ! empty( $custom_style ) ) {
@@ -256,20 +256,20 @@ function markiter_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'markiter_excerpt_more' );
 
 /**
- * Returns the customized color palette.
+ * Returns the editor color palette.
  *
  * @param  array $colors The default editor color palette
  * @return array
  */
-function markiter_customize_color_palette( $colors ) {
+function markiter_get_editor_color_palette() {
+	$colors = markiter_get_default_color_palette();
+
 	for ( $i = 0; $i < count( $colors ); $i++ ) {
 		$colors[ $i ]['color'] = get_theme_mod( $colors[ $i ]['slug'] . '-color', $colors[ $i ]['color'] );
 	}
 
 	return $colors;
 }
-
-add_filter( 'markiter_color_palette', 'markiter_customize_color_palette' );
 
 /**
  * Outputs the entry published and/or modified date.
@@ -332,9 +332,9 @@ function markiter_get_fonts_uri() {
  *
  * @return array
  */
-function markiter_get_color_palette() {
+function markiter_get_default_color_palette() {
 	return apply_filters(
-		'markiter_color_palette',
+		'markiter_default_color_palette',
 		array(
 			array(
 				'name'  => esc_html__( 'Background', 'markiter' ),

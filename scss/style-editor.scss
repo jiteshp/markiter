@@ -5,8 +5,8 @@
 // Override settings
 // -----------------------------------------------------------------------------
 $base-font-size: 20px;
-$container-max-width: 790px;
-$container-wide-max-width: 1290px;
+$container-max-width: 720px;
+$container-wide-max-width: 1200px;
 $white-space: $base-font-size * $base-line-height;
 $gutter-width: $white-space * 2;
 
@@ -300,7 +300,7 @@ $font-sizes: (
 			background-color: get-color( fg );
 		}
 
-		.wp-block-group__inner-container {
+		.wp-block-cover__inner-container {
 			@include make-container( $container-wide-max-width - $gutter-width, 0 );
 
 			.wp-block {
@@ -308,9 +308,30 @@ $font-sizes: (
 			}
 		}
 
+		.inner-container-320 & {
+			.wp-block-cover__inner-container {
+				@include make-container( 320px, 0 );
+			}
+		}
+
+		.inner-container-480 &,
+		.inner-container-xs & {
+			.wp-block-cover__inner-container {
+				@include make-container( 480px, 0 );
+			}
+		}
+
+		.inner-container-720 &,
 		.inner-container-sm & {
-			.wp-block-group__inner-container {
-				@include make-container( $container-max-width - $gutter-width, 0 );
+			.wp-block-cover__inner-container {
+				@include make-container( 720px, 0 );
+			}
+		}
+
+		.inner-container-960 &,
+		.inner-container-md & {
+			.wp-block-cover__inner-container {
+				@include make-container( 960px, 0 );
 			}
 		}
 	}
@@ -374,19 +395,28 @@ $font-sizes: (
 // -----------------------------------------------------------------------------
 .editor-styles-wrapper {
 	.wp-block-columns {
-		margin-bottom: 0 !important;
+		@include make-block( $white-space );
 	}
 
 	.wp-block-column {
-		margin-bottom: $white-space;
+		@include make-block( $white-space );
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
 
-		&:last-child {
+	@media ( min-width: 782px ) {
+		.wp-block-column {
 			margin-bottom: 0;
-		}
-
-		@media ( min-width: 782px ) {
-			margin-bottom: 0;
+			margin-left: $white-space;
 			margin-right: $white-space;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
 		}
 	}
 }
@@ -400,19 +430,40 @@ $font-sizes: (
 		.wp-block[data-align="full"] > &.has-background {
 			margin-bottom: 0;
 			margin-top: 0;
+		}
 
-			.wp-block-group__inner-container {
-				@include make-container( $container-wide-max-width - $gutter-width, 0 );
+		.wp-block-group__inner-container {
+			@include make-container( $container-wide-max-width - $gutter-width, 0 );
 
-				.wp-block {
-					max-width: none;
-				}
+			.wp-block {
+				max-width: none;
 			}
 		}
 
-		.inner-container-sm & {
+		&.inner-container-320 {
 			.wp-block-group__inner-container {
-				@include make-container( $container-wide-max-width, 0 );
+				@include make-container( 320px, 0 );
+			}
+		}
+
+		&.inner-container-480,
+		&.inner-container-xs {
+			.wp-block-group__inner-container {
+				@include make-container( 480px, 0 );
+			}
+		}
+
+		&.inner-container-720,
+		&.inner-container-sm {
+			.wp-block-group__inner-container {
+				@include make-container( 720px, 0 );
+			}
+		}
+
+		&.inner-container-960,
+		&.inner-container-md {
+			.wp-block-group__inner-container {
+				@include make-container( 960px, 0 );
 			}
 		}
 	}

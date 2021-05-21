@@ -63,7 +63,7 @@
  * -----------------------------------------------------------------------------
  */
 .has-background {
-	padding: $white-space !important;
+	padding: ( $gutter-width / 2 ) !important;
 }
 
 @each $name, $value in $colors {
@@ -195,9 +195,30 @@ figure.wp-block-image {
 		@include make-container( $container-wide-max-width - $gutter-width, 0 );
 	}
 
+	&.inner-container-320 {
+		.wp-block-cover__inner-container {
+			@include make-container( 320px, 0 );
+		}
+	}
+
+	&.inner-container-480,
+	&.inner-container-xs {
+		.wp-block-cover__inner-container {
+			@include make-container( 480px, 0 );
+		}
+	}
+
+	&.inner-container-720,
 	&.inner-container-sm {
 		.wp-block-cover__inner-container {
-			@include make-container( $container-max-width - $gutter-width, 0 );
+			@include make-container( 720px, 0 );
+		}
+	}
+
+	&.inner-container-960,
+	&.inner-container-md {
+		.wp-block-cover__inner-container {
+			@include make-container( 960px, 0 );
 		}
 	}
 }
@@ -240,15 +261,22 @@ figure.wp-block-image {
 	@include make-block( $white-space );
 
 	.wp-block-column {
-		margin-bottom: $white-space;
+		@include make-block( $white-space );
+	}
 
-		&:last-child {
+	@media ( min-width: 782px ) {
+		.wp-block-column {
 			margin-bottom: 0;
-		}
-
-		@media ( min-width: 782px ) {
-			margin-bottom: 0;
+			margin-left: $white-space;
 			margin-right: $white-space;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
 		}
 	}
 }
@@ -258,15 +286,35 @@ figure.wp-block-image {
 // -----------------------------------------------------------------------------
 .wp-block-group {
 	@include make-block( $white-space );
-	padding: $white-space;
 
 	.wp-block-group__inner-container {
 		@include make-container( $container-wide-max-width - $gutter-width, 0 );
 	}
 
+	&.inner-container-320 {
+		.wp-block-group__inner-container {
+			@include make-container( 320px, 0 );
+		}
+	}
+
+	&.inner-container-480,
+	&.inner-container-xs {
+		.wp-block-group__inner-container {
+			@include make-container( 480px, 0 );
+		}
+	}
+
+	&.inner-container-720,
 	&.inner-container-sm {
 		.wp-block-group__inner-container {
-			@include make-container( $container-max-width - $gutter-width, 0 );
+			@include make-container( 720px, 0 );
+		}
+	}
+
+	&.inner-container-960,
+	&.inner-container-md {
+		.wp-block-group__inner-container {
+			@include make-container( 960px, 0 );
 		}
 	}
 }

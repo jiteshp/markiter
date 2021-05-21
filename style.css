@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
  * Theme name: 		Markiter
- * Version:			2.2
+ * Version:			2.2.1
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -102,7 +102,6 @@ html {
   padding: 0.3375rem 0.9375rem;
   text-decoration: none;
   width: auto;
-  font-size: var(--markiter-small-font-size);
   line-height: 1.75;
 }
 .btn:hover, button[type=submit]:hover, input[type=submit]:hover {
@@ -121,7 +120,6 @@ html {
   padding: 0.3375rem 0.9375rem;
   text-decoration: none;
   width: auto;
-  font-size: var(--markiter-small-font-size);
   line-height: 1.75;
 }
 .btn-outline:hover, .more-link:hover, input[type=reset]:hover {
@@ -148,7 +146,7 @@ button, input, select, textarea {
   color: var(--markiter-fg-color);
   display: inline-block;
   font-family: "Quattrocento Sans", serif;
-  font-size: var(--markiter-small-font-size);
+  font-size: var(--markiter-normal-font-size);
   line-height: 1.75;
   padding: 0.4375rem 0.75rem;
   width: 100%;
@@ -195,6 +193,12 @@ textarea {
 .happyforms-part--width-auto + .happyforms-part--recaptcha + .happyforms-part--submit input[type=submit] {
   border-width: 0 !important;
   padding: 0.4375rem 0.75rem !important;
+}
+
+.happyforms-message-notices h2 {
+  font-size: var(--markiter-normal-font-size);
+  font-weight: normal;
+  line-height: 1.75;
 }
 
 /**
@@ -730,10 +734,31 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   padding-left: 0;
   padding-right: 0;
 }
-.wp-block-cover.inner-container-sm .wp-block-cover__inner-container {
+.wp-block-cover.inner-container-320 .wp-block-cover__inner-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 36rem;
+  max-width: 320px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.wp-block-cover.inner-container-480 .wp-block-cover__inner-container, .wp-block-cover.inner-container-xs .wp-block-cover__inner-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 480px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.wp-block-cover.inner-container-720 .wp-block-cover__inner-container, .wp-block-cover.inner-container-sm .wp-block-cover__inner-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.wp-block-cover.inner-container-960 .wp-block-cover__inner-container, .wp-block-cover.inner-container-md .wp-block-cover__inner-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
   padding-left: 0;
   padding-right: 0;
 }
@@ -813,13 +838,19 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 @media (min-width: 782px) {
   .wp-block-columns .wp-block-column {
     margin-bottom: 0;
+    margin-left: 1.75rem;
     margin-right: 1.75rem;
+  }
+  .wp-block-columns .wp-block-column:first-child {
+    margin-left: 0;
+  }
+  .wp-block-columns .wp-block-column:last-child {
+    margin-right: 0;
   }
 }
 
 .wp-block-group {
   margin-bottom: 1.75rem;
-  padding: 1.75rem;
 }
 .wp-block-group:last-child {
   margin-bottom: 0;
@@ -831,10 +862,31 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   padding-left: 0;
   padding-right: 0;
 }
-.wp-block-group.inner-container-sm .wp-block-group__inner-container {
+.wp-block-group.inner-container-320 .wp-block-group__inner-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 36rem;
+  max-width: 320px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.wp-block-group.inner-container-480 .wp-block-group__inner-container, .wp-block-group.inner-container-xs .wp-block-group__inner-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 480px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.wp-block-group.inner-container-720 .wp-block-group__inner-container, .wp-block-group.inner-container-sm .wp-block-group__inner-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.wp-block-group.inner-container-960 .wp-block-group__inner-container, .wp-block-group.inner-container-md .wp-block-group__inner-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
   padding-left: 0;
   padding-right: 0;
 }

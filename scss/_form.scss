@@ -4,7 +4,7 @@
  */
 .btn {
 	@include make-button( get-color( accent ), get-color( accent ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
-	font-size: get-font-size( small );
+	// font-size: get-font-size( small );
 	line-height: $base-line-height;
 
 	&:hover {
@@ -14,7 +14,7 @@
 
 .btn-outline {
 	@include make-button( transparent, get-color( accent ), $button-border-width, $button-border-radius, get-color( accent ), $button-padding-x, $button-padding-y );
-	font-size: get-font-size( small );
+	// font-size: get-font-size( small );
 	line-height: $base-line-height;
 
 	&:hover {
@@ -37,7 +37,7 @@ button, input, select, textarea {
 	color: get-color( fg );
 	display: inline-block;
 	font-family: $text-font;
-	font-size: get-font-size( small );
+	font-size: get-font-size( normal );
 	line-height: $base-line-height;
 	padding: $input-padding-y $input-padding-x;
 	width: 100%;
@@ -99,5 +99,13 @@ input[type=reset] {
 	input[type=submit] {
 		border-width: 0 !important;
 		padding: $input-padding-y $input-padding-x !important;
+	}
+}
+
+.happyforms-message-notices {
+	h2 {
+		font-size: get-font-size(normal);
+		font-weight: normal;
+		line-height: $base-line-height;
 	}
 }

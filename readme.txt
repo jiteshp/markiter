@@ -12,6 +12,10 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.2.1 =
+* Fixed column styles.
+* Fixed block editor styles.
+
 = 2.2 =
 * Enable post thumbnails.
 * Enable custom colors in block editor.

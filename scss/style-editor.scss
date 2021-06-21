@@ -400,11 +400,11 @@ $font-sizes: (
 
 	.wp-block-column {
 		@include make-block( $white-space );
-		margin-left: 0 !important;
-		margin-right: 0 !important;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
-	@media ( min-width: 782px ) {
+	@include when-screen( md ) {
 		.wp-block-column {
 			margin-bottom: 0;
 			margin-left: $white-space;

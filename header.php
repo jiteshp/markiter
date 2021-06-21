@@ -67,10 +67,10 @@
 </header>
 
 <?php
-if ( is_home() && is_active_sidebar( 'home' ) ) :
+if ( is_home() && is_active_sidebar( 'blog-hero' ) ) :
 	?>
 	<section class="home-widgets">
-		<?php dynamic_sidebar( 'home' )?>
+		<?php dynamic_sidebar( 'blog-hero' )?>
 	</section>
 	<?php
 endif;

@@ -354,13 +354,13 @@
 }
 .editor-styles-wrapper .wp-block-column {
   margin-bottom: 35px;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 .editor-styles-wrapper .wp-block-column:last-child {
   margin-bottom: 0;
 }
-@media (min-width: 782px) {
+@media (min-width: 768px) {
   .editor-styles-wrapper .wp-block-column {
     margin-bottom: 0;
     margin-left: 35px;

@@ -84,8 +84,8 @@ function markiter_sidebars() {
 	// Home widgets
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Home', 'markiter' ),
-			'id'            => 'home',
+			'name'          => esc_html__( 'Blog Hero', 'markiter' ),
+			'id'            => 'blog-hero',
 			'description'   => esc_html__( 'Displayed on the blog page.', 'markiter' ),
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',

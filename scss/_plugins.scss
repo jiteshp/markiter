@@ -1,0 +1,71 @@
+/**
+ * Happy forms styles
+ * -----------------------------------------------------------------------------
+ */
+.happyforms-part__label {
+	margin-bottom: 0 !important;
+}
+
+.happyforms-part--submit * {
+	margin-right: 0 !important;
+}
+
+.happyforms-form {
+	.hide-label {
+		.happyforms-part__label-container {
+			@extend .screen-reader-text;
+		}
+	}
+}
+
+.happyforms-part--width-auto + .happyforms-part--submit,
+.happyforms-part--width-auto + .happyforms-part--recaptcha + .happyforms-part--submit {
+	align-self: flex-start !important;
+
+	input[type=submit] {
+		border-width: 0 !important;
+		padding: $input-padding-y $input-padding-x !important;
+	}
+}
+
+.happyforms-message-notices {
+	h2 {
+		font-size: get-font-size(normal);
+		font-weight: normal;
+		line-height: $base-line-height;
+	}
+}
+
+/**
+ * Better click to tweet styles
+ * -----------------------------------------------------------------------------
+ */
+ .bctt-click-to-tweet {
+	border: solid 3px var( --markiter-alt-bg-color );
+	border-radius: 10px;
+	display: block;
+	padding: 1.75rem;
+	position: relative;
+
+	.bctt-ctt-text a {
+		color: var( --markiter-fg-color ) !important;
+		font-family: inherit !important;
+		font-size: var( --markiter-medium-font-size );
+		line-height: 1.75rem;
+	}
+
+	a.bctt-ctt-btn {
+		background-color: var( --markiter-alt-bg-color );
+		background-position: right 6px top 50%;
+		color: var( --markiter-fg-color ) !important;
+		display: block;
+		font-family: inherit !important;
+		letter-spacing: 1px;
+		line-height: 1em;
+		padding: 1em 2em 0.6em 1em;
+		padding-right: 2em;
+		position: absolute;
+		bottom: -1px;
+		right: -1px;
+	}
+}

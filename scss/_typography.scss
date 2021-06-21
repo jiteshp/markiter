@@ -62,7 +62,7 @@ dl {
 
 ol, ul {
 	list-style: decimal;
-	margin-left: $white-space;
+	padding-left: $white-space;
 
 	ol, ul {
 		margin-bottom: 0;
@@ -182,7 +182,7 @@ em {
 
 figcaption {
 	color: get-color( fg );
-	display: block;
+	display: block !important;
 	font-size: get-font-size( small );
 	padding: $white-space / 4;
 	text-align: center;
@@ -195,6 +195,12 @@ img {
 
 ins, u {
 	text-decoration: underline;
+}
+
+mark {
+	background-color: transparent;
+	background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(114,46,249,0.15) 70%);
+	font-weight: bold;
 }
 
 q {

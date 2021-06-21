@@ -165,11 +165,25 @@ figure.wp-block-image {
 	@include make-block( $white-space );
 
 	.wp-block-media-text__content {
-		padding: $white-space;
+		padding: 0;
 	}
 
-	&.has-background {
-		padding: 0 !important;
+	.wp-block-media-text__media {
+		margin-bottom: 1.75rem;
+	}
+
+	@include when-screen( md ) {
+		.wp-block-media-text__media {
+			margin-bottom: 0;
+			margin-right: 1.75rem;
+		}
+
+		&.has-media-on-the-right {
+			.wp-block-media-text__media {
+				margin-bottom: 0;
+				margin-left: 1.75rem;
+			}
+		}
 	}
 }
 
@@ -183,6 +197,7 @@ figure.wp-block-image {
 
 	&.has-background-dim {
 		background-color: get-color( fg );
+		color: get-color( bg );
 
 		@each $name, $value in $colors {
 			&.has-#{$name}-background-color {
@@ -264,7 +279,7 @@ figure.wp-block-image {
 		@include make-block( $white-space );
 	}
 
-	@media ( min-width: 782px ) {
+	@include when-screen( md ) {
 		.wp-block-column {
 			margin-bottom: 0;
 			margin-left: $white-space;

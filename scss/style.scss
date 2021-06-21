@@ -1,6 +1,6 @@
 /**
  * Theme name: 		Markiter
- * Version:			2.2.1
+ * Version:			2.3
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -8,7 +8,7 @@
  * Author URI: 		https://www.jiteshpatil.com/
  * License: 		GNU General Public License v2 or later
  * License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
- * Tested up to: 	5.6
+ * Tested up to: 	5.7.2
  * Requires PHP: 	7.1
  *
  * All files, unless otherwise stated, are released under the
@@ -25,6 +25,7 @@
 @import 'typography';
 @import 'a11y';
 @import 'wp';
+@import 'plugins';
 
 /**
  * Base styles
@@ -165,6 +166,7 @@
 		list-style: none;
 		margin-bottom: 0;
 		margin-top: 0;
+		padding-left: 0;
 		width: 100%;
 	}
 
@@ -200,11 +202,10 @@
 						border: solid get-color( fg );
 						border-width: 0 2px 2px 0;
 						content: '';
-						display: inline-block;
-						padding: 2px;
+						padding: 1.5px;
 						position: absolute;
-						right: $input-padding-x / 3;
-						top: 40%;
+						right: $input-padding-x / 2;
+						top: 42.5%;
 					}
 				}
 			}
@@ -249,8 +250,10 @@
 }
 
 .main-navigation .sub-menu {
+	padding-left: $white-space;
+
 	& > li {
-		border-top: 1px dotted get-color( border );
+		border-top: 1px solid get-color( bg );
 	}
 
 	@include when-screen( lg ) {
@@ -258,6 +261,7 @@
 		box-shadow: 0 3px 3px get-color( border );
 		left: -999em;
 		margin-left: 0;
+		padding-left: 0;
 		position: absolute;
 		top: 100%;
 		width: 240px;
@@ -422,6 +426,14 @@
 	h1, h2, h3, h4, h5, h6 {
 		margin-bottom: $white-space / 2;
 	}
+
+	ol, ul {
+		padding-left: $white-space;
+	}
+
+	address, blockquote, pre {
+		padding: $white-space;
+	}
 }
 
 .more-link {
@@ -450,10 +462,24 @@
  * -----------------------------------------------------------------------------
  */
 .home-widgets {
+	.widget-title {
+		@extend .screen-reader-text;
+	}
 }
 
 .footer-widgets {
 	border-bottom: 1px solid rgba( 255, 255, 255, 0.1 );
+	color: get-color( bg );
+	padding: $white-space;
+
+	a {
+		border-bottom-color: get-color( bg );
+		color: get-color( bg );
+	}
+
+	.widget-title {
+		@include make-block( $white-space / 4 );
+	}
 }
 
 /**

@@ -12,6 +12,9 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.3.1 =
+* Updated header nav and footer widget styles.
+
 = 2.3 =
 * Fixed media text block alignment issue.
 * Added styles for <mark> element.

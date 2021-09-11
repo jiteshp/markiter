@@ -1,6 +1,6 @@
 /**
  * Theme name: 		Markiter
- * Version:			2.3
+ * Version:			2.3.1
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -78,25 +78,19 @@
  * -----------------------------------------------------------------------------
  */
 .site-footer {
-	background-color: get-color( fg );
+	border: 1px solid get-color( border );
+	font-size: get-font-size( small );
+
+	a {
+		border-bottom: none;
+	}
 }
 
 .site-footer-wrap {
 	@include make-container( $container-wide-max-width, $gutter-width / 2 );
-	color: get-color( bg );
-	font-size: get-font-size( small );
 	padding-bottom: $white-space;
 	padding-top: $white-space;
 	text-align: center;
-
-	a {
-		border-bottom: 1px solid transparent;
-		color: get-color( bg );
-
-		&:hover {
-			border-bottom: 1px solid get-color( bg );
-		}
-	}
 }
 
 /**
@@ -154,7 +148,7 @@
  */
 .main-navigation {
 	display: none;
-	font-size: $base-font-size;
+	font-size: get-font-size( small );
 	margin-top: $white-space / 2;
 	width: 100%;
 
@@ -438,6 +432,7 @@
 
 .more-link {
 	@extend .btn-outline;
+	font-size: get-font-size( small );
 }
 
 .post-nav-links {
@@ -468,17 +463,20 @@
 }
 
 .footer-widgets {
-	border-bottom: 1px solid rgba( 255, 255, 255, 0.1 );
-	color: get-color( bg );
 	padding: $white-space;
-
-	a {
-		border-bottom-color: get-color( bg );
-		color: get-color( bg );
-	}
 
 	.widget-title {
 		@include make-block( $white-space / 4 );
+	}
+
+	.widget {
+		ol, ul {
+			list-style: none;
+		}
+
+		& > ol, & > ul {
+			padding-left: 0;
+		}
 	}
 }
 
@@ -596,6 +594,7 @@
 
 .comment-list {
 	margin-left: 0;
+	padding-left: 0;
 
 	&, .children {
 		list-style: none;

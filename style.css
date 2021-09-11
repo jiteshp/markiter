@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
  * Theme name: 		Markiter
- * Version:			2.3
+ * Version:			2.3.1
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -1000,7 +1000,11 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
  * -----------------------------------------------------------------------------
  */
 .site-footer {
-  background-color: var(--markiter-fg-color);
+  border: 1px solid var(--markiter-border-color);
+  font-size: var(--markiter-small-font-size);
+}
+.site-footer a {
+  border-bottom: none;
 }
 
 .site-footer-wrap {
@@ -1009,18 +1013,9 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   max-width: 63.5rem;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
-  color: var(--markiter-bg-color);
-  font-size: var(--markiter-small-font-size);
   padding-bottom: 1.75rem;
   padding-top: 1.75rem;
   text-align: center;
-}
-.site-footer-wrap a {
-  border-bottom: 1px solid transparent;
-  color: var(--markiter-bg-color);
-}
-.site-footer-wrap a:hover {
-  border-bottom: 1px solid var(--markiter-bg-color);
 }
 
 /**
@@ -1077,7 +1072,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
  */
 .main-navigation {
   display: none;
-  font-size: 100%;
+  font-size: var(--markiter-small-font-size);
   margin-top: 0.875rem;
   width: 100%;
 }
@@ -1339,6 +1334,10 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   padding: 1.75rem;
 }
 
+.more-link {
+  font-size: var(--markiter-small-font-size);
+}
+
 .post-nav-links {
   clear: both;
 }
@@ -1363,19 +1362,19 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
  * -----------------------------------------------------------------------------
  */
 .footer-widgets {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--markiter-bg-color);
   padding: 1.75rem;
-}
-.footer-widgets a {
-  border-bottom-color: var(--markiter-bg-color);
-  color: var(--markiter-bg-color);
 }
 .footer-widgets .widget-title {
   margin-bottom: 0.4375rem;
 }
 .footer-widgets .widget-title:last-child {
   margin-bottom: 0;
+}
+.footer-widgets .widget ol, .footer-widgets .widget ul {
+  list-style: none;
+}
+.footer-widgets .widget > ol, .footer-widgets .widget > ul {
+  padding-left: 0;
 }
 
 /**
@@ -1492,6 +1491,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 
 .comment-list {
   margin-left: 0;
+  padding-left: 0;
 }
 .comment-list, .comment-list .children {
   list-style: none;

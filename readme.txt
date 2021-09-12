@@ -12,6 +12,10 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.3.2 =
+* Fixed site brand to display custom logo with site title and description.
+* Fixed footer border.
+
 = 2.3.1 =
 * Updated header nav and footer widget styles.
 

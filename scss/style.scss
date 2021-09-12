@@ -1,6 +1,6 @@
 /**
  * Theme name: 		Markiter
- * Version:			2.3.1
+ * Version:			2.3.2
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -78,7 +78,7 @@
  * -----------------------------------------------------------------------------
  */
 .site-footer {
-	border: 1px solid get-color( border );
+	border-top: 1px solid get-color( border );
 	font-size: get-font-size( small );
 
 	a {
@@ -98,6 +98,10 @@
  * -----------------------------------------------------------------------------
  */
 .brand {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+
 	a {
 		border-bottom: none;
 	}
@@ -121,6 +125,7 @@
 
 .custom-logo {
 	display: block;
+	margin-right: $white-space / 4;
 }
 
 /**

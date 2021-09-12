@@ -27,26 +27,28 @@
 <header id="header" class="site-header" role="banner">
 	<div class="site-header-wrap">
 		<div class="brand">
-			<?php
-			the_custom_logo();
+			<?php the_custom_logo(); ?>
 
-			if ( is_home() && is_front_page() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<div class="brand-text">
 				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
+				if ( is_home() && is_front_page() ) :
+					?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php
+				else :
+					?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php
+				endif;
 
-			$markiter_description = get_bloginfo( 'description', 'display' );
-			if ( $markiter_description || is_customize_preview() ) :
+				$markiter_description = get_bloginfo( 'description', 'display' );
+				if ( $markiter_description || is_customize_preview() ) :
+					?>
+					<p class="site-description"><?php echo esc_html( $markiter_description ); ?></p>
+					<?php
+				endif;
 				?>
-				<p class="site-description"><?php echo esc_html( $markiter_description ); ?></p>
-				<?php
-			endif;
-			?>
+			</div><!-- .brand-text -->
 		</div><!-- .brand -->
 
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>

@@ -30,7 +30,7 @@ function markiter_setup() {
 		array(
 			'flex-height' => true,
 			'flex-width'  => true,
-			'header-text' => array( 'site-title', 'site-description' ),
+			'header-text' => array( 'brand-text' ),
 			'height'      => 68,
 			'width'       => 150,
 		)

@@ -666,10 +666,7 @@
 	padding: $white-space;
 
 	.search-form {
-		align-items: center;
 		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
 
 		input[type=submit] {
 			margin-left: 10px;

@@ -1561,10 +1561,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   padding: 1.75rem;
 }
 .page-not-found .search-form {
-  align-items: center;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
 }
 .page-not-found .search-form input[type=submit] {
   margin-left: 10px;

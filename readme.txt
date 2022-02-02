@@ -12,6 +12,10 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.3.3 =
+* Reduce wide alignment length from 1200px to 960px.
+* Improved spacing between logo image and logo text.
+
 = 2.3.2 =
 * Fixed site brand to display custom logo with site title and description.
 * Fixed footer border.

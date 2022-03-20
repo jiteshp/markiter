@@ -14,7 +14,8 @@ $colors: (
 // Typography settings
 // -----------------------------------------------------------------------------
 $code-font: 'Courier New', 'Courier', monospace;
-$text-font: 'Quattrocento Sans', serif;
+$heading-font: 'Francois One', serif;
+$text-font: 'Inter', sans-serif;
 
 $base-font-size: 100%;
 $base-font-size-md: 125%;
@@ -28,7 +29,7 @@ $font-sizes: (
 	normal: 1rem,
 	medium: 1.25rem,
 	large: 1.6rem,
-	extra-large: 2.05rem,
+	extra-large: 2.35rem,
 );
 
 //

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
  * Theme name: 		Markiter
- * Version:			2.3.2
+ * Version:			2.3.4
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -145,7 +145,7 @@ button, input, select, textarea {
   border-radius: 0.2rem;
   color: var(--markiter-fg-color);
   display: inline-block;
-  font-family: "Quattrocento Sans", serif;
+  font-family: "Inter", sans-serif;
   font-size: var(--markiter-normal-font-size);
   line-height: 1.75;
   padding: 0.4375rem 0.75rem;
@@ -189,7 +189,7 @@ textarea {
 body {
   background-color: var(--markiter-bg-color);
   color: var(--markiter-fg-color);
-  font-family: "Quattrocento Sans", serif;
+  font-family: "Inter", sans-serif;
   font-size: var(--markiter-normal-font-size);
   line-height: 1.75;
 }
@@ -275,7 +275,7 @@ figure img, .wp-caption img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
+  font-family: "Francois One", serif;
 }
 
 h1, h2, h3 {
@@ -323,7 +323,7 @@ table td, table th {
  * -----------------------------------------------------------------------------
  */
 a {
-  border-bottom: 1px solid var(--markiter-accent-color);
+  border-bottom: 2px solid var(--markiter-accent-color);
   color: var(--markiter-accent-color);
   text-decoration: none;
 }
@@ -955,7 +955,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   --markiter-normal-font-size: 1rem;
   --markiter-medium-font-size: 1.25rem;
   --markiter-large-font-size: 1.6rem;
-  --markiter-extra-large-font-size: 2.05rem;
+  --markiter-extra-large-font-size: 2.35rem;
 }
 
 /**
@@ -1000,7 +1000,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
  * -----------------------------------------------------------------------------
  */
 .site-footer {
-  border-top: 1px solid var(--markiter-border-color);
+  background-color: var(--markiter-alt-bg-color);
   font-size: var(--markiter-small-font-size);
 }
 .site-footer a {
@@ -1037,8 +1037,8 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 }
 
 .site-title {
+  font-family: "Francois One", serif;
   font-size: var(--markiter-large-font-size);
-  font-weight: bold;
   line-height: 1.25;
 }
 
@@ -1095,6 +1095,9 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .main-navigation li {
   margin-bottom: 0;
   margin-top: 0;
+}
+.main-navigation li.current-menu-item > a, .main-navigation li.current-menu-parent > a {
+  font-weight: bold;
 }
 .main-navigation a {
   border-bottom: none;
@@ -1368,19 +1371,50 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
  * -----------------------------------------------------------------------------
  */
 .footer-widgets {
+  border-bottom: dotted 1px var(--markiter-bg-color);
   padding: 1.75rem;
+  padding-top: 3.5rem;
 }
-.footer-widgets .widget-title {
+@media (min-width: 768px) {
+  .footer-widgets .footer-widgets-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 63.5rem;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.footer-widgets .widget-title, .footer-widgets h1, .footer-widgets h2, .footer-widgets h3, .footer-widgets h4, .footer-widgets h5, .footer-widgets h6 {
   margin-bottom: 0.4375rem;
+  font-size: var(--markiter-medium-font-size);
 }
-.footer-widgets .widget-title:last-child {
+.footer-widgets .widget-title:last-child, .footer-widgets h1:last-child, .footer-widgets h2:last-child, .footer-widgets h3:last-child, .footer-widgets h4:last-child, .footer-widgets h5:last-child, .footer-widgets h6:last-child {
   margin-bottom: 0;
+}
+.footer-widgets .widget {
+  margin-bottom: 1.75rem;
+}
+.footer-widgets .widget:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .footer-widgets .widget {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin-right: 1.75rem;
+  }
+  .footer-widgets .widget:last-child {
+    margin-right: 0;
+  }
 }
 .footer-widgets .widget ol, .footer-widgets .widget ul {
   list-style: none;
-}
-.footer-widgets .widget > ol, .footer-widgets .widget > ul {
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /**
@@ -1390,9 +1424,9 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .pagination {
   margin-left: auto;
   margin-right: auto;
-  max-width: 36rem;
-  padding-left: 0;
-  padding-right: 0;
+  max-width: 39.5rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
 }
 .pagination .page-numbers {
   background-color: var(--markiter-alt-bg-color);

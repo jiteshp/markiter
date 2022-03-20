@@ -13,7 +13,9 @@
 	if ( ! is_page_template( 'no-header-page.php' ) && is_active_sidebar( 'footer' ) ) :
 	 	?>
 	 	<aside class="footer-widgets" role="complementary">
-	 		<?php dynamic_sidebar( 'footer' )?>
+			<div class="footer-widgets-wrap">
+	 			<?php dynamic_sidebar( 'footer' )?>
+			</div>
 	 	</aside>
 	 	<?php
 	 endif;

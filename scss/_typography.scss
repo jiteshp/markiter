@@ -91,7 +91,7 @@ figure {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: bold;
+	font-family: $heading-font;
 }
 
 h1, h2, h3 {
@@ -140,7 +140,7 @@ table {
  * -----------------------------------------------------------------------------
  */
 a {
-	border-bottom: 1px solid get-color( accent );
+	border-bottom: 2px solid get-color( accent );
 	color: get-color( accent );
 	text-decoration: none;
 

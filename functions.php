@@ -107,7 +107,7 @@ function markiter_enqueue_scripts() {
 	$version = wp_get_theme()->get( 'Version' );
 
 	wp_enqueue_style( 'markiter-style', get_stylesheet_uri(), $dependancies, $version );
-	wp_enqueue_style( 'markiter-fonts', markiter_get_fonts_uri(), $dependancies, $version );
+	wp_enqueue_style( 'markiter-fonts', markiter_get_fonts_uri(), $dependancies, null );
 
 	if ( has_nav_menu( 'primary' ) ) {
 		wp_enqueue_script( 'markiter-navigation-menu', get_template_directory_uri() . '/js/navigation.js', array(), $version, true );
@@ -128,7 +128,7 @@ add_action( 'wp_enqueue_scripts', 'markiter_enqueue_scripts' );
 function markiter_block_editor_styles() {
 	$version = wp_get_theme()->get( 'Version' );
 
-	wp_enqueue_style( 'markiter-block-editor-fonts', markiter_get_fonts_uri(), array(), $version, 'all' );
+	wp_enqueue_style( 'markiter-block-editor-fonts', markiter_get_fonts_uri(), array(), null, 'all' );
 	wp_enqueue_style( 'markiter-block-editor-style', get_theme_file_uri( 'style-editor.css' ), array(), $version, 'all' );
 }
 
@@ -310,21 +310,12 @@ function markiter_get_the_date() {
  * @return string
  */
 function markiter_get_fonts_uri() {
-	$font_families = apply_filters(
-		'markiter_fonts_uri',
-		array(
-			'Quattrocento Sans:ital,wght@0,400;0,700;1,400;1,700',
+	return esc_url_raw(
+		apply_filters(
+			'markiter_font_source_url',
+			'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Francois+One&display=swap'
 		)
 	);
-
-	$query_args = array(
-		'family' => urlencode( implode( '|', $font_families ) ),
-		'subset' => urlencode( 'latin,latin-ext' ),
-	);
-
-	$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css2' );
-
-	return esc_url_raw( $fonts_url );
 }
 
 /**

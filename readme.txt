@@ -12,6 +12,10 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.3.4 =
+* Footer widgets styling fixes.
+* Changed typography.
+
 = 2.3.3 =
 * Reduce wide alignment length from 1200px to 960px.
 * Improved spacing between logo image and logo text.

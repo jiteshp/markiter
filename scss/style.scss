@@ -1,6 +1,6 @@
 /**
  * Theme name: 		Markiter
- * Version:			2.3.3
+ * Version:			2.3.4
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -78,7 +78,7 @@
  * -----------------------------------------------------------------------------
  */
 .site-footer {
-	border-top: 1px solid get-color( border );
+	background-color: get-color( alt-bg );
 	font-size: get-font-size( small );
 
 	a {
@@ -113,8 +113,8 @@
 }
 
 .site-title {
+	font-family: $heading-font;
 	font-size: get-font-size( large );
-	font-weight: bold;
 	line-height: $heading-line-height;
 }
 
@@ -172,6 +172,11 @@
 	li {
 		margin-bottom: 0;
 		margin-top: 0;
+
+		&.current-menu-item > a,
+		&.current-menu-parent > a {
+			font-weight: bold;
+		}
 	}
 
 	a {
@@ -468,19 +473,42 @@
 }
 
 .footer-widgets {
+	border-bottom: dotted 1px get_color( bg );
 	padding: $white-space;
+	padding-top: $white-space * 2;
 
-	.widget-title {
+	.footer-widgets-wrap {
+		@include when-screen( md ) {
+			@include make-container( $container-extra-wide-max-width, $gutter-width / 2 );
+			align-items: flex-start;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	.widget-title, h1, h2, h3, h4, h5, h6 {
 		@include make-block( $white-space / 4 );
+		font-size: get-font-size( medium );
 	}
 
 	.widget {
-		ol, ul {
-			list-style: none;
+		@include make-block( $white-space );
+
+		@include when-screen( md ) {
+			flex-basis: 0;
+			flex-grow: 1;
+			margin-right: $white-space;
+
+			&:last-child {
+				margin-right: 0;
+			}
 		}
 
-		& > ol, & > ul {
-			padding-left: 0;
+		ol, ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
 		}
 	}
 }
@@ -490,7 +518,7 @@
  * -----------------------------------------------------------------------------
  */
 .pagination {
-	@include make-container( $container-max-width - $gutter-width, 0 );
+	@include make-container( $container-max-width, $white-space );
 
 	.page-numbers {
 		background-color: get-color( alt-bg );

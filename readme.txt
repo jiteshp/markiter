@@ -12,6 +12,10 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.4 =
+* Topic-cluster/Guide page template.
+* Improved post content typography and list styles.
+
 = 2.3.4 =
 * Footer widgets styling fixes.
 * Changed typography.

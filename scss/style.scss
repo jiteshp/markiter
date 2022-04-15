@@ -1,6 +1,6 @@
 /**
  * Theme name: 		Markiter
- * Version:			2.3.4
+ * Version:			2.4
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -51,12 +51,20 @@
 }
 
 .site-header-wrap {
-	@include make-container( $container-extra-wide-max-width, $gutter-width / 2 );
+	@include make-container( 100%, $gutter-width / 2 );
 	align-items: center;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
+
+	@include when-screen( md ) {
+		@include make-container( $container-max-width - $gutter-width, 0 );
+	}
+
+	@include when-screen( lg ) {
+		@include make-container( $container-extra-wide-max-width, $gutter-width / 2 );
+	}
 }
 
 /**
@@ -78,7 +86,7 @@
  * -----------------------------------------------------------------------------
  */
 .site-footer {
-	background-color: get-color( alt-bg );
+	background-color: get-color( bg );
 	font-size: get-font-size( small );
 
 	a {
@@ -87,10 +95,18 @@
 }
 
 .site-footer-wrap {
-	@include make-container( $container-extra-wide-max-width, $gutter-width / 2 );
+	@include make-container( 100%, $gutter-width / 2 );
 	padding-bottom: $white-space;
 	padding-top: $white-space;
 	text-align: center;
+
+	@include when-screen( md ) {
+		@include make-container( $container-max-width - $gutter-width, 0 );
+	}
+
+	@include when-screen( lg ) {
+		@include make-container( $container-extra-wide-max-width, $gutter-width / 2 );
+	}
 }
 
 /**
@@ -226,7 +242,7 @@
 	margin-left: 0;
 
 	& > li {
-		border-bottom: 1px dotted get-color( border );
+		border-bottom: 1px solid get-color( alt-bg );
 
 		&.focus,
 		&:hover {
@@ -257,7 +273,11 @@
 	padding-left: $white-space;
 
 	& > li {
-		border-top: 1px solid get-color( bg );
+		border-top: 1px solid get-color( alt-bg );
+
+		@include when-screen( lg ) {
+			border-top-color: get-color( bg );
+		}
 	}
 
 	@include when-screen( lg ) {
@@ -420,7 +440,7 @@
 	@include clear-floats();
 
 	& > * {
-		@include make-container( $container-max-width - $gutter-width, $gutter-width / 2 );
+		@include make-container( 100%, $gutter-width / 2 );
 
 		@include when-screen( md ) {
 			@include make-container( $container-max-width - $gutter-width, 0 );
@@ -429,10 +449,45 @@
 
 	h1, h2, h3, h4, h5, h6 {
 		margin-bottom: $white-space / 2;
+		margin-top: $white-space * 1.5;
 	}
 
 	ol, ul {
-		padding-left: $white-space;
+		list-style: none;
+		padding-left: $white-space * 2;
+
+		ol, ul {
+			padding-left: $white-space;
+		}
+
+		li {
+			margin: $white-space 0;
+			position: relative;
+			padding-left: $white-space * 0.5;
+
+			&:before {
+				color: get-color( accent );
+				left: $white-space * -0.5;
+				position: absolute;
+			}
+		}
+	}
+
+	ul {
+		li:before {
+			content: '\2794';
+		}
+	}
+
+	ol {
+		counter-reset: entry-content-list;
+
+		li:before {
+			content: '\2794';
+			content: counter( entry-content-list ) ".";
+			counter-increment: entry-content-list;
+			font-weight: bold;
+		}
 	}
 
 	address, blockquote, pre {
@@ -473,17 +528,23 @@
 }
 
 .footer-widgets {
-	border-bottom: dotted 1px get_color( bg );
-	padding: $white-space;
-	padding-top: $white-space * 2;
+	border-bottom: 1px dotted get_color( alt-bg );
+	border-top: 1px solid get_color( alt-bg );
+	padding: ( $white-space * 2 ) 0 $white-space 0;
 
 	.footer-widgets-wrap {
+		@include make-container( 100%, $gutter-width / 2 );
+
 		@include when-screen( md ) {
-			@include make-container( $container-extra-wide-max-width, $gutter-width / 2 );
+			@include make-container( $container-max-width - $gutter-width, 0 );
 			align-items: flex-start;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
+		}
+
+		@include when-screen( lg ) {
+			@include make-container( $container-extra-wide-max-width, $gutter-width / 2 );
 		}
 	}
 
@@ -540,8 +601,8 @@
 	@extend .alignwide;
 	@include make-block( $white-space * 2 );
 	@include make-container( $container-wide-max-width - $gutter-width, 0 );
-	border-bottom: 1px solid get-color( border );
-	border-top: 1px solid get-color( border );
+	border-bottom: 1px solid get-color( alt-bg );
+	border-top: 1px solid get-color( alt-bg );
 	padding: $white-space;
 
 	.nav-links {
@@ -601,7 +662,7 @@
 		}
 
 		.nav-previous {
-			border-right: 1px solid get-color( border );
+			border-right: 1px solid get-color( alt-bg );
 			padding-right: $white-space;
 			text-align: left;
 		}
@@ -622,7 +683,11 @@
  * -----------------------------------------------------------------------------
  */
 .comments-area {
-	@include make-container( $container-max-width, $gutter-width / 2 );
+	@include make-container( 100%, $gutter-width / 2 );
+
+	@include when-screen( md ) {
+		@include make-container( $container-max-width - $gutter-width, 0 );
+	}
 }
 
 .comment-list {
@@ -635,7 +700,7 @@
 }
 
 .comment-body {
-	border: 1px solid get-color( border );
+	border: 1px solid get-color( alt-bg );
 	padding: $white-space;
 }
 
@@ -674,7 +739,7 @@
 }
 
 .comment-respond {
-	border: 1px solid get-color( border );
+	border: 1px solid get-color( alt-bg );
 	padding: $white-space;
 
 	.comment & {
@@ -747,5 +812,103 @@
 .page-template-no-header-page {
 	.site-header {
 		display: none;
+	}
+}
+
+/**
+ * Guide page template styles
+ * -----------------------------------------------------------------------------
+ */
+.page-template-guide-page {
+	.entry-header {
+		margin-bottom: $white-space * 2;
+		text-align: center;
+
+		&:after {
+			border-bottom: 4px solid get-color( fg );
+			content: '';
+			display: block;
+			margin: $white-space auto;
+			max-width: $white-space * 2;
+		}
+
+		.guide-title {
+			letter-spacing: 1px;
+			margin-bottom: $white-space / 4;
+			text-transform: uppercase;
+		}
+	}
+
+	.entry-content-wrap {
+		@include when-screen( lg ) {
+			@include make-container( $container-extra-wide-max-width, $gutter-width / 2 );
+			align-items: flex-start;
+			display: flex;
+			flex-direction: row-reverse;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+		}
+	}
+
+	.guide-nav-menu {
+		@include make-container( 100%, $gutter-width / 2 );
+		font-size: get-font-size( small );
+
+		@include when-screen( md ) {
+			@include make-container( $container-max-width, $gutter-width / 2 );
+		}
+
+		@include when-screen( lg ) {
+			margin-left: 0;
+			margin-right: $gutter-width;
+			max-width: none;
+			position: sticky;
+			padding: 0;
+			top: 32px;
+		}
+
+		h4 {
+			margin-bottom: $white-space / 2;
+
+			a {
+				border-bottom: none;
+			}
+		}
+
+		ol {
+			counter-reset: guide-menu;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				border-top: 1px dotted get-color( alt-bg );
+				margin: 0;
+				padding: $white-space / 2;
+				padding-left: 2.5em;
+				position: relative;
+
+				&:before {
+					content: counter( guide-menu ) ".";
+					counter-increment: guide-menu;
+					display: inline-block;
+					left: 0;
+					margin-right: 0.5em;
+					position: absolute;
+					text-align: right;
+					width: 2em;
+				}
+
+				&.current-guide-page-item {
+					border-left: 4px solid get-color( alt-bg );
+					font-weight: bold;
+				}
+			}
+
+			a {
+				border-bottom: none;
+				display: block;
+			}
+		}
 	}
 }

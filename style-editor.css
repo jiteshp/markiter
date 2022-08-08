@@ -207,7 +207,7 @@
 .editor-styles-wrapper pre.wp-block-preformatted {
   background-color: var(--markiter-alt-bg-color);
   color: var(--markiter-fg-color);
-  font-family: "Courier New", "Courier", monospace;
+  font-family: "Consolas", "Courier New", "Courier", monospace;
   font-size: var(--markiter-small-font-size);
   overflow-x: auto;
   padding: 35px;

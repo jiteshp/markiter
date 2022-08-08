@@ -333,3 +333,43 @@ figure.wp-block-image {
 		}
 	}
 }
+
+//
+// Separator block styles
+// -----------------------------------------------------------------------------
+.wp-block-separator {
+	@extend hr;
+	margin-left: auto;
+	margin-right: auto;
+
+	&.is-style-wide {
+		max-width: none !important;
+	}
+
+	&.is-style-dots:before {
+		font-family: $text-font;
+		font-size: get-font-size( extra-large );
+		letter-spacing: 1rem;
+	}
+}
+
+//
+// Search form styles
+// -----------------------------------------------------------------------------
+.search-form {
+	display: flex;
+	flex-direction: column;
+
+	@include when-screen( sm ) {
+		flex-direction: row;
+	}
+
+	label {
+		margin-bottom: 0.5rem;
+
+		@include when-screen( sm ) {
+			margin-bottom: 0;
+			margin-right: 0.5rem;
+		}
+	}
+}

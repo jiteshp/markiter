@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
  * Theme name: 		Markiter
- * Version:			2.4
+ * Version:			2.4.1
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -206,6 +206,7 @@ figure,
 .wp-caption,
 h1, h2, h3, h4, h5, h6,
 hr,
+.wp-block-separator,
 p,
 pre,
 table {
@@ -218,6 +219,7 @@ figure:last-child,
 .wp-caption:last-child,
 h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child,
 hr:last-child,
+.wp-block-separator:last-child,
 p:last-child,
 pre:last-child,
 table:last-child {
@@ -236,7 +238,7 @@ blockquote {
 }
 
 pre {
-  font-family: "Courier New", "Courier", monospace;
+  font-family: "Consolas", "Courier New", "Courier", monospace;
   font-size: 100%;
   overflow: auto;
 }
@@ -261,8 +263,8 @@ ol ol, ol ul, ul ol, ul ul {
   margin-top: 0;
 }
 ol li, ul li {
-  margin-bottom: 0.4375rem;
-  margin-top: 0.4375rem;
+  margin-bottom: 0.875rem;
+  margin-top: 0.875rem;
 }
 
 ul {
@@ -307,7 +309,7 @@ h5, h6 {
   font-size: var(--markiter-small-font-size);
 }
 
-hr {
+hr, .wp-block-separator {
   border: 0;
   border-bottom: 0.2rem solid var(--markiter-fg-color);
 }
@@ -315,11 +317,15 @@ hr {
 table {
   border: 0.05rem solid var(--markiter-alt-bg-color);
   border-collapse: collapse;
+  font-size: var(--markiter-small-font-size);
   width: 100%;
 }
 table td, table th {
   border: 0.05rem solid var(--markiter-alt-bg-color);
   padding: 0.875rem;
+}
+table th {
+  font-weight: bold;
 }
 
 /**
@@ -352,7 +358,7 @@ cite {
 code, kbd, tt, var {
   background-color: var(--markiter-alt-bg-color);
   display: inline-block;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: "Consolas", "Courier New", "Courier", monospace;
   font-size: 100%;
   padding: 3px 6px;
 }
@@ -380,12 +386,15 @@ img {
 }
 
 ins, u {
-  text-decoration: underline;
+  border-bottom: 0.2rem solid #f5c000;
+  font-weight: bold;
+  padding-bottom: 0.1rem;
+  text-decoration: none;
 }
 
 mark {
   background-color: transparent;
-  background-image: linear-gradient(rgba(0, 0, 0, 0) 30%, rgba(114, 46, 249, 0.15) 70%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 30%, #f5c00033 70%);
   font-weight: bold;
 }
 
@@ -415,6 +424,22 @@ sub {
 
 sup {
   top: -0.5em;
+}
+
+/**
+ * No margin styles
+ * -----------------------------------------------------------------------------
+ */
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.no-margin-top {
+  margin-top: 0 !important;
 }
 
 /**
@@ -882,6 +907,38 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   max-width: 960px;
   padding-left: 0;
   padding-right: 0;
+}
+
+.wp-block-separator {
+  margin-left: auto;
+  margin-right: auto;
+}
+.wp-block-separator.is-style-wide {
+  max-width: none !important;
+}
+.wp-block-separator.is-style-dots:before {
+  font-family: "Inter", sans-serif;
+  font-size: var(--markiter-extra-large-font-size);
+  letter-spacing: 1rem;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 576px) {
+  .search-form {
+    flex-direction: row;
+  }
+}
+.search-form label {
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 576px) {
+  .search-form label {
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+  }
 }
 
 /**
@@ -1390,7 +1447,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   padding-left: 1.75rem;
 }
 .entry-content ol li, .entry-content ul li {
-  margin: 1.75rem 0;
+  margin: 0.875rem 0;
   position: relative;
   padding-left: 0.875rem;
 }
@@ -1442,6 +1499,10 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
  * Widget area styles
  * -----------------------------------------------------------------------------
  */
+.home-widgets h1, .home-widgets h2, .home-widgets h3, .home-widgets h4, .home-widgets h5, .home-widgets h6 {
+  margin-bottom: 0.875rem;
+}
+
 .footer-widgets {
   border-bottom: 1px dotted var(--markiter-alt-bg-color);
   border-top: 1px solid var(--markiter-alt-bg-color);
@@ -1690,12 +1751,6 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
  */
 .page-not-found {
   padding: 1.75rem;
-}
-.page-not-found .search-form {
-  display: flex;
-}
-.page-not-found .search-form input[type=submit] {
-  margin-left: 10px;
 }
 
 /**

@@ -130,17 +130,21 @@ hr {
 }
 
 table {
-	border: $table-border-width solid get-color( alt-bg );
+	border: $table-border-width solid get-color( bg );
 	border-collapse: collapse;
-	font-size: get-font-size( small );
 	width: 100%;
 
 	td, th {
-		border: $table-border-width solid get-color( alt-bg );
-		padding: $white-space / 2;
+		border: $table-border-width solid get-color( bg );
+		padding: ( $white-space / 4 ) ( $white-space / 2 );
+	}
+
+	td {
+		background-color: get-color( alt-bg-light );
 	}
 
 	th {
+		background-color: get-color( alt-bg );
 		font-weight: bold;
 	}
 }

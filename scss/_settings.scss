@@ -4,6 +4,7 @@
 $colors: (
 	bg: #FFFFFF,
 	alt-bg: #ECE4FE,
+	alt-bg-light: #ECE4FE99,
 	fg: #190248,
 	accent: #722EF9,
 	border: #DDDDDD,
@@ -67,4 +68,4 @@ $button-padding-x: $input-padding-x * 1.25;
 // Misc settings
 // -----------------------------------------------------------------------------
 $hr-border-width: 0.2rem;
-$table-border-width: 0.05rem;
+$table-border-width: 0.2rem;

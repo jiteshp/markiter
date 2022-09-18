@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
  * Theme name: 		Markiter
- * Version:			2.4.1
+ * Version:			2.4.2
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -315,16 +315,19 @@ hr, .wp-block-separator {
 }
 
 table {
-  border: 0.05rem solid var(--markiter-alt-bg-color);
+  border: 0.2rem solid var(--markiter-bg-color);
   border-collapse: collapse;
-  font-size: var(--markiter-small-font-size);
   width: 100%;
 }
 table td, table th {
-  border: 0.05rem solid var(--markiter-alt-bg-color);
-  padding: 0.875rem;
+  border: 0.2rem solid var(--markiter-bg-color);
+  padding: 0.4375rem 0.875rem;
+}
+table td {
+  background-color: var(--markiter-alt-bg-light-color);
 }
 table th {
+  background-color: var(--markiter-alt-bg-color);
   font-weight: bold;
 }
 
@@ -551,6 +554,18 @@ sup {
   background-color: var(--markiter-alt-bg-color);
 }
 
+.has-alt-bg-light-color {
+  color: var(--markiter-alt-bg-light-color);
+}
+.has-alt-bg-light-color a {
+  border-bottom-color: var(--markiter-alt-bg-light-color);
+  color: var(--markiter-alt-bg-light-color);
+}
+
+.has-alt-bg-light-background-color {
+  background-color: var(--markiter-alt-bg-light-color);
+}
+
 .has-fg-color {
   color: var(--markiter-fg-color);
 }
@@ -732,6 +747,9 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 }
 .wp-block-cover.has-background-dim.has-alt-bg-background-color {
   background-color: var(--markiter-alt-bg-color);
+}
+.wp-block-cover.has-background-dim.has-alt-bg-light-background-color {
+  background-color: var(--markiter-alt-bg-light-color);
 }
 .wp-block-cover.has-background-dim.has-fg-background-color {
   background-color: var(--markiter-fg-color);
@@ -1008,6 +1026,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 :root {
   --markiter-bg-color: #FFFFFF;
   --markiter-alt-bg-color: #ECE4FE;
+  --markiter-alt-bg-light-color: #ECE4FE99;
   --markiter-fg-color: #190248;
   --markiter-accent-color: #722EF9;
   --markiter-border-color: #DDDDDD;
@@ -1434,6 +1453,9 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
     padding-left: 0;
     padding-right: 0;
   }
+}
+.entry-content a {
+  font-weight: bold;
 }
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
   margin-bottom: 0.875rem;

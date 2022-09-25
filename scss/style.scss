@@ -1,6 +1,6 @@
 /**
  * Theme name: 		Markiter
- * Version:			2.4.2
+ * Version:			2.4.3
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -90,7 +90,7 @@
 	font-size: get-font-size( small );
 
 	a {
-		border-bottom: none;
+		text-decoration: none;
 	}
 }
 
@@ -119,7 +119,7 @@
 	flex-direction: row;
 
 	a {
-		border-bottom: none;
+		text-decoration: none;
 	}
 }
 
@@ -196,10 +196,10 @@
 	}
 
 	a {
-		border-bottom: none;
 		color: get-color( fg );
 		display: block;
 		padding: ( $input-padding-y * 1.5 ) 0;
+		text-decoration: none;
 
 		&:hover {
 			color: get-color( accent );
@@ -385,8 +385,8 @@
 	margin-bottom: $white-space / 4;
 
 	a {
-		border-bottom: none;
 		color: get-color( fg );
+		text-decoration: none;
 
 		&:active,
 		&:hover {
@@ -400,11 +400,11 @@
 	font-size: get-font-size( small );
 
 	a {
-		border-bottom: 1px solid transparent;
+		text-decoration: none;
 
 		&:hover {
 			color: get-color( accent );
-			border-bottom: 1px solid get-color( accent );
+			text-decoration: underline;
 		}
 	}
 
@@ -447,50 +447,16 @@
 		}
 	}
 
-	a {
-		font-weight: bold;
-	}
-
 	h1, h2, h3, h4, h5, h6 {
 		margin-bottom: $white-space / 2;
 		margin-top: $white-space * 1.5;
 	}
 
 	ol, ul {
-		list-style: none;
 		padding-left: $white-space * 2;
 
-		ol, ul {
-			padding-left: $white-space;
-		}
-
 		li {
-			margin: ( $white-space / 2 ) 0;
-			position: relative;
-			padding-left: $white-space * 0.5;
-
-			&:before {
-				color: get-color( accent );
-				left: $white-space * -0.5;
-				position: absolute;
-			}
-		}
-	}
-
-	ul {
-		li:before {
-			content: '\2794';
-		}
-	}
-
-	ol {
-		counter-reset: entry-content-list;
-
-		li:before {
-			content: '\2794';
-			content: counter( entry-content-list ) ".";
-			counter-increment: entry-content-list;
-			font-weight: bold;
+			padding-left: 1em;
 		}
 	}
 
@@ -591,12 +557,12 @@
 
 	.page-numbers {
 		background-color: get-color( alt-bg );
-		border-bottom: none;
 		border-radius: $button-border-radius;
 		display: inline-block;
 		height: $input-height;
 		line-height: $input-height;
 		text-align: center;
+		text-decoration: none;
 		width: $input-height;
 	}
 }
@@ -624,11 +590,11 @@
 		text-align: center;
 
 		a {
-			border-bottom: 1px solid transparent;
+			text-decoration: none;
 
 			&:hover {
-				border-bottom: 1px solid get-color( accent );
 				color: get-color( accent );
+				text-decoration: underline;
 
 				span {
 					color: get-color( accent );
@@ -720,11 +686,11 @@
 
 .comment-meta {
 	a {
-		border-bottom: 1px solid transparent;
+		text-decoration: none;
 
 		&:hover {
 			color: get-color( accent );
-			border-bottom: 1px solid get-color( accent );
+			text-decoration: underline;
 		}
 	}
 
@@ -812,103 +778,5 @@
 .page-template-no-header-page {
 	.site-header {
 		display: none;
-	}
-}
-
-/**
- * Guide page template styles
- * -----------------------------------------------------------------------------
- */
-.page-template-guide-page {
-	.entry-header {
-		margin-bottom: $white-space * 2;
-		text-align: center;
-
-		&:after {
-			border-bottom: 4px solid get-color( fg );
-			content: '';
-			display: block;
-			margin: $white-space auto;
-			max-width: $white-space * 2;
-		}
-
-		.guide-title {
-			letter-spacing: 1px;
-			margin-bottom: $white-space / 4;
-			text-transform: uppercase;
-		}
-	}
-
-	.entry-content-wrap {
-		@include when-screen( lg ) {
-			@include make-container( $container-extra-wide-max-width, $gutter-width / 2 );
-			align-items: flex-start;
-			display: flex;
-			flex-direction: row-reverse;
-			flex-wrap: nowrap;
-			justify-content: space-between;
-		}
-	}
-
-	.guide-nav-menu {
-		@include make-container( 100%, $gutter-width / 2 );
-		font-size: get-font-size( small );
-
-		@include when-screen( md ) {
-			@include make-container( $container-max-width, $gutter-width / 2 );
-		}
-
-		@include when-screen( lg ) {
-			margin-left: 0;
-			margin-right: $gutter-width;
-			max-width: none;
-			position: sticky;
-			padding: 0;
-			top: 32px;
-		}
-
-		h4 {
-			margin-bottom: $white-space / 2;
-
-			a {
-				border-bottom: none;
-			}
-		}
-
-		ol {
-			counter-reset: guide-menu;
-			list-style: none;
-			margin: 0;
-			padding: 0;
-
-			li {
-				border-top: 1px dotted get-color( alt-bg );
-				margin: 0;
-				padding: $white-space / 2;
-				padding-left: 2.5em;
-				position: relative;
-
-				&:before {
-					content: counter( guide-menu ) ".";
-					counter-increment: guide-menu;
-					display: inline-block;
-					left: 0;
-					margin-right: 0.5em;
-					position: absolute;
-					text-align: right;
-					width: 2em;
-				}
-
-				&.current-guide-page-item {
-					border-left: 4px solid get-color( alt-bg );
-					font-weight: bold;
-				}
-			}
-
-			a {
-				border-bottom: none;
-				display: block;
-			}
-		}
 	}
 }

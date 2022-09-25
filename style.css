@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
  * Theme name: 		Markiter
- * Version:			2.4.2
+ * Version:			2.4.3
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -314,21 +314,20 @@ hr, .wp-block-separator {
   border-bottom: 0.2rem solid var(--markiter-fg-color);
 }
 
-table {
-  border: 0.2rem solid var(--markiter-bg-color);
+table, .wp-block-table.is-style-stripes table {
+  border: 0.0625rem solid var(--markiter-alt-bg-color);
   border-collapse: collapse;
   width: 100%;
 }
-table td, table th {
-  border: 0.2rem solid var(--markiter-bg-color);
-  padding: 0.4375rem 0.875rem;
+table td, table th, .wp-block-table.is-style-stripes table td, .wp-block-table.is-style-stripes table th {
+  border: 0.0625rem solid var(--markiter-alt-bg-color) !important;
+  padding: 0.5em;
 }
-table td {
-  background-color: var(--markiter-alt-bg-light-color);
-}
-table th {
+table thead tr, .wp-block-table.is-style-stripes table thead tr {
   background-color: var(--markiter-alt-bg-color);
-  font-weight: bold;
+}
+.wp-block-table.is-style-stripes table tbody tr:nth-child(odd) {
+  background-color: var(--markiter-alt-bg-light-color);
 }
 
 /**
@@ -336,9 +335,7 @@ table th {
  * -----------------------------------------------------------------------------
  */
 a {
-  border-bottom: 2px solid var(--markiter-accent-color);
   color: var(--markiter-accent-color);
-  text-decoration: none;
 }
 a:active, a:hover {
   color: var(--markiter-fg-color);
@@ -1102,7 +1099,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   font-size: var(--markiter-small-font-size);
 }
 .site-footer a {
-  border-bottom: none;
+  text-decoration: none;
 }
 
 .site-footer-wrap {
@@ -1144,7 +1141,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   flex-direction: row;
 }
 .brand a {
-  border-bottom: none;
+  text-decoration: none;
 }
 
 .site-title,
@@ -1216,10 +1213,10 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   font-weight: bold;
 }
 .main-navigation a {
-  border-bottom: none;
   color: var(--markiter-fg-color);
   display: block;
   padding: 0.65625rem 0;
+  text-decoration: none;
 }
 .main-navigation a:hover {
   color: var(--markiter-accent-color);
@@ -1394,8 +1391,8 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   margin-bottom: 0.4375rem;
 }
 .entry-title a {
-  border-bottom: none;
   color: var(--markiter-fg-color);
+  text-decoration: none;
 }
 .entry-title a:active, .entry-title a:hover {
   color: var(--markiter-accent-color);
@@ -1406,11 +1403,11 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   font-size: var(--markiter-small-font-size);
 }
 .entry-meta a {
-  border-bottom: 1px solid transparent;
+  text-decoration: none;
 }
 .entry-meta a:hover {
   color: var(--markiter-accent-color);
-  border-bottom: 1px solid var(--markiter-accent-color);
+  text-decoration: underline;
 }
 .entry-meta .entry-date:before,
 .entry-meta .entry-tags:before {
@@ -1454,41 +1451,15 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
     padding-right: 0;
   }
 }
-.entry-content a {
-  font-weight: bold;
-}
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
   margin-bottom: 0.875rem;
   margin-top: 2.625rem;
 }
 .entry-content ol, .entry-content ul {
-  list-style: none;
   padding-left: 3.5rem;
 }
-.entry-content ol ol, .entry-content ol ul, .entry-content ul ol, .entry-content ul ul {
-  padding-left: 1.75rem;
-}
 .entry-content ol li, .entry-content ul li {
-  margin: 0.875rem 0;
-  position: relative;
-  padding-left: 0.875rem;
-}
-.entry-content ol li:before, .entry-content ul li:before {
-  color: var(--markiter-accent-color);
-  left: -0.875rem;
-  position: absolute;
-}
-.entry-content ul li:before {
-  content: "➔";
-}
-.entry-content ol {
-  counter-reset: entry-content-list;
-}
-.entry-content ol li:before {
-  content: "➔";
-  content: counter(entry-content-list) ".";
-  counter-increment: entry-content-list;
-  font-weight: bold;
+  padding-left: 1em;
 }
 .entry-content address, .entry-content blockquote, .entry-content pre {
   padding: 1.75rem;
@@ -1601,12 +1572,12 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 }
 .pagination .page-numbers {
   background-color: var(--markiter-alt-bg-color);
-  border-bottom: none;
   border-radius: 0.2rem;
   display: inline-block;
   height: 2.625rem;
   line-height: 2.625rem;
   text-align: center;
+  text-decoration: none;
   width: 2.625rem;
 }
 
@@ -1639,12 +1610,12 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 }
 .post-navigation .nav-previous a,
 .post-navigation .nav-next a {
-  border-bottom: 1px solid transparent;
+  text-decoration: none;
 }
 .post-navigation .nav-previous a:hover,
 .post-navigation .nav-next a:hover {
-  border-bottom: 1px solid var(--markiter-accent-color);
   color: var(--markiter-accent-color);
+  text-decoration: underline;
 }
 .post-navigation .nav-previous a:hover span,
 .post-navigation .nav-next a:hover span {
@@ -1734,11 +1705,11 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 }
 
 .comment-meta a {
-  border-bottom: 1px solid transparent;
+  text-decoration: none;
 }
 .comment-meta a:hover {
   color: var(--markiter-accent-color);
-  border-bottom: 1px solid var(--markiter-accent-color);
+  text-decoration: underline;
 }
 .comment-meta .avatar {
   float: left;
@@ -1813,105 +1784,6 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 
 .page-template-no-header-page .site-header {
   display: none;
-}
-
-/**
- * Guide page template styles
- * -----------------------------------------------------------------------------
- */
-.page-template-guide-page .entry-header {
-  margin-bottom: 3.5rem;
-  text-align: center;
-}
-.page-template-guide-page .entry-header:after {
-  border-bottom: 4px solid var(--markiter-fg-color);
-  content: "";
-  display: block;
-  margin: 1.75rem auto;
-  max-width: 3.5rem;
-}
-.page-template-guide-page .entry-header .guide-title {
-  letter-spacing: 1px;
-  margin-bottom: 0.4375rem;
-  text-transform: uppercase;
-}
-@media (min-width: 992px) {
-  .page-template-guide-page .entry-content-wrap {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 63.5rem;
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-  }
-}
-.page-template-guide-page .guide-nav-menu {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
-  font-size: var(--markiter-small-font-size);
-}
-@media (min-width: 768px) {
-  .page-template-guide-page .guide-nav-menu {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 39.5rem;
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
-  }
-}
-@media (min-width: 992px) {
-  .page-template-guide-page .guide-nav-menu {
-    margin-left: 0;
-    margin-right: 3.5rem;
-    max-width: none;
-    position: sticky;
-    padding: 0;
-    top: 32px;
-  }
-}
-.page-template-guide-page .guide-nav-menu h4 {
-  margin-bottom: 0.875rem;
-}
-.page-template-guide-page .guide-nav-menu h4 a {
-  border-bottom: none;
-}
-.page-template-guide-page .guide-nav-menu ol {
-  counter-reset: guide-menu;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.page-template-guide-page .guide-nav-menu ol li {
-  border-top: 1px dotted var(--markiter-alt-bg-color);
-  margin: 0;
-  padding: 0.875rem;
-  padding-left: 2.5em;
-  position: relative;
-}
-.page-template-guide-page .guide-nav-menu ol li:before {
-  content: counter(guide-menu) ".";
-  counter-increment: guide-menu;
-  display: inline-block;
-  left: 0;
-  margin-right: 0.5em;
-  position: absolute;
-  text-align: right;
-  width: 2em;
-}
-.page-template-guide-page .guide-nav-menu ol li.current-guide-page-item {
-  border-left: 4px solid var(--markiter-alt-bg-color);
-  font-weight: bold;
-}
-.page-template-guide-page .guide-nav-menu ol a {
-  border-bottom: none;
-  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

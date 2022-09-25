@@ -130,22 +130,26 @@ hr {
 }
 
 table {
-	border: $table-border-width solid get-color( bg );
-	border-collapse: collapse;
-	width: 100%;
+	&,
+	.wp-block-table.is-style-stripes & {
+		border: $table-border-width solid get-color( alt-bg );
+		border-collapse: collapse;
+		width: 100%;
 
-	td, th {
-		border: $table-border-width solid get-color( bg );
-		padding: ( $white-space / 4 ) ( $white-space / 2 );
+		td, th {
+			border: $table-border-width solid get-color( alt-bg ) !important;
+			padding: 0.5em;
+		}
+
+		thead tr {
+			background-color: get-color( alt-bg );
+		}
 	}
 
-	td {
-		background-color: get-color( alt-bg-light );
-	}
-
-	th {
-		background-color: get-color( alt-bg );
-		font-weight: bold;
+	.wp-block-table.is-style-stripes & {
+		tbody tr:nth-child( odd ) {
+			background-color: get-color( alt-bg-light );
+		}
 	}
 }
 
@@ -154,9 +158,7 @@ table {
  * -----------------------------------------------------------------------------
  */
 a {
-	border-bottom: 2px solid get-color( accent );
 	color: get-color( accent );
-	text-decoration: none;
 
 	&:active,
 	&:hover {

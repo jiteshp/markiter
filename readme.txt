@@ -12,6 +12,9 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.4.3 =
+* Removed guide page template
+
 = 2.4.2 =
 * Miscellaneous CSS style improvements.
 

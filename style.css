@@ -30,7 +30,8 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
+table,
+.wp-block-table table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure,
 .wp-caption, figcaption, .gallery-caption,
@@ -69,7 +70,7 @@ q:before, q:after {
   content: none;
 }
 
-table {
+table, .wp-block-table table {
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -90,7 +91,7 @@ html {
  * Button styles
  * -----------------------------------------------------------------------------
  */
-.btn, button[type=submit], input[type=submit] {
+.btn, .main-navigation .cta a, button[type=submit], input[type=submit] {
   background-color: var(--markiter-accent-color);
   border-color: var(--markiter-accent-color);
   color: var(--markiter-bg-color);
@@ -104,8 +105,10 @@ html {
   width: auto;
   line-height: 1.75;
 }
-.btn:hover, button[type=submit]:hover, input[type=submit]:hover {
-  opacity: 0.75;
+.btn:hover, .main-navigation .cta a:hover, button[type=submit]:hover, input[type=submit]:hover {
+  background-color: var(--markiter-fg-color);
+  border-color: var(--markiter-fg-color);
+  color: var(--markiter-bg-color);
 }
 
 .btn-outline, .more-link, input[type=reset] {
@@ -209,7 +212,8 @@ hr,
 .wp-block-separator,
 p,
 pre,
-table {
+table,
+.wp-block-table table {
   margin-bottom: 1.75rem;
 }
 address:last-child,
@@ -314,20 +318,23 @@ hr, .wp-block-separator {
   border-bottom: 0.2rem solid var(--markiter-fg-color);
 }
 
-table, .wp-block-table.is-style-stripes table {
-  border: 0.0625rem solid var(--markiter-alt-bg-color);
+table, .wp-block-table table {
+  border: solid 1px var(--markiter-alt-bg-color);
   border-collapse: collapse;
   width: 100%;
 }
-table td, table th, .wp-block-table.is-style-stripes table td, .wp-block-table.is-style-stripes table th {
-  border: 0.0625rem solid var(--markiter-alt-bg-color) !important;
-  padding: 0.5em;
+table td, .wp-block-table table td, table th, .wp-block-table table th {
+  border: none;
+  border-collapse: collapse;
+  padding: 0.75rem;
 }
-table thead tr, .wp-block-table.is-style-stripes table thead tr {
+table thead tr, .wp-block-table table thead tr {
+  background-color: var(--markiter-fg-color);
+  color: var(--markiter-bg-color);
+  font-weight: bold;
+}
+table tbody tr:nth-child(even) {
   background-color: var(--markiter-alt-bg-color);
-}
-.wp-block-table.is-style-stripes table tbody tr:nth-child(odd) {
-  background-color: var(--markiter-alt-bg-light-color);
 }
 
 /**
@@ -937,6 +944,10 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   letter-spacing: 1rem;
 }
 
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+  background-color: transparent;
+}
+
 .search-form {
   display: flex;
   flex-direction: column;
@@ -1323,6 +1334,18 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 @media (min-width: 992px) {
   .main-navigation .sub-menu .sub-menu > li:first-child:before {
     content: none;
+  }
+}
+
+.main-navigation .cta a {
+  border: 0;
+  color: var(--markiter-bg-color);
+  margin: 0.4375rem 0;
+  padding: 0.65625rem 1.125rem;
+}
+@media (min-width: 992px) {
+  .main-navigation .cta a {
+    margin: 0 0 0 1.75rem;
   }
 }
 

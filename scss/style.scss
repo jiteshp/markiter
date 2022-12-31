@@ -348,6 +348,20 @@
 	}
 }
 
+.main-navigation .cta {
+	a {
+		@extend .btn;
+		border: 0;
+		color: get-color( bg );
+		margin: $input-padding-y 0;
+		padding: ( $input-padding-y * 1.5 ) $input-padding-x * 1.5;
+
+		@include when-screen( lg ) {
+			margin: 0 0 0 $white-space;
+		}
+	}
+}
+
 /**
  * Entry styles
  * -----------------------------------------------------------------------------

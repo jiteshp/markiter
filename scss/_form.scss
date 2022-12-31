@@ -4,17 +4,15 @@
  */
 .btn {
 	@include make-button( get-color( accent ), get-color( accent ), $button-border-width, $button-border-radius, get-color( bg ), $button-padding-x, $button-padding-y );
-	// font-size: get-font-size( small );
 	line-height: $base-line-height;
 
 	&:hover {
-		opacity: 0.75;
+		@include set-button-color( get-color( fg ), get-color( fg ), get-color( bg ) );
 	}
 }
 
 .btn-outline {
 	@include make-button( transparent, get-color( accent ), $button-border-width, $button-border-radius, get-color( accent ), $button-padding-x, $button-padding-y );
-	// font-size: get-font-size( small );
 	line-height: $base-line-height;
 
 	&:hover {

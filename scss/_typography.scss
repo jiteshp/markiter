@@ -130,26 +130,24 @@ hr {
 }
 
 table {
-	&,
-	.wp-block-table.is-style-stripes & {
-		border: $table-border-width solid get-color( alt-bg );
+	border: solid 1px get-color( alt-bg );
+	border-collapse: collapse;
+	width: 100%;
+
+	td, th {
+		border: none;
 		border-collapse: collapse;
-		width: 100%;
-
-		td, th {
-			border: $table-border-width solid get-color( alt-bg ) !important;
-			padding: 0.5em;
-		}
-
-		thead tr {
-			background-color: get-color( alt-bg );
-		}
+		padding: $input-padding-x;
 	}
 
-	.wp-block-table.is-style-stripes & {
-		tbody tr:nth-child( odd ) {
-			background-color: get-color( alt-bg-light );
-		}
+	thead tr {
+		background-color: get-color( fg );
+		color: get-color( bg );
+		font-weight: bold;
+	}
+
+	tbody tr:nth-child( even ) {
+		background-color: get-color( alt-bg );
 	}
 }
 

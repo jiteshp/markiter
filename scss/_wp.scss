@@ -354,6 +354,21 @@ figure.wp-block-image {
 }
 
 //
+// Table block styles
+// -----------------------------------------------------------------------------
+.wp-block-table {
+	table {
+		@extend table;
+	}
+
+	&.is-style-stripes {
+		tbody tr:nth-child( odd ) {
+			background-color: transparent;
+		}
+	}
+}
+
+//
 // Search form styles
 // -----------------------------------------------------------------------------
 .search-form {

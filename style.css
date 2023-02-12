@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
  * Theme name: 		Markiter
- * Version:			2.4.3
+ * Version:			2.4.4
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -185,7 +185,7 @@ textarea {
 }
 @media (min-width: 768px) {
   :root {
-    font-size: 125%;
+    font-size: 112.5%;
   }
 }
 
@@ -238,6 +238,7 @@ pre {
 
 blockquote {
   border-left: solid 0.25rem var(--markiter-alt-bg-color);
+  font-style: normal;
   padding: 1.75rem 0 1.75rem 1.75rem;
 }
 
@@ -319,22 +320,22 @@ hr, .wp-block-separator {
 }
 
 table, .wp-block-table table {
-  border: solid 1px var(--markiter-alt-bg-color);
-  border-collapse: collapse;
+  border: none;
   width: 100%;
 }
 table td, .wp-block-table table td, table th, .wp-block-table table th {
-  border: none;
-  border-collapse: collapse;
+  background-color: var(--markiter-alt-bg-color);
+  border: solid 4px var(--markiter-bg-color) !important;
   padding: 0.75rem;
 }
 table thead tr, .wp-block-table table thead tr {
-  background-color: var(--markiter-fg-color);
-  color: var(--markiter-bg-color);
   font-weight: bold;
 }
-table tbody tr:nth-child(even) {
-  background-color: var(--markiter-alt-bg-color);
+table tbody tr td, .wp-block-table table tbody tr td {
+  background-color: var(--markiter-alt-bg-light-color);
+}
+table tbody tr:nth-child(even) td {
+  background-color: var(--markiter-alt-bg-lighter-color);
 }
 
 /**
@@ -359,6 +360,7 @@ big {
 }
 
 cite {
+  font-style: normal;
   font-weight: bold;
 }
 
@@ -494,11 +496,11 @@ sup {
   padding-right: 0;
 }
 
-@media (min-width: 51.5rem) {
+@media (min-width: 56.667rem) {
   .alignwide, .post-navigation, .entry-content .alignwide {
     margin-left: auto;
     margin-right: auto;
-    max-width: 48rem;
+    max-width: 53.167rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -568,6 +570,18 @@ sup {
 
 .has-alt-bg-light-background-color {
   background-color: var(--markiter-alt-bg-light-color);
+}
+
+.has-alt-bg-lighter-color {
+  color: var(--markiter-alt-bg-lighter-color);
+}
+.has-alt-bg-lighter-color a {
+  border-bottom-color: var(--markiter-alt-bg-lighter-color);
+  color: var(--markiter-alt-bg-lighter-color);
+}
+
+.has-alt-bg-lighter-background-color {
+  background-color: var(--markiter-alt-bg-lighter-color);
 }
 
 .has-fg-color {
@@ -656,27 +670,39 @@ p.has-drop-cap:not(:focus):first-letter {
  * Quote block styles
  * -----------------------------------------------------------------------------
  */
-blockquote.wp-block-quote, blockquote.wp-block-quote.is-style-large {
+.wp-block-quote, .wp-block-pullquote blockquote, .wp-block-quote.has-text-align-right, .wp-block-quote.is-style-large {
   margin-bottom: 1.75rem;
-  padding: 1.75rem 0 1.75rem 1.75rem;
+  background-color: var(--markiter-alt-bg-lighter-color) !important;
+  padding: 1.75rem 1.75rem 1.75rem 1.96875rem !important;
 }
-blockquote.wp-block-quote:last-child, blockquote.wp-block-quote.is-style-large:last-child {
+.wp-block-quote:last-child, .wp-block-pullquote blockquote:last-child, .wp-block-quote.has-text-align-right:last-child, .wp-block-quote.is-style-large:last-child {
   margin-bottom: 0;
 }
-blockquote.wp-block-quote p, blockquote.wp-block-quote.is-style-large p {
+.wp-block-quote p, .wp-block-pullquote blockquote p, .wp-block-quote.has-text-align-right p, .wp-block-quote.is-style-large p {
   margin-bottom: 0.875rem;
   font-size: var(--markiter-normal-font-size);
-  font-style: normal;
+  font-style: normal !important;
 }
-blockquote.wp-block-quote p:last-child, blockquote.wp-block-quote.is-style-large p:last-child {
+.wp-block-quote p:last-child, .wp-block-pullquote blockquote p:last-child, .wp-block-quote.has-text-align-right p:last-child, .wp-block-quote.is-style-large p:last-child {
   margin-bottom: 0;
 }
-blockquote.wp-block-quote cite, blockquote.wp-block-quote.is-style-large cite {
-  font-size: var(--markiter-small-font-size);
+.wp-block-quote cite, .wp-block-pullquote blockquote cite, .wp-block-quote.has-text-align-right cite, .wp-block-quote.is-style-large cite {
+  font-size: var(--markiter-small-font-size) !important;
   font-weight: bold;
 }
-blockquote.wp-block-quote.is-style-large p {
-  font-size: var(--markiter-medium-font-size);
+.wp-block-quote.is-style-large p, .wp-block-pullquote blockquote.is-style-large p {
+  font-size: var(--markiter-medium-font-size) !important;
+}
+
+.wp-block-pullquote {
+  margin-bottom: 1.75rem !important;
+  margin-top: 1.75rem !important;
+  padding: 0 !important;
+  text-align: left;
+}
+.wp-block-pullquote.is-style-solid-color blockquote {
+  background-color: transparent !important;
+  max-width: none;
 }
 
 /**
@@ -755,6 +781,9 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .wp-block-cover.has-background-dim.has-alt-bg-light-background-color {
   background-color: var(--markiter-alt-bg-light-color);
 }
+.wp-block-cover.has-background-dim.has-alt-bg-lighter-background-color {
+  background-color: var(--markiter-alt-bg-lighter-color);
+}
 .wp-block-cover.has-background-dim.has-fg-background-color {
   background-color: var(--markiter-fg-color);
 }
@@ -770,7 +799,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .wp-block-cover .wp-block-cover__inner-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 48rem;
+  max-width: 53.167rem;
   padding-left: 0;
   padding-right: 0;
 }
@@ -898,7 +927,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .wp-block-group .wp-block-group__inner-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 48rem;
+  max-width: 53.167rem;
   padding-left: 0;
   padding-right: 0;
 }
@@ -944,8 +973,22 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   letter-spacing: 1rem;
 }
 
-.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-  background-color: transparent;
+.wp-block-table {
+  border: none !important;
+}
+.wp-block-gallery:not(.alignleft), .wp-block-gallery:not(.alignright) {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.wp-block-gallery.alignleft {
+  margin-right: 1.75rem !important;
+}
+.wp-block-gallery.alignright {
+  margin-left: 1.75rem !important;
+}
+.wp-block-gallery figcaption, .wp-block-gallery .gallery-caption,
+.wp-block-gallery .wp-caption-text {
+  background: none !important;
 }
 
 .search-form {
@@ -1034,7 +1077,8 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 :root {
   --markiter-bg-color: #FFFFFF;
   --markiter-alt-bg-color: #ECE4FE;
-  --markiter-alt-bg-light-color: #ECE4FE99;
+  --markiter-alt-bg-light-color: #ECE4FEBB;
+  --markiter-alt-bg-lighter-color: #ECE4FE77;
   --markiter-fg-color: #190248;
   --markiter-accent-color: #722EF9;
   --markiter-border-color: #DDDDDD;
@@ -1071,7 +1115,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .site-header-wrap {
     margin-left: auto;
     margin-right: auto;
-    max-width: 36rem;
+    max-width: 39.834rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1080,7 +1124,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .site-header-wrap {
     margin-left: auto;
     margin-right: auto;
-    max-width: 63.5rem;
+    max-width: 68.889rem;
     padding-left: 1.75rem;
     padding-right: 1.75rem;
   }
@@ -1127,7 +1171,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .site-footer-wrap {
     margin-left: auto;
     margin-right: auto;
-    max-width: 36rem;
+    max-width: 39.834rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1136,7 +1180,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .site-footer-wrap {
     margin-left: auto;
     margin-right: auto;
-    max-width: 63.5rem;
+    max-width: 68.889rem;
     padding-left: 1.75rem;
     padding-right: 1.75rem;
   }
@@ -1377,7 +1421,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .entry-footer {
   margin-left: auto;
   margin-right: auto;
-  max-width: 36rem;
+  max-width: 39.834rem;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
@@ -1386,7 +1430,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .entry-footer {
     margin-left: auto;
     margin-right: auto;
-    max-width: 36rem;
+    max-width: 39.834rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1395,7 +1439,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .entry-thumbnail {
   margin-left: auto;
   margin-right: auto;
-  max-width: 48rem;
+  max-width: 53.167rem;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
@@ -1403,7 +1447,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .entry-thumbnail {
     margin-left: auto;
     margin-right: auto;
-    max-width: 48rem;
+    max-width: 53.167rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1469,7 +1513,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .entry-content > * {
     margin-left: auto;
     margin-right: auto;
-    max-width: 36rem;
+    max-width: 39.834rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1535,7 +1579,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .footer-widgets .footer-widgets-wrap {
     margin-left: auto;
     margin-right: auto;
-    max-width: 36rem;
+    max-width: 39.834rem;
     padding-left: 0;
     padding-right: 0;
     align-items: flex-start;
@@ -1548,7 +1592,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .footer-widgets .footer-widgets-wrap {
     margin-left: auto;
     margin-right: auto;
-    max-width: 63.5rem;
+    max-width: 68.889rem;
     padding-left: 1.75rem;
     padding-right: 1.75rem;
   }
@@ -1589,7 +1633,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .pagination {
   margin-left: auto;
   margin-right: auto;
-  max-width: 39.5rem;
+  max-width: 43.334rem;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
@@ -1612,7 +1656,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   margin-bottom: 3.5rem;
   margin-left: auto;
   margin-right: auto;
-  max-width: 48rem;
+  max-width: 53.167rem;
   padding-left: 0;
   padding-right: 0;
   border-bottom: 1px solid var(--markiter-alt-bg-color);
@@ -1697,7 +1741,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .comments-area {
     margin-left: auto;
     margin-right: auto;
-    max-width: 36rem;
+    max-width: 39.834rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1759,6 +1803,10 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 
 .bypostauthor {
   display: block;
+}
+
+.comment-notes {
+  font-size: var(--markiter-small-font-size);
 }
 
 /**

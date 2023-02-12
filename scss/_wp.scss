@@ -109,27 +109,47 @@ p {
  * Quote block styles
  * -----------------------------------------------------------------------------
  */
-blockquote.wp-block-quote {
+.wp-block-quote {
 	&,
+	&.has-text-align-right,
 	&.is-style-large {
 		@include make-block( $white-space );
-		padding: $white-space 0 $white-space $white-space;
+		background-color: get-color( alt-bg-lighter ) !important;
+		padding: $white-space $white-space $white-space ( $white-space * 1.125 ) !important;
 
 		p {
 			@include make-block( $white-space / 2 );
 			font-size: get-font-size( normal );
-			font-style: normal;
+			font-style: normal !important;
 		}
 
 		cite {
-			font-size: get-font-size( small );
+			font-size: get-font-size( small ) !important;
 			font-weight: bold;
 		}
 	}
 
 	&.is-style-large {
 		p {
-			font-size: get-font-size( medium );
+			font-size: get-font-size( medium ) !important;
+		}
+	}
+}
+
+.wp-block-pullquote {
+	margin-bottom: $white-space !important;
+	margin-top: $white-space !important;
+	padding: 0 !important;
+	text-align: left;
+
+	blockquote {
+		@extend .wp-block-quote;
+	}
+
+	&.is-style-solid-color {
+		blockquote {
+			background-color: transparent !important;
+			max-width: none;
 		}
 	}
 }
@@ -357,14 +377,33 @@ figure.wp-block-image {
 // Table block styles
 // -----------------------------------------------------------------------------
 .wp-block-table {
+	border: none !important;
+
 	table {
 		@extend table;
 	}
+}
 
-	&.is-style-stripes {
-		tbody tr:nth-child( odd ) {
-			background-color: transparent;
-		}
+//
+// Gallery styles
+// -----------------------------------------------------------------------------
+.wp-block-gallery {
+	&:not(.alignleft),
+	&:not(.alignright) {
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+
+	&.alignleft {
+		margin-right: $white-space !important;
+	}
+
+	&.alignright {
+		margin-left: $white-space !important;
+	}
+
+	figcaption {
+		background: none !important;
 	}
 }
 

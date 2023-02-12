@@ -43,6 +43,7 @@ pre {
 
 blockquote {
 	border-left: solid 0.25rem get-color( alt-bg );
+	font-style: normal;
 	padding: $white-space 0 $white-space $white-space;
 }
 
@@ -130,24 +131,29 @@ hr {
 }
 
 table {
-	border: solid 1px get-color( alt-bg );
-	border-collapse: collapse;
+	border: none;
 	width: 100%;
 
 	td, th {
-		border: none;
-		border-collapse: collapse;
+		background-color: get-color( alt-bg );
+		border: solid 4px get-color( bg ) !important;
 		padding: $input-padding-x;
 	}
 
 	thead tr {
-		background-color: get-color( fg );
-		color: get-color( bg );
 		font-weight: bold;
 	}
 
-	tbody tr:nth-child( even ) {
-		background-color: get-color( alt-bg );
+	tbody tr {
+		td {
+			background-color: get-color( alt-bg-light );
+		}
+
+		&:nth-child( even ) {
+			td {
+				background-color: get-color( alt-bg-lighter );
+			}
+		}
 	}
 }
 
@@ -175,6 +181,7 @@ big {
 }
 
 cite {
+	font-style: normal;
 	font-weight: bold;
 }
 

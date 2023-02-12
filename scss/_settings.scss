@@ -4,7 +4,8 @@
 $colors: (
 	bg: #FFFFFF,
 	alt-bg: #ECE4FE,
-	alt-bg-light: #ECE4FE99,
+	alt-bg-light: #ECE4FEBB,
+	alt-bg-lighter: #ECE4FE77,
 	fg: #190248,
 	accent: #722EF9,
 	border: #DDDDDD,
@@ -19,7 +20,7 @@ $heading-font: 'Francois One', serif;
 $text-font: 'Inter', sans-serif;
 
 $base-font-size: 100%;
-$base-font-size-md: 125%;
+$base-font-size-md: 112.5%;
 $base-line-height: 1.75;
 $heading-line-height: 1.25;
 
@@ -45,9 +46,9 @@ $screens: (
 );
 
 $gutter-width: $white-space * 2;
-$container-max-width: 39.5rem;
-$container-wide-max-width: 51.5rem;
-$container-extra-wide-max-width: 63.5rem;
+$container-max-width: 43.334rem;
+$container-wide-max-width: 56.667rem;
+$container-extra-wide-max-width: 68.889rem;
 $container-full-max-width: none;
 
 //

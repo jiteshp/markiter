@@ -42,7 +42,7 @@ button, input, select, textarea {
 }
 
 input, select, textarea {
-	box-shadow: inset 0 0 3px get-color( input );
+	box-shadow: inset 0 0 3px get-color( fg-light );
 }
 
 input[type=checkbox], input[type=submit], input[type=radio], input[type=reset] {

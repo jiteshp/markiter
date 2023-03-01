@@ -145,14 +145,10 @@ table {
 	}
 
 	tbody tr {
-		td {
-			background-color: get-color( alt-bg-light );
-		}
+		background-color: transparent !important; 
 
-		&:nth-child( even ) {
-			td {
-				background-color: get-color( alt-bg-lighter );
-			}
+		td {
+			background-color: get-color( alt-bg-light ) !important;
 		}
 	}
 }

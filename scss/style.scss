@@ -1,6 +1,6 @@
 /**
  * Theme name: 		Markiter
- * Version:			2.4.4
+ * Version:			2.4.5
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -282,7 +282,6 @@
 
 	@include when-screen( lg ) {
 		background-color: get-color( alt-bg );
-		box-shadow: 0 3px 3px get-color( border );
 		left: -999em;
 		margin-left: 0;
 		padding-left: 0;
@@ -354,7 +353,7 @@
 		border: 0;
 		color: get-color( bg );
 		margin: $input-padding-y 0;
-		padding: ( $input-padding-y * 1.5 ) $input-padding-x * 1.5;
+		padding: $button-padding-y $button-padding-x;
 
 		@include when-screen( lg ) {
 			margin: 0 0 0 $white-space;
@@ -410,15 +409,15 @@
 }
 
 .entry-meta {
-	color: get-color( fg );
+	color: get-color( fg-light );
 	font-size: get-font-size( small );
 
 	a {
+		color: get-color( fg-light );
 		text-decoration: none;
 
 		&:hover {
 			color: get-color( accent );
-			text-decoration: underline;
 		}
 	}
 
@@ -722,7 +721,12 @@
 	font-size: get-font-size( small );
 
 	a {
-		color: get-color( accent );
+		color: get-color( fg-light );
+		text-decoration: none;
+
+		&:hover {
+			color: get-color( accent );
+		}
 	}
 }
 

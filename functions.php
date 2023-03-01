@@ -338,24 +338,24 @@ function markiter_get_default_color_palette() {
 				'color' => '#E4E1FF',
 			),
 			array(
+				'name'  => esc_html__( 'Alternate Background Lighter', 'markiter' ),
+				'slug'  => 'alt-bg-light',
+				'color' => '#F2ECFE',
+			),
+			array(
 				'name'  => esc_html__( 'Text', 'markiter' ),
 				'slug'  => 'fg',
 				'color' => '#190248',
 			),
 			array(
+				'name'  => esc_html__( 'Text Lighter', 'markiter' ),
+				'slug'  => 'fg-light',
+				'color' => '#8C81A4',
+			),
+			array(
 				'name'  => esc_html__( 'Accent', 'markiter' ),
 				'slug'  => 'accent',
 				'color' => '#722EF9',
-			),
-			array(
-				'name'  => esc_html__( 'Border', 'markiter' ),
-				'slug'  => 'border',
-				'color' => '#DDDDDD',
-			),
-			array(
-				'name'  => esc_html__( 'Input', 'markiter' ),
-				'slug'  => 'input',
-				'color' => '#999999',
 			),
 		)
 	);

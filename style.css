@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
  * Theme name: 		Markiter
- * Version:			2.4.4
+ * Version:			2.4.5
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -100,7 +100,7 @@ html {
   border-radius: 0.2rem;
   cursor: pointer;
   display: inline-block;
-  padding: 0.3375rem 0.9375rem;
+  padding: 0.50625rem 1.125rem;
   text-decoration: none;
   width: auto;
   line-height: 1.75;
@@ -120,7 +120,7 @@ html {
   border-radius: 0.2rem;
   cursor: pointer;
   display: inline-block;
-  padding: 0.3375rem 0.9375rem;
+  padding: 0.50625rem 1.125rem;
   text-decoration: none;
   width: auto;
   line-height: 1.75;
@@ -156,7 +156,7 @@ button, input, select, textarea {
 }
 
 input, select, textarea {
-  box-shadow: inset 0 0 3px var(--markiter-input-color);
+  box-shadow: inset 0 0 3px var(--markiter-fg-light-color);
 }
 
 input[type=checkbox], input[type=submit], input[type=radio], input[type=reset] {
@@ -185,7 +185,7 @@ textarea {
 }
 @media (min-width: 768px) {
   :root {
-    font-size: 112.5%;
+    font-size: 125%;
   }
 }
 
@@ -331,11 +331,11 @@ table td, .wp-block-table table td, table th, .wp-block-table table th {
 table thead tr, .wp-block-table table thead tr {
   font-weight: bold;
 }
-table tbody tr td, .wp-block-table table tbody tr td {
-  background-color: var(--markiter-alt-bg-light-color);
+table tbody tr, .wp-block-table table tbody tr {
+  background-color: transparent !important;
 }
-table tbody tr:nth-child(even) td {
-  background-color: var(--markiter-alt-bg-lighter-color);
+table tbody tr td, .wp-block-table table tbody tr td {
+  background-color: var(--markiter-alt-bg-light-color) !important;
 }
 
 /**
@@ -496,11 +496,11 @@ sup {
   padding-right: 0;
 }
 
-@media (min-width: 56.667rem) {
+@media (min-width: 51.5rem) {
   .alignwide, .post-navigation, .entry-content .alignwide {
     margin-left: auto;
     margin-right: auto;
-    max-width: 53.167rem;
+    max-width: 48rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -572,18 +572,6 @@ sup {
   background-color: var(--markiter-alt-bg-light-color);
 }
 
-.has-alt-bg-lighter-color {
-  color: var(--markiter-alt-bg-lighter-color);
-}
-.has-alt-bg-lighter-color a {
-  border-bottom-color: var(--markiter-alt-bg-lighter-color);
-  color: var(--markiter-alt-bg-lighter-color);
-}
-
-.has-alt-bg-lighter-background-color {
-  background-color: var(--markiter-alt-bg-lighter-color);
-}
-
 .has-fg-color {
   color: var(--markiter-fg-color);
 }
@@ -596,6 +584,18 @@ sup {
   background-color: var(--markiter-fg-color);
 }
 
+.has-fg-light-color {
+  color: var(--markiter-fg-light-color);
+}
+.has-fg-light-color a {
+  border-bottom-color: var(--markiter-fg-light-color);
+  color: var(--markiter-fg-light-color);
+}
+
+.has-fg-light-background-color {
+  background-color: var(--markiter-fg-light-color);
+}
+
 .has-accent-color {
   color: var(--markiter-accent-color);
 }
@@ -606,30 +606,6 @@ sup {
 
 .has-accent-background-color {
   background-color: var(--markiter-accent-color);
-}
-
-.has-border-color {
-  color: var(--markiter-border-color);
-}
-.has-border-color a {
-  border-bottom-color: var(--markiter-border-color);
-  color: var(--markiter-border-color);
-}
-
-.has-border-background-color {
-  background-color: var(--markiter-border-color);
-}
-
-.has-input-color {
-  color: var(--markiter-input-color);
-}
-.has-input-color a {
-  border-bottom-color: var(--markiter-input-color);
-  color: var(--markiter-input-color);
-}
-
-.has-input-background-color {
-  background-color: var(--markiter-input-color);
 }
 
 /**
@@ -672,7 +648,7 @@ p.has-drop-cap:not(:focus):first-letter {
  */
 .wp-block-quote, .wp-block-pullquote blockquote, .wp-block-quote.has-text-align-right, .wp-block-quote.is-style-large {
   margin-bottom: 1.75rem;
-  background-color: var(--markiter-alt-bg-lighter-color) !important;
+  background-color: var(--markiter-alt-bg-light-color) !important;
   padding: 1.75rem 1.75rem 1.75rem 1.96875rem !important;
 }
 .wp-block-quote:last-child, .wp-block-pullquote blockquote:last-child, .wp-block-quote.has-text-align-right:last-child, .wp-block-quote.is-style-large:last-child {
@@ -781,25 +757,19 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .wp-block-cover.has-background-dim.has-alt-bg-light-background-color {
   background-color: var(--markiter-alt-bg-light-color);
 }
-.wp-block-cover.has-background-dim.has-alt-bg-lighter-background-color {
-  background-color: var(--markiter-alt-bg-lighter-color);
-}
 .wp-block-cover.has-background-dim.has-fg-background-color {
   background-color: var(--markiter-fg-color);
+}
+.wp-block-cover.has-background-dim.has-fg-light-background-color {
+  background-color: var(--markiter-fg-light-color);
 }
 .wp-block-cover.has-background-dim.has-accent-background-color {
   background-color: var(--markiter-accent-color);
 }
-.wp-block-cover.has-background-dim.has-border-background-color {
-  background-color: var(--markiter-border-color);
-}
-.wp-block-cover.has-background-dim.has-input-background-color {
-  background-color: var(--markiter-input-color);
-}
 .wp-block-cover .wp-block-cover__inner-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 53.167rem;
+  max-width: 48rem;
   padding-left: 0;
   padding-right: 0;
 }
@@ -848,7 +818,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   border-radius: 0.2rem;
   cursor: pointer;
   display: inline-block;
-  padding: 0.3375rem 0.9375rem;
+  padding: 0.50625rem 1.125rem;
   text-decoration: none;
   width: auto;
 }
@@ -861,7 +831,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   border-radius: 0.2rem;
   cursor: pointer;
   display: inline-block;
-  padding: 0.3375rem 0.9375rem;
+  padding: 0.50625rem 1.125rem;
   text-decoration: none;
   width: auto;
 }
@@ -874,7 +844,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   border-radius: 0.2rem;
   cursor: pointer;
   display: inline-block;
-  padding: 0.3375rem 0.9375rem;
+  padding: 0.50625rem 1.125rem;
   text-decoration: none;
   width: auto;
 }
@@ -887,7 +857,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   border-radius: 0.2rem;
   cursor: pointer;
   display: inline-block;
-  padding: 0.3375rem 0.9375rem;
+  padding: 0.50625rem 1.125rem;
   text-decoration: none;
   width: auto;
 }
@@ -927,7 +897,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .wp-block-group .wp-block-group__inner-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 53.167rem;
+  max-width: 48rem;
   padding-left: 0;
   padding-right: 0;
 }
@@ -1077,12 +1047,10 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 :root {
   --markiter-bg-color: #FFFFFF;
   --markiter-alt-bg-color: #ECE4FE;
-  --markiter-alt-bg-light-color: #ECE4FEBB;
-  --markiter-alt-bg-lighter-color: #ECE4FE77;
+  --markiter-alt-bg-light-color: #F2ECFE;
   --markiter-fg-color: #190248;
+  --markiter-fg-light-color: #8C81A4;
   --markiter-accent-color: #722EF9;
-  --markiter-border-color: #DDDDDD;
-  --markiter-input-color: #999999;
   --markiter-small-font-size: 0.8rem;
   --markiter-normal-font-size: 1rem;
   --markiter-medium-font-size: 1.25rem;
@@ -1115,7 +1083,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .site-header-wrap {
     margin-left: auto;
     margin-right: auto;
-    max-width: 39.834rem;
+    max-width: 36rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1124,7 +1092,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .site-header-wrap {
     margin-left: auto;
     margin-right: auto;
-    max-width: 68.889rem;
+    max-width: 63.5rem;
     padding-left: 1.75rem;
     padding-right: 1.75rem;
   }
@@ -1171,7 +1139,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .site-footer-wrap {
     margin-left: auto;
     margin-right: auto;
-    max-width: 39.834rem;
+    max-width: 36rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1180,7 +1148,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .site-footer-wrap {
     margin-left: auto;
     margin-right: auto;
-    max-width: 68.889rem;
+    max-width: 63.5rem;
     padding-left: 1.75rem;
     padding-right: 1.75rem;
   }
@@ -1337,7 +1305,6 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 @media (min-width: 992px) {
   .main-navigation .sub-menu {
     background-color: var(--markiter-alt-bg-color);
-    box-shadow: 0 3px 3px var(--markiter-border-color);
     left: -999em;
     margin-left: 0;
     padding-left: 0;
@@ -1385,7 +1352,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   border: 0;
   color: var(--markiter-bg-color);
   margin: 0.4375rem 0;
-  padding: 0.65625rem 1.125rem;
+  padding: 0.50625rem 1.125rem;
 }
 @media (min-width: 992px) {
   .main-navigation .cta a {
@@ -1421,7 +1388,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .entry-footer {
   margin-left: auto;
   margin-right: auto;
-  max-width: 39.834rem;
+  max-width: 36rem;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
@@ -1430,7 +1397,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .entry-footer {
     margin-left: auto;
     margin-right: auto;
-    max-width: 39.834rem;
+    max-width: 36rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1439,7 +1406,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .entry-thumbnail {
   margin-left: auto;
   margin-right: auto;
-  max-width: 53.167rem;
+  max-width: 48rem;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
@@ -1447,7 +1414,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .entry-thumbnail {
     margin-left: auto;
     margin-right: auto;
-    max-width: 53.167rem;
+    max-width: 48rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1466,15 +1433,15 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 }
 
 .entry-meta {
-  color: var(--markiter-fg-color);
+  color: var(--markiter-fg-light-color);
   font-size: var(--markiter-small-font-size);
 }
 .entry-meta a {
+  color: var(--markiter-fg-light-color);
   text-decoration: none;
 }
 .entry-meta a:hover {
   color: var(--markiter-accent-color);
-  text-decoration: underline;
 }
 .entry-meta .entry-date:before,
 .entry-meta .entry-tags:before {
@@ -1513,7 +1480,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .entry-content > * {
     margin-left: auto;
     margin-right: auto;
-    max-width: 39.834rem;
+    max-width: 36rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1579,7 +1546,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .footer-widgets .footer-widgets-wrap {
     margin-left: auto;
     margin-right: auto;
-    max-width: 39.834rem;
+    max-width: 36rem;
     padding-left: 0;
     padding-right: 0;
     align-items: flex-start;
@@ -1592,7 +1559,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .footer-widgets .footer-widgets-wrap {
     margin-left: auto;
     margin-right: auto;
-    max-width: 68.889rem;
+    max-width: 63.5rem;
     padding-left: 1.75rem;
     padding-right: 1.75rem;
   }
@@ -1633,7 +1600,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .pagination {
   margin-left: auto;
   margin-right: auto;
-  max-width: 43.334rem;
+  max-width: 39.5rem;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
@@ -1656,7 +1623,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   margin-bottom: 3.5rem;
   margin-left: auto;
   margin-right: auto;
-  max-width: 53.167rem;
+  max-width: 48rem;
   padding-left: 0;
   padding-right: 0;
   border-bottom: 1px solid var(--markiter-alt-bg-color);
@@ -1741,7 +1708,7 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   .comments-area {
     margin-left: auto;
     margin-right: auto;
-    max-width: 39.834rem;
+    max-width: 36rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1790,6 +1757,10 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
   font-size: var(--markiter-small-font-size);
 }
 .comment-metadata a {
+  color: var(--markiter-fg-light-color);
+  text-decoration: none;
+}
+.comment-metadata a:hover {
   color: var(--markiter-accent-color);
 }
 

@@ -114,7 +114,7 @@ p {
 	&.has-text-align-right,
 	&.is-style-large {
 		@include make-block( $white-space );
-		background-color: get-color( alt-bg-lighter ) !important;
+		background-color: get-color( alt-bg-light ) !important;
 		padding: $white-space $white-space $white-space ( $white-space * 1.125 ) !important;
 
 		p {

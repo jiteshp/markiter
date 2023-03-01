@@ -12,6 +12,10 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.4.5 =
+* Improved color options
+* Improved typography
+
 = 2.4.4 =
 * Improved blockquote and pullquote block styles.
 * Improved table block styles

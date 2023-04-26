@@ -6,31 +6,20 @@
  */
 
 $markiter_tags = get_the_tag_list( '', ', ', '' );
-?>
-<footer class="entry-footer entry-meta">
-	<div class="entry-footer-wrap">
-		<span class="entry-categories">
+if ( $markiter_tags ) :
+	?>
+	<footer class="entry-footer entry-meta">
+		<div class="entry-footer-wrap">
 			<?php
-			echo wp_kses_post(
-				sprintf(
-					// translators: %s is for the category list.
-					__( 'Posted in %s', 'markiter' ),
-					get_the_category_list( ', ' )
-				)
-			);
+				echo '<span class="entry-tags">' . wp_kses_post(
+					sprintf(
+						// translators: %s is for the tag list.
+						__( 'Tagged %s', 'markiter' ),
+						$markiter_tags
+					)
+				) . '</span>';
 			?>
-		</span>
-
-		<?php
-		if ( $markiter_tags ) {
-			echo '<span class="entry-tags">' . wp_kses_post(
-				sprintf(
-					// translators: %s is for the tag list.
-					__( 'Tagged %s', 'markiter' ),
-					$markiter_tags
-				)
-			) . '</span>';
-		}
-		?>
-	</div>
-</footer>
+		</div>
+	</footer>
+	<?php
+endif;

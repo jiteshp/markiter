@@ -14,6 +14,12 @@
 		?>
 	</header>
 
+	<?php if ( has_excerpt() ) : ?>
+		<div class="entry-content entry-summary">
+			<?php the_excerpt(); ?>
+		</div>
+	<?php endif; ?>
+
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="entry-thumbnail">
 			<?php

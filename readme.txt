@@ -12,6 +12,10 @@ Minimal theme for marketers & bloggers that's designed to be compatible with the
 
 == Changelog ==
 
+= 2.4.6 =
+* Better support for topic-clusters in post meta
+* Single post layout displays the custom post excerpt at the top 
+
 = 2.4.5 =
 * Improved color options
 * Improved typography

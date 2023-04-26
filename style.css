@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
  * Theme name: 		Markiter
- * Version:			2.4.5
+ * Version:			2.4.6
  * Description:		Minimal theme for marketers & bloggers.
  * Tags: 			blog, one-column, sticky-post, accessibility-ready, translation-ready, custom-menu, editor-style, custom-colors, custom-logo, threaded-comments, block-styles, wide-blocks, footer-widgets, featured-images
  * Text domain: 	markiter
@@ -9,7 +9,7 @@
  * Author URI: 		https://www.jiteshpatil.com/
  * License: 		GNU General Public License v2 or later
  * License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
- * Tested up to: 	5.7.2
+ * Tested up to: 	6.2
  * Requires PHP: 	7.1
  *
  * All files, unless otherwise stated, are released under the
@@ -268,8 +268,8 @@ ol ol, ol ul, ul ol, ul ul {
   margin-top: 0;
 }
 ol li, ul li {
-  margin-bottom: 0.875rem;
-  margin-top: 0.875rem;
+  margin-bottom: 0.21875rem;
+  margin-top: 0.21875rem;
 }
 
 ul {
@@ -1443,8 +1443,8 @@ figure.wp-block-image img, .wp-block-image.wp-caption img {
 .entry-meta a:hover {
   color: var(--markiter-accent-color);
 }
-.entry-meta .entry-date:before,
-.entry-meta .entry-tags:before {
+.entry-meta .entry-author:before,
+.entry-meta .entry-date:before {
   content: "—";
   margin: 0 5px;
 }

@@ -77,8 +77,8 @@ ol, ul {
 	}
 
 	li {
-		margin-bottom: $white-space / 2;
-		margin-top: $white-space / 2;
+		margin-bottom: $white-space / 8;
+		margin-top: $white-space / 8;
 	}
 }
 
@@ -145,7 +145,7 @@ table {
 	}
 
 	tbody tr {
-		background-color: transparent !important; 
+		background-color: transparent !important;
 
 		td {
 			background-color: get-color( alt-bg-light ) !important;
